@@ -1,0 +1,16 @@
+{
+  "studio_url": "https://your-private-studio.example.com",
+  "artifacts_host": "YOUR_ACCOUNT_ID.artifacts.cloudflare.net",
+  "runner_id": "isolated-runner-1",
+  "isolated_environment": false,
+  "amplifier_argv": ["amplifier", "run", "{prompt}"],
+  "agent_env": ["ANTHROPIC_API_KEY"],
+  "test_commands": [],
+  "max_agents": 2,
+  "base_branch": "main",
+  "git_username": "x-access-token",
+  "agent_timeout_seconds": 1200,
+  "test_timeout_seconds": 300,
+  "heartbeat_seconds": 30,
+  "poll_seconds": 15
+}

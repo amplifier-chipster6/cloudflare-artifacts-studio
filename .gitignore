@@ -1,0 +1,9 @@
+data/
+node_modules/
+.dev.vars
+.env
+.wrangler/
+src/assets.mjs
+src/schema.mjs
+__pycache__/
+bridge/config.json

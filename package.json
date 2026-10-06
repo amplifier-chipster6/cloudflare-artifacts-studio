@@ -1,0 +1,17 @@
+{
+  "name": "artifacts-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs && node tests/frontend-smoke.mjs",
+    "build": "node build.mjs",
+    "start": "node server.mjs",
+    "test:frontend": "node tests/frontend-smoke.mjs",
+    "check:frontend": "node --check public/app.js",
+    "test:bridge": "python3 -m unittest discover -s bridge -p 'test_*.py' -v"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

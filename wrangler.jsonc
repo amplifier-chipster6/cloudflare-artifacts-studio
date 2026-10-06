@@ -1,0 +1,15 @@
+{
+  "name": "artifacts-studio",
+  "account_id": "YOUR_CLOUDFLARE_ACCOUNT_ID",
+  "main": "src/cloud.mjs",
+  "compatibility_date": "2026-10-06",
+  "workers_dev": false,
+  "preview_urls": false,
+  "build": {"command": "node build.mjs"},
+  "artifacts": [{"binding": "ARTIFACTS", "namespace": "artifacts-studio"}],
+  "durable_objects": {
+    "bindings": [{"name": "STUDIO_DATABASE", "class_name": "StudioDatabase"}]
+  },
+  "migrations": [{"tag": "v1", "new_sqlite_classes": ["StudioDatabase"]}],
+  "vars": {"OWNER_EMAILS": "owner@example.com"}
+}
