@@ -1,8 +1,10 @@
-# Launch Cody's Artifacts Studio
+# Private deployment of the v0.1 application
+
+Deployment is a future qualification gate; this documentation branch does not deploy the app. Read the [roadmap](docs/ROADMAP.md), [architecture](docs/ARCHITECTURE.md), and [verification strategy](docs/VERIFICATION.md) first. Uploading today's code does not implement the proposed Artifacts record writer, memory port, or final-candidate verifier.
 
 Before deploying, replace `YOUR_CLOUDFLARE_ACCOUNT_ID` and `owner@example.com` in `wrangler.jsonc` with your account ID and authorized owner email. This public backup retains Worker name `artifacts-studio` and namespace `artifacts-studio`; private account values were removed. It uses SQLite Durable Object storage, so no separate D1 database ID is needed. No credentials are included.
 
-Current state: the application is locally runnable and its last recorded local tests passed. Workers Paid is shown in the user screenshot. A successful listing confirmed the user-created `artifacts-studio` namespace. Repository creation and Worker upload then failed; after reauthentication, the connector returned “Unknown tool” before reaching Cloudflare. The latest API permissions remain unverified. There is no verified hosted Studio URL or live Amplifier connection. Read `docs/HANDOFF.md` before continuing; the steps below have not yet been executed successfully against this account.
+Historical state: the local application and controlled tests were delivered. A successful listing confirmed an unrestricted `artifacts-studio` namespace. Repository creation and Worker upload failed; after reauthentication, a connector returned “Unknown tool” before reaching Cloudflare. These historical failures do not diagnose current permissions. There is no verified hosted Studio URL or live Amplifier connection. Recheck current inventory and permissions before a future authorized deployment; preserve the [deployment history](docs/DEPLOYMENT-STATUS.json).
 
 ## Use the workspace locally
 
@@ -24,7 +26,7 @@ npx --yes wrangler@4.145.0 login
 npx --yes wrangler@4.145.0 deploy --config wrangler.jsonc
 ```
 
-`npx` downloads and runs the pinned Wrangler CLI without a global installation; `--yes` accepts the package-download prompt. `login` opens Cloudflare authorization in your browser. Sign in with an account that can deploy Workers and access Artifacts. `deploy` builds and uploads this Worker; `--config` selects the supplied account-specific configuration. It also declares the SQLite Durable Object migration and native Artifacts binding. The namespace can be created implicitly when Studio creates its first repository.
+`npx` downloads the example pinned CLI without a global installation; `--yes` accepts the download prompt. Qualify that exact project-local version and generated binding types against current Artifacts documentation first. `login` opens Cloudflare authorization. `deploy` builds/uploads this Worker and declares its SQLite Durable Object migration and native Artifacts binding. Choose namespace jurisdiction explicitly before creation; implicit unrestricted creation is unsuitable for a required locality policy.
 
 The initial configuration leaves `workers.dev` and previews disabled. Upload success alone does not make the Studio usable. If upload fails, keep the complete error text and stop here; neither the paid plan nor this package guarantees permission to deploy.
 
@@ -47,7 +49,7 @@ Keep agent execution disconnected until the separate runner is configured. These
 
 ## Pair Amplifier separately
 
-Use `bridge/README.md` inside an already isolated execution environment with your existing Amplifier and provider access. No command above installs or changes Amplifier, its global bundles, your VPS, or Context Intelligence.
+Use [bridge guidance](bridge/README.md) for the current adapter and [execution architecture](docs/EXECUTION-ADAPTER.md) for the proposed Unified/Converge qualification. Actual host invocation, loaded composition, OS isolation, and custody must be qualified. No command above installs or changes the host or its global bundles.
 
 Create a random runner secret in your secret manager. Set the Worker secret interactively:
 

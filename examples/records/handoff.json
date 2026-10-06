@@ -1,0 +1,41 @@
+{
+  "schema_version": "1-candidate",
+  "record_type": "handoff",
+  "id": "handoff-demo",
+  "revision": 1,
+  "project_id": "project-demo",
+  "created_at": "2026-10-06T12:00:00Z",
+  "producer": {
+    "id": "example-studio",
+    "role": "studio"
+  },
+  "authority": "attributed_report",
+  "access_scope": "selected_task",
+  "supersedes": null,
+  "payload": {
+    "task": {
+      "id": "task-demo",
+      "revision": 1
+    },
+    "journal": {
+      "id": "journal-demo",
+      "revision": 1
+    },
+    "goal": "Continue the real bounded pilot",
+    "current_state": "No live run demonstrated",
+    "evidence": [
+      {
+        "id": "candidate-demo",
+        "revision": 1
+      },
+      {
+        "id": "verification-demo",
+        "revision": 1
+      }
+    ],
+    "open_work": [
+      "Qualify actual host and private Artifacts"
+    ],
+    "next_authorized_action": "Review draft contracts and resolve actual pins"
+  }
+}

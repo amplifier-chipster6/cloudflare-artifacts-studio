@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/deployment_receipt.schema.json",
+  "title": "deployment_receipt (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "deployment_receipt"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "delivery"
+            }
+          }
+        },
+        "authority": {
+          "const": "trusted_delivery"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "integration": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "source_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "target": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "enum": [
+                "confirmed",
+                "failed",
+                "outcome_unknown"
+              ]
+            },
+            "idempotency_key": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "integration",
+            "source_commit",
+            "target",
+            "status",
+            "idempotency_key"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

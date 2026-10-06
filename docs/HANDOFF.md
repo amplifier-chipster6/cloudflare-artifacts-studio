@@ -1,108 +1,41 @@
 # Continue Artifacts Studio
 
-This public repository is the source backup requested on October 6, 2026:
-`amplifier-chipster6/cloudflare-artifacts-studio`, branch `main`.
-It contains the personalized v0.1 Studio implementation from the conversation,
-plus the latest deployment findings. The other Artifacts Studio prototype was
-not modified or merged into this backup.
+Public continuation guide, authored 2026-10-06. Branch for this documentation work: `initial-documentation-creation`; implementation base: `1a493cb9c6b7618fbd714c50eff059c9ffe3bce2`.
 
-## Start here
+## Big picture and reading order
 
-Continue this implementation; do not restart design or assume a live deployment.
-Read `README.md`, `PROJECT_STATUS.md`, and `DEPLOY.md`. Existing design and plan:
-`docs/DESIGN.md` and `docs/PLAN.md`. The review of all 26 indexed Artifacts
-product documentation pages is `docs/ARTIFACTS-REVIEW.md`.
+Artifacts Studio is the engineering workspace beneath the larger Website Studio vision. It connects defined work, explicit selected context, Amplifier execution, reviewed candidates, and continuity. Artifacts is the proposed durable record/workspace foundation; SQL coordinates and projects; memory derives cited knowledge; Unified owns native session history.
 
-The user wants a personalized GitHub-like workspace supporting Website Studio,
-Amplifier, bounded agent runs, explicit selected context, and review. The source
-implements the local workspace and adapters. Live cloud and agent verification
-are unfinished. See the existing design rather than replacing its scope.
+Read [vision](VISION.md), [pilot](PILOT.md), [roles](REPOSITORY-ROLES.md), [architecture](ARCHITECTURE.md), [ownership](INTEGRATION-OWNERSHIP.md), [ADR register](adr/README.md), [contracts](CONTRACTS-README.md), [pins](../PINS.md), and [roadmap](ROADMAP.md). The [source register](SOURCES.md) supplies exact reviewed repository revisions. The twenty requested documentation tasks are in [TODO](TODO.md).
 
-## Public backup boundary
+## Implementation and evidence
 
-The repository was public when this snapshot was uploaded. The Cloudflare
-account ID and owner email have been replaced with placeholders in
-`wrangler.jsonc`, deployment instructions, and the deployment receipt.
-Set the actual values before deployment. The complete original private
-configuration remains in the user's `artifacts-studio-v0.1.0.zip` attachment.
-The private conversation handoff is `Artifacts-Studio-Handoff-2026-10-06.md`.
-Neither credentials, user database contents, private Git history, account
-screenshots, nor the unrelated Worker investigation evidence are published here.
+The local v0.1 app has SQL persistence, selected packets, Artifacts binding/REST code, queue/lease/report/review behavior, and an outbound bridge. It does not yet have the proposed Artifacts record writer/memory port, independent final-candidate verifier, or integration service.
 
-The application source is based on local commit `96fcafb`; final documentation
-corrections and this handoff were added for this backup. This is a clean source
-snapshot, not a claim that the original local commit history was pushed.
+Historical cloud deployment failed; an unrestricted namespace was observed. Current write/deploy permissions require requalification, not diagnosis from historical errors. No hosted Studio, real model run, browser qualification, or memory integration has been demonstrated. [Status](../PROJECT_STATUS.md), [validation](VALIDATION.md), and [deployment history](DEPLOYMENT-STATUS.json) distinguish evidence classes.
 
-## Latest Cloudflare state
+## Repository and runtime relationships
 
-- The user's screenshot showed Workers Paid as the current plan.
-- A successful listing confirmed the user-created `artifacts-studio` namespace,
-  jurisdiction `unrestricted`, with zero repositories.
-- Repository creation then returned authentication error `10000`; uploading
-  the Studio Worker returned “No access to the specified resource.”
-- After the user reauthenticated, both Cloudflare connector actions failed
-  before reaching the API with MCP `-32001`, “Unknown tool” for
-  `cloudflare.execute` and `cloudflare.search`. This does not establish that
-  the newly granted API permissions are wrong.
-- No Studio Worker, repository, or hosted Studio URL was successfully created
-  by the assistant. Recheck current state before mutations; the user may have
-  acted since the last successful inventory.
-- Dashboard fallback was rejected by the environment's browser security
-  policy. Do not retry through another browser surface, raw CDP, or shell
-  workaround. A restored Cloudflare connector is a separate permitted route.
-- No Amplifier/runtime/provider, GitHub synchronization, or external memory
-  service has been connected by this project.
+The public Cloudflare Studio is the selected application baseline. The earlier private artifacts-studio prototype supplies comparison patterns and the starter Cloudflare specialist bundle. Amplified Design supplies larger intent, capability maps, and journal/learning worksheets. Own Unified is the pilot fork; Microsoft Unified is upstream. Converge is a proposed development workflow composed project-locally; the operator is actively developing the specialist bundle.
 
-The historical attempts in `docs/DEPLOYMENT-STATUS.json` are retained; its
-`latest_observations` section records the later namespace and connection state.
+Do not infer that helper discovery establishes real worker lanes, that root Converge bundle alone activates manager custody, or that upstream release frequency proves host compatibility. Preserve native history and one owner per active attempt.
 
-## Next actions
+## Focus for the receiving memory architect
 
-1. Discover the current Cloudflare connection and attempt a small read. Handle
-   tool errors before JSON parsing. If “Unknown tool” persists, state that
-   precise blocker rather than diagnosing API permissions.
-2. Verify the intended account, existing namespace, repositories, and Worker
-   inventory. Inspect any same-name resource before modifying it.
-3. Restore the private deployment values, then follow `DEPLOY.md`. Use the
-   SQLite Durable Object variant with the native Artifacts binding. Keep
-   routes/previews disabled until owner-only Access protects all traffic.
-4. Verify signed-out/unauthorized access is blocked, owner access works,
-   project/context records survive reload, task packets contain only selected
-   context, and live Artifacts repository operations succeed.
-5. Pair `bridge/runner.py` only when an authorized isolated runtime with Git,
-   Amplifier, and model access is available. Follow `bridge/README.md` and
-   demonstrate an actual run before claiming the connection is operational.
+Read [MEMORY-INTEGRATION](MEMORY-INTEGRATION.md), its [draft contract](../contracts/memory-integration.v1-candidate.md), and [schemas/examples](../schemas/README.md). Identify the actual custom memory repository/API first; it has not been inspected.
 
-Private deployment was already authorized. The user is handling unrelated
-Worker cleanup; do not delete Workers, routes, or tokens as part of this task.
-Do not change global Amplifier configuration or ingest personal history.
+Map stable ID/revision separately from source occurrence (repo/commit/path/blob/digest); keep source envelopes outside authored records; preserve producer/authority/scope and typed relationships. Model project→task→run→candidate→verification→review→delivery without turning proposed or failed work into accepted outcomes. Summaries and retrieval remain derived and cited. Explicit selection freezes any excerpt released to a worker. Plan supersession, deletion, idempotent intake, reconciliation, and SQL migration.
 
-## Verification and limits
+Use a reconstruction exercise: recover a task's effective revision, packet, custody, contribution, final candidate, trusted checks, operator decision, actual delivery receipts, failed history, and next authorized action from immutable references.
 
-The last implementation verification passed the build, 11 Node tests,
-10 frontend smoke groups, and 16 Python bridge tests. These historical results
-are recorded in `PROJECT_STATUS.md`; repeat relevant checks after code changes.
-Frontend smoke uses a DOM stub and Artifacts fixtures. Browser rendering,
-accessibility, Wrangler dry-run, real cloud CRUD/Git operations, and live
-Amplifier/model runs remain unverified.
+## Next authorized work and open gates
 
-Review acceptance records a decision; it does not merge or deploy. GitHub is
-a project link, not synchronization. Context is explicitly selected per project;
-external memory retrieval is not connected. Runner-reported tests are attributed
-evidence, not tests independently rerun by Studio. Separate Git clones are not
-an OS sandbox. See the existing docs for the full boundaries.
+This request authorizes documentation creation, commit, and branch push. It does not establish a new implementation/deployment action for a continuation session. Review the concrete draft artifacts, resolve contract/pilot choices and owners, inspect the memory system, resolve runtime pins/seam support, then define the next bounded implementation task under the operator's current instruction.
+
+Unknown outcomes must be reconciled before retries. Secrets, private configuration, personal history, original attachments, and unrelated resources stay outside this public documentation.
 
 ## Suggested skills
 
-- `executing-plans`: resume the existing implementation plan.
-- `systematic-debugging`: investigate concrete connection/deployment failures.
-- `verification-before-completion`: require actual evidence for new claims.
-- `plugin-management`: discover the connection if currently unavailable.
-- `library`: retrieve the user's private handoff/configuration ZIP when needed.
-- `personal-context`: use only for missing history that these documents do not supply.
+Load relevant skills through the available harness tool: Cloudflare for platform design; Workers best practices for Worker changes; Wrangler before CLI commands; planning/execution for ratified implementation; systematic debugging for failures; verification before claims; and handoff if installed. Discover memory-system skills once its identity is known. The operator supplied handoff instructions in this conversation; do not assume an installed skill of that name.
 
-## New-conversation prompt
-
-> @Cloudflare Continue amplifier-chipster6/cloudflare-artifacts-studio on main.
-> Read docs/HANDOFF.md, verify the Cloudflare connection, and finish the existing
-> private deployment. I am handling the unrelated Worker cleanup myself.
+Use [journal](JOURNAL.md) and [handoff template](templates/handoff.md). Reference existing artifacts instead of duplicating their contents.

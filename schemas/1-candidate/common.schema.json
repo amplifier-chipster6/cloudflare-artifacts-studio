@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/common.schema.json",
+  "title": "Authored record envelope (candidate)",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1-candidate"
+    },
+    "record_type": {
+      "enum": [
+        "project",
+        "milestone",
+        "task",
+        "criterion",
+        "assignment",
+        "context",
+        "context_manifest",
+        "run",
+        "contribution",
+        "candidate",
+        "verification",
+        "review_decision",
+        "integration_receipt",
+        "deployment_receipt",
+        "journal",
+        "handoff"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]{2,95}$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "producer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "operator",
+            "studio",
+            "worker",
+            "verifier",
+            "delivery",
+            "memory"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "role"
+      ],
+      "additionalProperties": false
+    },
+    "authority": {
+      "enum": [
+        "operator_intent",
+        "operator_decision",
+        "attributed_report",
+        "trusted_verification",
+        "trusted_delivery",
+        "derived"
+      ]
+    },
+    "access_scope": {
+      "enum": [
+        "private_project",
+        "selected_task",
+        "public"
+      ]
+    },
+    "supersedes": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/reference"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "revision",
+    "project_id",
+    "created_at",
+    "producer",
+    "authority",
+    "access_scope",
+    "supersedes",
+    "payload"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "id",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "repository_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\u0000]+$"
+        },
+        "blob_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "repository_id",
+        "commit",
+        "path",
+        "blob_sha",
+        "content_sha256",
+        "observed_at"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

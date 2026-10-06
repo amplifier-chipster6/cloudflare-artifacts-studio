@@ -1,0 +1,13 @@
+flowchart TD
+  Intent["Serialized intent and idempotency key"] --> Write["External write"]
+  Write --> Confirmed["Confirmed source receipt"]
+  Write --> Failed["Known failure"]
+  Write --> Unknown["Outcome unknown"]
+  Unknown --> Pause["Pause new effects and custody reassignment"]
+  Pause --> Read["Read authoritative refs and receipts"]
+  Read --> Match["Effect already confirmed"]
+  Read --> Conflict["Unexpected state: block and revise"]
+  Read --> Absent["Proven absent: safe idempotent retry"]
+  Match --> Confirmed
+  Absent --> Write
+  Confirmed --> Project["Rebuild SQL and memory projections"]

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/milestone.schema.json",
+  "title": "milestone (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "milestone"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "operator"
+            }
+          }
+        },
+        "authority": {
+          "const": "operator_intent"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "project": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "goal": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "enum": [
+                "planned",
+                "active",
+                "blocked",
+                "completed"
+              ]
+            },
+            "exit_criteria": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "project",
+            "name",
+            "goal",
+            "status",
+            "exit_criteria"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/assignment.schema.json",
+  "title": "assignment (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "assignment"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "studio"
+            }
+          }
+        },
+        "authority": {
+          "const": "operator_intent"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "task": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "role": {
+              "enum": [
+                "implementation",
+                "testing"
+              ]
+            },
+            "agent_profile": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "enum": [
+                "proposed",
+                "assigned",
+                "completed",
+                "failed"
+              ]
+            }
+          },
+          "required": [
+            "task",
+            "role",
+            "agent_profile",
+            "status"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

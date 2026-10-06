@@ -1,0 +1,21 @@
+sequenceDiagram
+  actor O as Operator
+  participant S as Studio
+  participant A as Artifacts
+  participant R as Qualified runtime
+  participant V as Trusted verifier
+  participant D as Delivery
+  O->>S: Approve task revision and selected context
+  S->>A: Freeze records and packet; confirm source
+  S->>R: Map custody and approved base
+  R->>A: Publish per-agent contribution
+  S->>A: Build isolated candidate
+  S->>V: Check final candidate SHA
+  V->>A: Write trusted verification receipt
+  S->>O: Present candidate and evidence
+  O->>S: Record review decision
+  opt Separately authorized integration
+    S->>D: Candidate and expected destination base
+    D->>D: Compare-and-swap, then read back
+    D->>A: Confirmed or outcome-unknown receipt
+  end

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/journal.schema.json",
+  "title": "journal (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "journal"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "studio"
+            }
+          }
+        },
+        "authority": {
+          "const": "attributed_report"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "task": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "intent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "approach": {
+              "enum": [
+                "reuse",
+                "configure",
+                "compose",
+                "extend"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/reference"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "observed_outcome": {
+              "type": "string",
+              "minLength": 1
+            },
+            "next_action": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "task",
+            "intent",
+            "approach",
+            "evidence",
+            "observed_outcome",
+            "next_action"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

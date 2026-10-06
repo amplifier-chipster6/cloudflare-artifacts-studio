@@ -1,0 +1,31 @@
+{
+  "schema_version": "1-candidate",
+  "record_type": "integration_receipt",
+  "id": "integration_receipt-demo",
+  "revision": 1,
+  "project_id": "project-demo",
+  "created_at": "2026-10-06T12:00:00Z",
+  "producer": {
+    "id": "example-delivery",
+    "role": "delivery"
+  },
+  "authority": "trusted_delivery",
+  "access_scope": "selected_task",
+  "supersedes": null,
+  "payload": {
+    "decision": {
+      "id": "review_decision-demo",
+      "revision": 1
+    },
+    "candidate": {
+      "id": "candidate-demo",
+      "revision": 1
+    },
+    "destination_repository": "example/unified-fork",
+    "destination_ref": "refs/heads/pilot",
+    "expected_base": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "result_commit": "cccccccccccccccccccccccccccccccccccccccc",
+    "status": "confirmed",
+    "idempotency_key": "synthetic-integration-1"
+  }
+}

@@ -1,0 +1,353 @@
+{
+  "authored_on": "2026-10-06",
+  "branch": "initial-documentation-creation",
+  "status_semantics": "authored_draft does not mean ratified or live-qualified",
+  "tasks": [
+    {
+      "id": "DOC-01",
+      "title": "Repository roles and baseline",
+      "owner": "Application architect",
+      "dependencies": [],
+      "files": [
+        "docs/REPOSITORY-ROLES.md",
+        "docs/adr/0001-repository-baseline.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-02",
+      "title": "Bounded Unified pilot",
+      "owner": "Product steward",
+      "dependencies": [
+        "DOC-01",
+        "DOC-07"
+      ],
+      "files": [
+        "docs/PILOT.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-03",
+      "title": "Vision",
+      "owner": "Project steward",
+      "dependencies": [
+        "DOC-01",
+        "DOC-02"
+      ],
+      "files": [
+        "docs/VISION.md",
+        "VISION.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-04",
+      "title": "Decision register and eight proposed ADRs",
+      "owner": "Architect",
+      "dependencies": [
+        "DOC-01",
+        "DOC-02",
+        "DOC-03"
+      ],
+      "files": [
+        "docs/adr/README.md",
+        "docs/adr/template.md",
+        "docs/adr/0001-repository-baseline.md",
+        "docs/adr/0002-record-authority.md",
+        "docs/adr/0003-operational-projection.md",
+        "docs/adr/0004-isolation-verification.md",
+        "docs/adr/0005-converge-custody.md",
+        "docs/adr/0006-publication-portability.md",
+        "docs/adr/0007-context-selection.md",
+        "docs/adr/0008-retention-residency.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-05",
+      "title": "Reconcile baseline documents",
+      "owner": "Application maintainer",
+      "dependencies": [
+        "DOC-01",
+        "DOC-03"
+      ],
+      "files": [
+        "README.md",
+        "PROJECT_STATUS.md",
+        "docs/DESIGN.md",
+        "docs/PLAN.md",
+        "DEPLOY.md",
+        "docs/DEPLOYMENT-STATUS.json",
+        "docs/ARTIFACTS-REVIEW.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-06",
+      "title": "Agent guidance",
+      "owner": "Application maintainer",
+      "dependencies": [
+        "DOC-03",
+        "DOC-05"
+      ],
+      "files": [
+        "AGENTS.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-07",
+      "title": "Pins and capability inventory",
+      "owner": "Runtime/bundle maintainer",
+      "dependencies": [
+        "DOC-01"
+      ],
+      "files": [
+        "PINS.md",
+        "docs/CAPABILITY-INVENTORY.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-08",
+      "title": "Contribution, review, CI, and templates",
+      "owner": "Application maintainer",
+      "dependencies": [
+        "DOC-06",
+        "DOC-07"
+      ],
+      "files": [
+        "CONTRIBUTING.md",
+        ".github/ISSUE_TEMPLATE/task.md",
+        ".github/ISSUE_TEMPLATE/bug.md",
+        ".github/pull_request_template.md",
+        ".github/workflows/checks.yml"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-09",
+      "title": "Roadmap and durable TODO",
+      "owner": "Project coordinator",
+      "dependencies": [
+        "DOC-02",
+        "DOC-04"
+      ],
+      "files": [
+        "docs/ROADMAP.md",
+        "docs/TODO.md",
+        "docs/documentation-coverage.json"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-10",
+      "title": "Architecture and five diagrams",
+      "owner": "Architect",
+      "dependencies": [
+        "DOC-01",
+        "DOC-03"
+      ],
+      "files": [
+        "docs/ARCHITECTURE.md",
+        "docs/architecture/components.mmd",
+        "docs/architecture/information-flow.mmd",
+        "docs/architecture/task-sequence.mmd",
+        "docs/architecture/recovery.mmd",
+        "docs/architecture/memory.mmd"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-11",
+      "title": "Integration ownership",
+      "owner": "Seam owners",
+      "dependencies": [
+        "DOC-10"
+      ],
+      "files": [
+        "docs/INTEGRATION-OWNERSHIP.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-12",
+      "title": "Contract registry and five draft seam contracts",
+      "owner": "Seam owners",
+      "dependencies": [
+        "DOC-11"
+      ],
+      "files": [
+        "docs/CONTRACTS-README.md",
+        "contracts/record-model.v1-candidate.md",
+        "contracts/context-packet.v1-candidate.md",
+        "contracts/runner-adapter.v1-candidate.md",
+        "contracts/memory-integration.v1-candidate.md",
+        "contracts/review-integration.v1-candidate.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-13",
+      "title": "Candidate schemas, examples, and validation",
+      "owner": "Data/integration architect",
+      "dependencies": [
+        "DOC-12"
+      ],
+      "files": [
+        "schemas/README.md",
+        "examples/records/README.md",
+        "schemas/1-candidate/common.schema.json",
+        "schemas/1-candidate/source-envelope.schema.json",
+        "examples/ingestion/task.json",
+        "scripts/check_docs.py",
+        "requirements-docs.txt",
+        "schemas/1-candidate/project.schema.json",
+        "examples/records/project.json",
+        "schemas/1-candidate/milestone.schema.json",
+        "examples/records/milestone.json",
+        "schemas/1-candidate/task.schema.json",
+        "examples/records/task.json",
+        "schemas/1-candidate/criterion.schema.json",
+        "examples/records/criterion.json",
+        "schemas/1-candidate/assignment.schema.json",
+        "examples/records/assignment.json",
+        "schemas/1-candidate/context.schema.json",
+        "examples/records/context.json",
+        "schemas/1-candidate/context_manifest.schema.json",
+        "examples/records/context_manifest.json",
+        "schemas/1-candidate/run.schema.json",
+        "examples/records/run.json",
+        "schemas/1-candidate/contribution.schema.json",
+        "examples/records/contribution.json",
+        "schemas/1-candidate/candidate.schema.json",
+        "examples/records/candidate.json",
+        "schemas/1-candidate/verification.schema.json",
+        "examples/records/verification.json",
+        "schemas/1-candidate/review_decision.schema.json",
+        "examples/records/review_decision.json",
+        "schemas/1-candidate/integration_receipt.schema.json",
+        "examples/records/integration_receipt.json",
+        "schemas/1-candidate/deployment_receipt.schema.json",
+        "examples/records/deployment_receipt.json",
+        "schemas/1-candidate/journal.schema.json",
+        "examples/records/journal.json",
+        "schemas/1-candidate/handoff.schema.json",
+        "examples/records/handoff.json"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-14",
+      "title": "Artifacts integration and official source review",
+      "owner": "Cloudflare specialist",
+      "dependencies": [
+        "DOC-07",
+        "DOC-12"
+      ],
+      "files": [
+        "docs/ARTIFACTS-INTEGRATION.md",
+        "docs/ARTIFACTS-REVIEW.md",
+        "docs/artifacts-doc-coverage.json"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-15",
+      "title": "Memory intake, provenance, and reconstruction proposal",
+      "owner": "Memory maintainer (unassigned)",
+      "dependencies": [
+        "DOC-11",
+        "DOC-13"
+      ],
+      "files": [
+        "docs/MEMORY-INTEGRATION.md",
+        "contracts/memory-integration.v1-candidate.md",
+        "docs/adr/0002-record-authority.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-16",
+      "title": "Execution adapter and bundle composition",
+      "owner": "Runtime/bundle maintainer",
+      "dependencies": [
+        "DOC-07",
+        "DOC-11",
+        "DOC-12"
+      ],
+      "files": [
+        "docs/EXECUTION-ADAPTER.md",
+        "bridge/README.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-17",
+      "title": "Verification and acceptance matrix",
+      "owner": "Independent verifier",
+      "dependencies": [
+        "DOC-02",
+        "DOC-12",
+        "DOC-13",
+        "DOC-14",
+        "DOC-15",
+        "DOC-16"
+      ],
+      "files": [
+        "docs/VERIFICATION.md",
+        "docs/VALIDATION.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-18",
+      "title": "Operations, recovery, retention, locality",
+      "owner": "Operations + memory maintainers",
+      "dependencies": [
+        "DOC-11",
+        "DOC-14",
+        "DOC-15"
+      ],
+      "files": [
+        "docs/OPERATIONS.md",
+        "docs/DATA-LIFECYCLE.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-19",
+      "title": "Security and context/data handling",
+      "owner": "Access/data steward",
+      "dependencies": [
+        "DOC-11",
+        "DOC-14",
+        "DOC-18"
+      ],
+      "files": [
+        "SECURITY.md",
+        "docs/CONTEXT-POLICY.md"
+      ],
+      "status": "authored_draft"
+    },
+    {
+      "id": "DOC-20",
+      "title": "Journal, source register, and continuation",
+      "owner": "Knowledge steward",
+      "dependencies": [
+        "DOC-13",
+        "DOC-15"
+      ],
+      "files": [
+        "docs/JOURNAL.md",
+        "docs/templates/journal.md",
+        "docs/templates/handoff.md",
+        "docs/HANDOFF.md",
+        "docs/SOURCES.md",
+        "docs/INDEX.md"
+      ],
+      "status": "authored_draft"
+    }
+  ]
+}

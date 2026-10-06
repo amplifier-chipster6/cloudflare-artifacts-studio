@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/source-envelope.schema.json",
+  "title": "Post-commit ingestion envelope",
+  "type": "object",
+  "properties": {
+    "record": {
+      "$ref": "task.schema.json"
+    },
+    "source": {
+      "$ref": "common.schema.json#/$defs/source"
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "record",
+    "source",
+    "idempotency_key"
+  ],
+  "additionalProperties": false
+}

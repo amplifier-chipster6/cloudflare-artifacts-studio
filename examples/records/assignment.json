@@ -1,0 +1,24 @@
+{
+  "schema_version": "1-candidate",
+  "record_type": "assignment",
+  "id": "assignment-demo",
+  "revision": 1,
+  "project_id": "project-demo",
+  "created_at": "2026-10-06T12:00:00Z",
+  "producer": {
+    "id": "example-studio",
+    "role": "studio"
+  },
+  "authority": "operator_intent",
+  "access_scope": "selected_task",
+  "supersedes": null,
+  "payload": {
+    "task": {
+      "id": "task-demo",
+      "revision": 1
+    },
+    "role": "implementation",
+    "agent_profile": "example-implementation-worker",
+    "status": "completed"
+  }
+}

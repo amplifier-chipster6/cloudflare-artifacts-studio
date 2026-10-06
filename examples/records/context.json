@@ -1,0 +1,30 @@
+{
+  "schema_version": "1-candidate",
+  "record_type": "context",
+  "id": "context-demo",
+  "revision": 1,
+  "project_id": "project-demo",
+  "created_at": "2026-10-06T12:00:00Z",
+  "producer": {
+    "id": "example-studio",
+    "role": "studio"
+  },
+  "authority": "operator_intent",
+  "access_scope": "selected_task",
+  "supersedes": null,
+  "payload": {
+    "label": "Synthetic selected requirement",
+    "classification": "evidence",
+    "text": "Open the approved Studio destination only on explicit activation.",
+    "text_sha256": "6b0c21e941fa9eb97944b5d38b82c7270ed56f280eff2dc6c5b339cdc671d2ef",
+    "source": {
+      "repository_id": "example-source",
+      "commit": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "path": "requirements/navigation.md",
+      "blob_sha": "dddddddddddddddddddddddddddddddddddddddd",
+      "content_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "observed_at": "2026-10-06T12:00:00Z"
+    },
+    "release_scope": "selected_task"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/review_decision.schema.json",
+  "title": "review_decision (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "review_decision"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "operator"
+            }
+          }
+        },
+        "authority": {
+          "const": "operator_decision"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "task": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "candidate": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "candidate_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "verifications": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/reference"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "disposition": {
+              "enum": [
+                "accepted",
+                "rejected",
+                "changes_requested"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "task",
+            "candidate",
+            "candidate_commit",
+            "verifications",
+            "disposition",
+            "rationale"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

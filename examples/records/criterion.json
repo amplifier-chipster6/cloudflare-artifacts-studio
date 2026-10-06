@@ -1,0 +1,24 @@
+{
+  "schema_version": "1-candidate",
+  "record_type": "criterion",
+  "id": "criterion-demo",
+  "revision": 1,
+  "project_id": "project-demo",
+  "created_at": "2026-10-06T12:00:00Z",
+  "producer": {
+    "id": "example-operator",
+    "role": "operator"
+  },
+  "authority": "operator_intent",
+  "access_scope": "selected_task",
+  "supersedes": null,
+  "payload": {
+    "task": {
+      "id": "task-demo",
+      "revision": 1
+    },
+    "statement": "The selected destination opens only on explicit activation",
+    "check_kind": "automated",
+    "required": true
+  }
+}

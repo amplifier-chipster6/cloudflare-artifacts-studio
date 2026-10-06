@@ -1,0 +1,15 @@
+flowchart LR
+  Operator --> Studio
+  Studio --> SQL["DO SQL: coordination and outbox"]
+  Studio --> Records["Artifacts: authoritative records"]
+  Studio --> Packet["Artifacts: selected packet"]
+  Studio --> Work["Artifacts: agent repos"]
+  Unified["Qualified Unified / Converge"] --> Work
+  Packet --> Unified
+  Work --> Candidate["Trusted candidate builder"]
+  Candidate --> Verifier["Independent verifier"]
+  Verifier --> Records
+  Records --> Memory["Derived memory"]
+  Memory --> Selector["Explicit selection"]
+  Selector --> Studio
+  Records --> Delivery["Authorized publication"]

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/handoff.schema.json",
+  "title": "handoff (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "handoff"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "studio"
+            }
+          }
+        },
+        "authority": {
+          "const": "attributed_report"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "task": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "journal": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "goal": {
+              "type": "string",
+              "minLength": 1
+            },
+            "current_state": {
+              "type": "string",
+              "minLength": 1
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/reference"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "open_work": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "next_authorized_action": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "task",
+            "journal",
+            "goal",
+            "current_state",
+            "evidence",
+            "open_work",
+            "next_authorized_action"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

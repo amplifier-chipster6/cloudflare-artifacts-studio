@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/verification.schema.json",
+  "title": "verification (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "verification"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "verifier"
+            }
+          }
+        },
+        "authority": {
+          "const": "trusted_verification"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "candidate": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "candidate_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "result": {
+              "enum": [
+                "passed",
+                "failed",
+                "blocked"
+              ]
+            },
+            "checks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "criterion": {
+                    "$ref": "common.schema.json#/$defs/reference"
+                  },
+                  "result": {
+                    "enum": [
+                      "passed",
+                      "failed",
+                      "blocked"
+                    ]
+                  },
+                  "command": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "exit_code": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "criterion",
+                  "result",
+                  "command",
+                  "exit_code"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "environment_fingerprint": {
+              "type": "string",
+              "minLength": 1
+            },
+            "started_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "finished_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "candidate",
+            "candidate_commit",
+            "result",
+            "checks",
+            "environment_fingerprint",
+            "started_at",
+            "finished_at"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

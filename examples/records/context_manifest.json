@@ -1,0 +1,35 @@
+{
+  "schema_version": "1-candidate",
+  "record_type": "context_manifest",
+  "id": "context_manifest-demo",
+  "revision": 1,
+  "project_id": "project-demo",
+  "created_at": "2026-10-06T12:00:00Z",
+  "producer": {
+    "id": "example-studio",
+    "role": "studio"
+  },
+  "authority": "operator_intent",
+  "access_scope": "selected_task",
+  "supersedes": null,
+  "payload": {
+    "task": {
+      "id": "task-demo",
+      "revision": 1
+    },
+    "base_commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "selected_items": [
+      {
+        "context": {
+          "id": "context-demo",
+          "revision": 1
+        },
+        "selected": true,
+        "content_sha256": "6b0c21e941fa9eb97944b5d38b82c7270ed56f280eff2dc6c5b339cdc671d2ef"
+      }
+    ],
+    "packet_digest": "e2548f12e2c1a5b79be79afd17b1c10a49a9915cc5fbb6d7ace8e1a3bcde8ec0",
+    "byte_budget": 200000,
+    "status": "frozen"
+  }
+}

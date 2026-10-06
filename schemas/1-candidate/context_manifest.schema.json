@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/context_manifest.schema.json",
+  "title": "context_manifest (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "context_manifest"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "studio"
+            }
+          }
+        },
+        "authority": {
+          "const": "operator_intent"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "task": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "base_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "selected_items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "context": {
+                    "$ref": "common.schema.json#/$defs/reference"
+                  },
+                  "selected": {
+                    "const": true
+                  },
+                  "content_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                },
+                "required": [
+                  "context",
+                  "selected",
+                  "content_sha256"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "packet_digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "byte_budget": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "status": {
+              "const": "frozen"
+            }
+          },
+          "required": [
+            "task",
+            "base_commit",
+            "selected_items",
+            "packet_digest",
+            "byte_budget",
+            "status"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

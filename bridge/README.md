@@ -1,5 +1,9 @@
 # Optional outbound Amplifier bridge
 
+This is the **implemented v0.1 adapter**, not a qualified Unified/Converge adapter. The proposed composition and custody seam are in [execution architecture](../docs/EXECUTION-ADAPTER.md) and the [draft runner contract](../contracts/runner-adapter.v1-candidate.md). Resolve the actual host invocation and pins before use.
+
+Current configured tests run **before the final commit**. They are attributed reports and cannot qualify a final combined candidate; the proposed [independent verifier](../docs/VERIFICATION.md) must test that final identity. Failed unpublished temporary work is removed, so recovery/retention needs deliberate improvement before relying on it.
+
 This is an operator-run Python 3 adapter for an **already isolated POSIX execution environment** with Git, Amplifier and model access already installed. It makes outbound HTTPS requests to the private Studio and Cloudflare Artifacts. It changes no host installation or global configuration. Nothing runs until `--execute` is specified.
 
 The application and adapter have not been paired with a live Amplifier runtime or provider in this delivery. Local tests verify adapter behavior; they do not establish model availability, Artifacts credentials or a successful live agent run.

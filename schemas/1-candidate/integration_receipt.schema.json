@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/integration_receipt.schema.json",
+  "title": "integration_receipt (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "integration_receipt"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "delivery"
+            }
+          }
+        },
+        "authority": {
+          "const": "trusted_delivery"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "decision": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "candidate": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "destination_repository": {
+              "type": "string",
+              "minLength": 1
+            },
+            "destination_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "expected_base": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "result_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "status": {
+              "enum": [
+                "confirmed",
+                "failed",
+                "outcome_unknown"
+              ]
+            },
+            "idempotency_key": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "decision",
+            "candidate",
+            "destination_repository",
+            "destination_ref",
+            "expected_base",
+            "result_commit",
+            "status",
+            "idempotency_key"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

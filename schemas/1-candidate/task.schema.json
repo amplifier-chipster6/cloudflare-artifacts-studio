@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/task.schema.json",
+  "title": "task (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "task"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "operator"
+            }
+          }
+        },
+        "authority": {
+          "const": "operator_intent"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "milestone": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "goal": {
+              "type": "string",
+              "minLength": 1
+            },
+            "base_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "allowed_paths": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "criteria": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/reference"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "assignments": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/reference"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "status": {
+              "enum": [
+                "draft",
+                "defined",
+                "queued",
+                "executing",
+                "review",
+                "completed",
+                "superseded"
+              ]
+            }
+          },
+          "required": [
+            "milestone",
+            "title",
+            "goal",
+            "base_commit",
+            "allowed_paths",
+            "criteria",
+            "assignments",
+            "status"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

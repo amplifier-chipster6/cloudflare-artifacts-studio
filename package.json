@@ -9,7 +9,8 @@
     "start": "node server.mjs",
     "test:frontend": "node tests/frontend-smoke.mjs",
     "check:frontend": "node --check public/app.js",
-    "test:bridge": "python3 -m unittest discover -s bridge -p 'test_*.py' -v"
+    "test:bridge": "python3 -m unittest discover -s bridge -p 'test_*.py' -v",
+    "check:docs": "python3 scripts/check_docs.py"
   },
   "engines": {
     "node": ">=24"

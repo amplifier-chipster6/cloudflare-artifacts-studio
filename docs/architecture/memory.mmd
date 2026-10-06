@@ -1,0 +1,12 @@
+flowchart LR
+  Record["Authored record: ID and revision"] --> Envelope["External source occurrence: repo / commit / path / digest"]
+  Envelope --> Validate["Validate authority, scope, lineage"]
+  Validate --> Graph["Typed relationship graph"]
+  Validate --> Summary["Cited summaries and embeddings"]
+  Graph --> Retrieval["Scoped current/history retrieval"]
+  Summary --> Retrieval
+  Retrieval --> Operator["Operator selects excerpt"]
+  Operator --> Frozen["Frozen selected packet"]
+  Tombstone["Supersession / deletion policy"] --> Graph
+  Tombstone --> Summary
+  Tombstone --> Retrieval

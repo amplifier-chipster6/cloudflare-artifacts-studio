@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/project.schema.json",
+  "title": "project (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "project"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "operator"
+            }
+          }
+        },
+        "authority": {
+          "const": "operator_intent"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "goal": {
+              "type": "string",
+              "minLength": 1
+            },
+            "repository": {
+              "type": "string",
+              "minLength": 1
+            },
+            "delivery_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "stage": {
+              "enum": [
+                "idea",
+                "defined",
+                "executing",
+                "review",
+                "delivered",
+                "archived"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "goal",
+            "repository",
+            "delivery_ref",
+            "stage"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

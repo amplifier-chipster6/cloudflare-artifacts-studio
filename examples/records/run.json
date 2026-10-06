@@ -1,0 +1,32 @@
+{
+  "schema_version": "1-candidate",
+  "record_type": "run",
+  "id": "run-demo",
+  "revision": 1,
+  "project_id": "project-demo",
+  "created_at": "2026-10-06T12:00:00Z",
+  "producer": {
+    "id": "example-studio",
+    "role": "studio"
+  },
+  "authority": "attributed_report",
+  "access_scope": "selected_task",
+  "supersedes": null,
+  "payload": {
+    "assignment": {
+      "id": "assignment-demo",
+      "revision": 1
+    },
+    "manifest": {
+      "id": "context_manifest-demo",
+      "revision": 1
+    },
+    "attempt": 1,
+    "status": "submitted",
+    "base_commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "head_commit": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "runtime_fingerprint": "synthetic-host-and-image-not-a-live-run",
+    "native_session_id": "example-session",
+    "native_tracker_id": "example-tracker"
+  }
+}

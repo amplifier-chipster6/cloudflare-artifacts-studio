@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/candidate.schema.json",
+  "title": "candidate (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "candidate"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "studio"
+            }
+          }
+        },
+        "authority": {
+          "const": "attributed_report"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "task": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "manifest": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "contributions": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/reference"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "repository_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "base_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "status": {
+              "enum": [
+                "constructed",
+                "conflicted",
+                "superseded"
+              ]
+            }
+          },
+          "required": [
+            "task",
+            "manifest",
+            "contributions",
+            "repository_id",
+            "base_commit",
+            "commit",
+            "status"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

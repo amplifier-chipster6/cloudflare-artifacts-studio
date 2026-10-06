@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/contribution.schema.json",
+  "title": "contribution (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "contribution"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "worker"
+            }
+          }
+        },
+        "authority": {
+          "const": "attributed_report"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "run": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "repository_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "base_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "head_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "changed_paths": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "diff_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "reported_tests": {
+              "type": "object",
+              "properties": {
+                "passed": {
+                  "type": "boolean"
+                },
+                "independent": {
+                  "const": false
+                }
+              },
+              "required": [
+                "passed",
+                "independent"
+              ],
+              "additionalProperties": false
+            },
+            "summary": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "run",
+            "repository_id",
+            "base_commit",
+            "head_commit",
+            "changed_paths",
+            "diff_sha256",
+            "reported_tests",
+            "summary"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

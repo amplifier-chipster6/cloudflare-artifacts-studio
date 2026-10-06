@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/criterion.schema.json",
+  "title": "criterion (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "criterion"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "operator"
+            }
+          }
+        },
+        "authority": {
+          "const": "operator_intent"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "task": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "statement": {
+              "type": "string",
+              "minLength": 1
+            },
+            "check_kind": {
+              "enum": [
+                "automated",
+                "manual"
+              ]
+            },
+            "required": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "task",
+            "statement",
+            "check_kind",
+            "required"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

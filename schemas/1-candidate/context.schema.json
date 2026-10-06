@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/context.schema.json",
+  "title": "context (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "context"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "studio"
+            }
+          }
+        },
+        "authority": {
+          "const": "operator_intent"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "classification": {
+              "enum": [
+                "evidence",
+                "decision",
+                "hypothesis",
+                "reference",
+                "memory_excerpt"
+              ]
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "text_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "source": {
+              "$ref": "common.schema.json#/$defs/source"
+            },
+            "release_scope": {
+              "enum": [
+                "private_project",
+                "selected_task",
+                "public"
+              ]
+            }
+          },
+          "required": [
+            "label",
+            "classification",
+            "text",
+            "text_sha256",
+            "source",
+            "release_scope"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

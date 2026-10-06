@@ -7,3 +7,4 @@ src/assets.mjs
 src/schema.mjs
 __pycache__/
 bridge/config.json
+.superpowers/

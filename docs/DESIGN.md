@@ -1,50 +1,52 @@
-# Artifacts Studio — Cody's private engineering workspace
+# Implemented v0.1 design
 
-## Intent and evidence
-A task-centred Git workspace for website modernization, Amplifier compositions, selected context and reviewed agent contributions. It complements GitHub and the private Website Studio rather than claiming GitHub feature parity. Website Studio owns project lifecycle; Amplifier executes bounded technical work; context/memory supplies task inputs and execution insight. Acceptance never automatically initiates the next stage.
+This document describes the current code. The proposed Artifacts-first record architecture is [ARCHITECTURE](ARCHITECTURE.md), with draft [contracts](CONTRACTS-README.md). Current SQL records have not migrated to Git authority.
 
-Grounded in the user's current request, `amplifier-artifacts-platform-build-prompt.txt` (2026-10-04), and the private Website Studio architecture. The current GitHub repository exists and is private. No running Amplifier service is accessible from this environment.
+## Runtime and storage
 
-## Architecture
-- Private Cloudflare Worker: owner authorization, JSON API and bundled static interface.
-- Cloudflare D1: projects, tasks, selected context, run attempts and immutable receipts.
-- Cloudflare Artifacts binding: repository management, isolated forks, history and file reads. Git operations remain the data plane; the app never invents a REST commit-write or merge endpoint.
-- Optional outbound Amplifier runner adapter, running in the user's isolated execution environment, claims work and reports evidence. The cloud app does not open inbound access to the VPS or graph.
-- No provider credentials or repository tokens in browser state. Owner and runner capabilities are distinct. Runs record base commit and exact returned head before review.
+Local mode: Node >=24, loopback listener, SQLite storage. Cloud mode: private Worker serving JSON APIs and bundled static interface; selected `src/cloud.mjs` uses a SQLite Durable Object. `src/worker.mjs` retains the D1 alternate.
 
-## First usable surface
-1. Home: next action, project cards, honest connection state.
-2. Projects: create projects, link a GitHub URL, select a delivery path, record explicit stages.
-3. Work: task brief, acceptance criteria, paths, selected context, planned assignments; prepare a downloadable task packet or queue a run when infrastructure is available.
-4. Repositories: browse live Artifacts repositories and commit history, create a repo, read files.
-5. Context: project-scoped evidence, decisions and hypotheses with source and explicit inclusion. No automatic upload of session history.
-6. Review: compare submitted diff and test evidence, accept/reject/request revision. Acceptance is a recorded decision, not a Git merge or deployment.
-7. Connections: Artifacts, GitHub links, Amplifier runner and Context Intelligence status; configuration instructions and export.
+Artifacts binding or REST adapter manages repositories/forks, tokens, history and files. Standard Git remains the write data plane. The outbound Python bridge claims work in a separately provisioned environment; it is not a runtime inside Workers.
+
+## Operator surface
+
+Overview, projects, work, repositories, context, review, and connections. Projects hold goal/repository/delivery path/stage. Tasks specify goal, scope, criteria, selected context and one/two assignments. Context is project-scoped evidence/decisions/hypotheses/references/excerpts. Queueing freezes the packet.
+
+Review displays submitted diff/tests and records accept/reject/revision request. Stage selection, creating a task, and acceptance do not merge, deploy, or implicitly run the next stage.
 
 ## Core API
-All owner APIs require verified Cloudflare Access identity in `ctx.access` and an explicit owner email allowlist. Writes require same-origin JSON requests. Runner uses a separate secret and `/api/runner/*` routes only, with leases and attempt identity. Responses `{error,code}` on errors.
 
-GET /api/state -> {projects,tasks,contexts,runs,events,connections,owner,version}
-POST /api/projects {name,description,github_url,path} -> project
-PATCH /api/projects/:id {stage} -> project
-POST /api/contexts {project_id,title,kind,content,source} -> context
-DELETE /api/contexts/:id -> {ok:true}
-POST /api/tasks {project_id,title,goal,acceptance,scope,context_ids,assignments:[{role,instruction}]} -> task
-GET /api/tasks/:id/packet -> structured JSON task packet (only selected context)
-POST /api/tasks/:id/queue -> {runs:[...]}, requires project Artifacts repo and healthy runner; no inferred execution
-GET /api/repos -> {repos:[{name,description,default_branch,remote,...}],cursor}
-POST /api/repos {name,description,project_id?} -> metadata, excludes token
-GET /api/repos/:name/log?ref=main -> {commits:[...]}
-GET /api/repos/:name/file?ref=main&path=README.md -> {content,path,ref}
-POST /api/runs/:id/review {decision:'accepted'|'rejected'|'revision_requested',note,expected_head} -> run
-GET /api/export -> all owner records (no secrets)
-POST /api/runner/heartbeat {runner_id} -> {ok:true}
-POST /api/runner/claim {runner_id} -> {run,packet,repo:{remote,token}} or {run:null}
-POST /api/runner/runs/:id/report {attempt,lease_token,status,head_commit,diff,tests,summary} -> run
-POST /api/runner/runs/:id/heartbeat {attempt,lease_token} -> {ok:true}
+Cloud owner routes require verified Access identity in `ctx.access` and an explicit owner allowlist. Local owner identity is loopback-only. Writes require same-origin JSON. Runner routes use a separate secret, attempt identity and leases. Error responses include `error` and `code`.
 
-## Limits and failure handling
-Two assignments per task initially; concurrency 2; lease 15 minutes refreshed by runner; no automatic retries or integration. Claims are conditional SQL updates and reports must match a current unexpired lease. Failed or expired runs need an explicit new attempt. A review requires evidence and exact head. Empty data and disconnected services are honest first-class states. App metadata and uploaded reports are untrusted text and never rendered as HTML.
+```text
+GET /api/state
+POST /api/projects
+PATCH /api/projects/:id
+POST /api/contexts
+DELETE /api/contexts/:id
+POST /api/tasks
+GET /api/tasks/:id/packet
+POST /api/tasks/:id/queue
+GET /api/repos
+POST /api/repos
+GET /api/repos/:name/log
+GET /api/repos/:name/file
+POST /api/runs/:id/review
+GET /api/export
+POST /api/runner/heartbeat
+POST /api/runner/claim
+POST /api/runner/runs/:id/heartbeat
+POST /api/runner/runs/:id/report
+```
 
-## Delivery boundary
-Implement and test the application and Artifacts adapter, publish privately only if supported deployment succeeds, save complete source and operational instructions. Live overlapping Amplifier execution cannot be claimed until the user's runner is paired and provider credentials are configured there. No competition submission, public launch, new plan purchase, upstream push, global Amplifier changes or personal-memory migration.
+Payload details are implemented in [api.mjs](../src/api.mjs) and documented for runner transport in [bridge README](../bridge/README.md). The draft record schemas are separate from today's wire format.
+
+## Limits and trust
+
+Two assignments/concurrent runs, 15-minute renewed leases, bounded packet/report sizes, conditional claims, no automatic retry, and exact returned-head review. Successful reports require a present descendant of the base in bounded first-parent history. Acceptance requires reported passing tests and unchanged source/fork heads.
+
+This does not independently rerun tests or reconstruct a trusted combined candidate. Bridge tests precede its final commit; forks/clones are data separation rather than OS isolation. v0.1 SQL remains project/task/context/decision authority.
+
+## Proposed evolution
+
+Version authoritative records and selected packets in Artifacts; add operational projection/outbox reconciliation, native Unified/Converge custody mapping, independent final-candidate checks, explicit integration receipts, and a cited memory port. These require implementation and conformance evidence. See [roadmap](ROADMAP.md) and [status](../PROJECT_STATUS.md).

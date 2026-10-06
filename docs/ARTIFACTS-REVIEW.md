@@ -1,81 +1,43 @@
-# Cloudflare Artifacts review for Artifacts Studio
+# Official Artifacts documentation review
 
-Reviewed 2026-10-06 against all 26 product pages in the [Artifacts documentation index](https://developers.cloudflare.com/artifacts/llms.txt). Coverage means the indexed product pages, not every external service linked from them. Documented capabilities are distinguished below from local verification. After the Workers Paid upgrade, namespace listing succeeds; namespace creation and Worker deployment remain blocked by authentication/access errors. Repository read/write behavior and native binding execution have not been verified live.
+Review date: 2026-10-06. Coverage: **32 Artifacts source files including index pages**, plus relevant Workers Builds integration, Queues event schemas/delivery guarantees, and release notes. The earlier delivery reviewed 26 indexed pages; this expanded review supersedes that coverage statement. Source blob identities are in [coverage.json](artifacts-doc-coverage.json).
 
-## Fit for your workflow
+## Coverage and findings
 
-Artifacts supplies Git repositories, scoped credentials, forks, object reads and event hooks. Studio supplies projects, tasks, selected context, agent assignments, evidence and decisions. Amplifier remains the external execution runtime. GitHub stays linked to the project; this version does not migrate or synchronize it.
+| Official area | Reviewed behavior | Project relevance |
+|---|---|---|
+| [Overview](https://developers.cloudflare.com/artifacts/) / getting started | Worker and REST setup, binding, Git remote | Primary durable foundation, not only a code attachment |
+| [Concepts](https://developers.cloudflare.com/artifacts/concepts/how-artifacts-works/) | Git-native storage, namespace/repo lifecycle, forks | Versioned records, packets, baselines, contributions |
+| [Worker binding](https://developers.cloudflare.com/artifacts/api/workers-binding/) | Namespace administration, repo info/token/fork/log/object/file reads | Trusted Studio control plane; generate current types |
+| [REST API](https://developers.cloudflare.com/artifacts/api/rest-api/) | Administration and content reads | Server-side/local adapters and external memory reader |
+| [Git protocol](https://developers.cloudflare.com/artifacts/api/git-protocol/) | Standard transport/auth, refs/notes, supported protocol limits | Authored commits and explicit publication |
+| [Authentication](https://developers.cloudflare.com/artifacts/guides/authentication/) | Account/API versus repo Git capabilities; scope/expiry | Separate writer, worker, packet, verifier authority |
+| [ArtifactFS](https://developers.cloudflare.com/artifacts/guides/artifact-fs/) | Snapshot/file access and documented transport assumptions | Optional read surface; partial-clone combinations need qualification |
+| [Imports](https://developers.cloudflare.com/artifacts/guides/import-repositories/) | Public HTTPS import | Private source requires trusted authenticated Git seeding |
+| [Localization](https://developers.cloudflare.com/artifacts/guides/data-localization/) | Immutable namespace jurisdiction | Decide locality before creation |
+| [Events](https://developers.cloudflare.com/artifacts/guides/event-subscriptions/) | Repository lifecycle, push/fetch/clone/token notifications | Idempotent projections and reconciliation |
+| [CI on push](https://developers.cloudflare.com/artifacts/guides/build-and-deploy-on-push/) | Workflow/Sandbox-backed checks and delivery composition | Optional verified checks; explicit deployment policy |
+| [Workers Builds integration](https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/artifacts-integration/) | Artifacts as build source, production/preview behavior | Worker-compatible projects; not arbitrary Unified Python execution |
+| [Examples](https://developers.cloudflare.com/artifacts/examples/git-client/) | Git client, isomorphic-git, Sandbox SDK | Implementation patterns, not live qualification |
+| [Metrics](https://developers.cloudflare.com/artifacts/observability/metrics/) | Adaptive GraphQL operational metrics | Observe errors/rates/latency; not proof of acceptance |
+| [Limits](https://developers.cloudflare.com/artifacts/platform/limits/) / [pricing](https://developers.cloudflare.com/artifacts/platform/pricing/) / [changelog](https://developers.cloudflare.com/artifacts/platform/changelog/) | Capacity, billing, beta changes | Budget and pin/compatibility checks |
 
-This preserves Website Studio's existing boundary: Studio owns lifecycle and approval; Amplifier executes bounded work; accepting evidence does not initiate another stage. Modernization is the first workspace, with amplifier-chatui the intended pilot after execution is connected. Context Intelligence and memory retrieval are future integrations, not an implied ingestion of personal history.
+## Reconciled API distinctions
 
-Each assignment gets its own fork of a project baseline, an immutable task/context snapshot and a short-lived repo credential. At most two runs can be active. This applies the [best-practices guide](https://developers.cloudflare.com/artifacts/concepts/best-practices/). Separate Git repositories do not isolate operating-system processes: execution still needs constrained containers or equivalent boundaries.
+- Current binding docs support commit/tree/blob/file reads. Older example language about metadata-only binding access should not override generated types.
+- Explicit namespace creation/locality is preferred when residency matters. Older implicit unrestricted-creation guidance is not a jurisdiction choice.
+- Namespace deletion appears in the broader API schema even where the REST prose omits a section; use live schema/status qualification. Repository deletion is asynchronous; do not confuse its response with empty namespace deletion.
+- Binding `get` returns a capability; `info` establishes existence. Token creation returns structured identity/secret/expiry. Repo tokens authorize Git, not account REST administration.
+- Fork is documented with branch options, not an arbitrary source-SHA parameter. Verify a stable approved baseline.
+- Logs follow first-parent history with a documented maximum of 1,000 entries. This is not full DAG ancestry proof.
+- Git notes do not change a code SHA, but notes refs can change and are not automatically exported with a branch.
+- Product event docs describe Artifacts events; generic Queues schema listings can lag. Qualify actual subscription shape and payload on the chosen account.
+- Queues provide [at-least-once delivery](https://developers.cloudflare.com/queues/reference/delivery-guarantees/). Reread complete records when event commit lists are partial.
 
-## Deployment implications
+## Conclusions and implementation status
 
-- **Availability and cost:** The [changelog](https://developers.cloudflare.com/artifacts/platform/changelog/) identifies open beta. [Pricing](https://developers.cloudflare.com/artifacts/platform/pricing/) requires Workers Paid and says billing starts October 14, 2026. Included usage is 10,000 operations and 1 GB monthly; additional usage costs $0.15 per 1,000 operations and $0.50 per GB-month. Workers, storage, execution and models can add separate charges. No plan upgrade was performed.
-- **Limits:** The [limits reference](https://developers.cloudflare.com/artifacts/platform/limits/) specifies 1 GB per repo, 32 MB per blob and 1 TB account storage; storage limits can be raised. Control-plane requests are limited to 2,000 per 10 seconds per namespace; Git has the same rate per repo. Large media belongs elsewhere. This version has no automatic retention or budget enforcement.
-- **Private GitHub:** The [import guide](https://developers.cloudflare.com/artifacts/guides/import-repositories/) documents public HTTPS remotes. The private Website Studio repo needs an authenticated Git seed from a trusted environment. A GitHub link in Studio does not establish private import or synchronization.
-- **Location:** The [localization guide](https://developers.cloudflare.com/artifacts/guides/data-localization/) supports `eu` and `us`. Jurisdiction is set at namespace creation and cannot subsequently change. Choose it before the first production repo if required. Templates make no residency claim.
+Artifacts is the proposed durable record and workspace backbone. Studio supplies domain schemas for milestones, issues/tasks, acceptance criteria, assignments, decisions, and journals. Memory supplies derived semantic retrieval; it is not a native Artifacts API.
 
-## Current API and older examples
+This review did not provision services or establish live writes. The historical unrestricted namespace/read observations and failed deployment attempts are preserved in [deployment status](DEPLOYMENT-STATUS.json). Expanded source/API review does not resolve cloud permissions or demonstrate a host run.
 
-The current [Workers binding reference](https://developers.cloudflare.com/artifacts/api/workers-binding/) drives this implementation: `get()` returns a disposable capability, `info()` returns metadata, create/fork return metadata directly, and `createToken()` returns a result containing `plaintext`. File reads return Blob values. Commit logs follow first parents, with at most 1,000 results. Code releases handles in `finally`. The reference requires Wrangler 4.145.0 or newer for current types and remote Blob support; generate binding types before deployment.
-
-Older examples contain discrepancies:
-
-1. The isomorphic-git page says the binding cannot read files. The newer reference now documents file, blob, tree and commit reads. We use native reads and external Git writes.
-2. The Sandbox example reads metadata properties directly from a repo handle. The newer reference requires `info()`; we follow that shape.
-3. “How Artifacts works” describes only implicit namespace creation. The newer namespace and REST pages also document explicit creation and jurisdiction. Repo creation can still implicitly create an unrestricted namespace.
-
-The [REST reference](https://developers.cloudflare.com/artifacts/api/rest-api/) uses Cloudflare's v4 JSON envelope, with raw bytes for file/blob success responses. The local adapter maps repo/fork/token/content routes into the same small interface used by the Worker. Tests validate those shapes with controlled responses, not account-level compatibility.
-
-## Authentication, review and automation
-
-The [authentication guide](https://developers.cloudflare.com/artifacts/guides/authentication/) distinguishes native bindings, Cloudflare API tokens and repo-scoped Git tokens. Cloud deployment additionally requires verified Access owner identity. The runner has a separate credential and cannot use owner routes. Agent processes receive no Cloudflare API token.
-
-The [Git protocol guide](https://developers.cloudflare.com/artifacts/api/git-protocol/) requires the returned HTTPS remote. Bearer auth uses the full token; Basic auth uses a nonempty username and the secret before `?expires=`. The bridge validates the Artifacts host and uses temporary askpass credentials instead of credential-bearing remotes.
-
-Studio checks reported commit existence, approved-base ancestry and unchanged source/fork heads. Diffs and tests remain runner-submitted evidence, not independently reproduced results. Acceptance records a human decision; there is no automatic merge or deployment.
-
-The [event guide](https://developers.cloudflare.com/artifacts/guides/event-subscriptions/) exposes repository lifecycle and push/fetch/clone/token events. Future handlers should deduplicate events and pin work to their commit IDs. No subscriptions were created.
-
-The [build/deploy guide](https://developers.cloudflare.com/artifacts/guides/build-and-deploy-on-push/) offers Workers Builds or custom Workflows with `@cloudflare/ci`, caches and isolated runners. Checks can run after pushes while publication stays separately initiated. Neither cloud CI path is implemented here.
-
-The [metrics reference](https://developers.cloudflare.com/artifacts/observability/metrics/) documents `artifactsEventsAdaptiveGroups`, counts, durations and errors for the past 31 days. These would complement Studio run records. This version displays only its own events and runner evidence, not Cloudflare analytics or a Context Intelligence feed.
-
-## Complete coverage ledger
-
-Each indexed page was reviewed for design and implementation implications. Deferred capabilities are not shipped features.
-
-| Page | Applied finding or disposition |
-|---|---|
-| [Overview](https://developers.cloudflare.com/artifacts/) | Git storage foundation; Studio implements the personal workflow. |
-| [Get started](https://developers.cloudflare.com/artifacts/get-started/) | Worker and external REST entrypoints both apply. |
-| [Workers quickstart](https://developers.cloudflare.com/artifacts/get-started/workers/) | Binding and Git handoff; live deployment unverified. |
-| [REST quickstart](https://developers.cloudflare.com/artifacts/get-started/rest-api/) | Account/namespace routes used by local adapter. |
-| [Workers binding](https://developers.cloudflare.com/artifacts/api/workers-binding/) | Current capability and metadata shapes implemented. |
-| [REST reference](https://developers.cloudflare.com/artifacts/api/rest-api/) | Repo/fork/token/log/commit/file routes mapped. |
-| [Git protocol](https://developers.cloudflare.com/artifacts/api/git-protocol/) | Returned HTTPS remote and repo credential used by bridge. |
-| [Wrangler](https://developers.cloudflare.com/artifacts/api/wrangler/) | Inspection and token commands support setup; no global install changed. |
-| [Errors](https://developers.cloudflare.com/artifacts/api/errors/) | Pending fork/import differs from access failure; provisioning failure is visible. |
-| [How it works](https://developers.cloudflare.com/artifacts/concepts/how-artifacts-works/) | Repo history, credentials and lifecycle are independent. |
-| [Namespaces](https://developers.cloudflare.com/artifacts/concepts/namespaces/) | Stable namespace across interfaces; explicit creation supports location choice. |
-| [Repositories](https://developers.cloudflare.com/artifacts/concepts/repositories/) | Control-plane management and Git writes remain separate. |
-| [Best practices](https://developers.cloudflare.com/artifacts/concepts/best-practices/) | Per-run fork, unique names, short-lived credentials; git notes deferred. |
-| [Authentication](https://developers.cloudflare.com/artifacts/guides/authentication/) | API and Git credentials are distinct. |
-| [Import](https://developers.cloudflare.com/artifacts/guides/import-repositories/) | Public import does not establish private GitHub sync. |
-| [ArtifactFS](https://developers.cloudflare.com/artifacts/guides/artifact-fs/) | Lazy FUSE hydration suits large repos; normal Git clone chosen initially. |
-| [Events](https://developers.cloudflare.com/artifacts/guides/event-subscriptions/) | Hooks reviewed; subscriptions deferred. |
-| [Build/deploy](https://developers.cloudflare.com/artifacts/guides/build-and-deploy-on-push/) | CI options reviewed; publication is separately initiated. |
-| [Localization](https://developers.cloudflare.com/artifacts/guides/data-localization/) | Immutable namespace jurisdiction must be chosen at creation. |
-| [Metrics](https://developers.cloudflare.com/artifacts/observability/metrics/) | GraphQL operation analytics deferred. |
-| [Git client](https://developers.cloudflare.com/artifacts/examples/git-client/) | Standard clone/push fits the existing execution environment. |
-| [isomorphic-git](https://developers.cloudflare.com/artifacts/examples/isomorphic-git/) | Worker-side writes are an alternative, unnecessary for this bridge. |
-| [Sandbox SDK](https://developers.cloudflare.com/artifacts/examples/sandbox-sdk-artifacts/) | Per-sandbox repo pattern reviewed; existing isolated environment preferred first. |
-| [Pricing](https://developers.cloudflare.com/artifacts/platform/pricing/) | Paid plan, usage charges and retained forks affect rollout. |
-| [Limits](https://developers.cloudflare.com/artifacts/platform/limits/) | Bound code/context; put large assets elsewhere. |
-| [Changelog](https://developers.cloudflare.com/artifacts/platform/changelog/) | Newer October API behavior takes precedence over older examples. |
-
-## Remaining live evidence
-
-Resolve connector access errors, deploy privately, verify a real baseline/fork/token/Git cycle, pair the installed Amplifier runtime, and demonstrate overlapping runs with actual commits and test evidence. Then implement separately initiated integration and deployment. The local workspace supports project planning, context selection and task preparation while these connections remain unresolved.
+Concrete usage, benefits, credential topology, limits, CI choices, and qualification procedures: [ARTIFACTS-INTEGRATION](ARTIFACTS-INTEGRATION.md). Recheck current documentation/schema/types before implementation because Artifacts is beta.

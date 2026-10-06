@@ -1,52 +1,37 @@
-# Artifacts Studio — project status
+# Project status
 
-As of 2026-10-06. This is a locally runnable v0.1 implementation, not a verified live agent platform.
+Snapshot: 2026-10-06. The locally runnable **v0.1** application remains the implementation baseline. The new architecture is a **documented proposal**.
 
-## Delivered scope
+## Implemented
 
-- Personalized single-operator UI: Overview, Projects, Work, Repositories, Context, Review, Connections.
-- Durable project/task/context storage, scoped task packets and JSON export.
-- Native Artifacts binding integration plus a local server-side REST adapter.
-- Isolated-repository run queue, atomic claim, two-run concurrency cap, lease/heartbeat/report protocol.
-- Review decisions bound to exact reported commit and unchanged source/fork heads.
-- D1 and SQLite Durable Object deployment entrypoints, both fail closed on owner access.
-- Outbound Amplifier runner adapter; no global Amplifier installation changes.
+Persistent SQL-backed project/task/context storage, project-scoped selected packets/export, native Artifacts binding and local REST adapter, per-run repository provisioning, two-run concurrency, atomic claims/leases/heartbeats, attributed reports, exact-head/freshness review, owner/runner auth boundaries, responsive UI, and an outbound Python bridge.
 
-## Evidence
+The selected cloud template uses SQLite Durable Object storage. D1 is an alternate entrypoint. No automatic GitHub synchronization, memory retrieval, integration/merge service, or production delivery is implemented.
 
-- Backend/API/REST and adversarial regression suite: 11 passed.
-- API-backed frontend smoke harness: 10 groups passed against real local SQLite.
-- Outbound runner adapter: 16 Python unit tests passed; compilation passed. These cover local validation, credential handling, Git indirection rejection, time budgets and process cancellation, not a live Amplifier run.
-- Frontend JavaScript syntax and static CSP checks passed.
-- Independent review identified orphan-commit acceptance, expired provisioning lease, project-relink race and non-atomic queuing. These are fixed with regression coverage.
-- Runner review identified alternate Git configuration redirection, token lifetime budget and process shutdown issues. Fixes have focused regression coverage.
-- Browser engine unavailable: pixel layout, native event behavior, keyboard navigation and accessibility remain unverified.
-- No actual Amplifier/model execution, live Artifacts Git operation or concurrent product-agent demonstration has run.
-- All 26 indexed Artifacts documentation pages reviewed; coverage and current API discrepancies are recorded in `docs/ARTIFACTS-REVIEW.md`.
+## Documentation foundation
 
-The frontend smoke harness uses a minimal DOM stub. It is not a browser screenshot or end-to-end browser test. Artifacts test responses are controlled fixtures, not observed cloud repository activity.
+The twenty ordered authoring tasks now have indexed deliverables: vision, bounded Unified pilot, roles, eight proposed ADRs, pins/capabilities, agent/contribution conventions, roadmap, diagrams, ownership, five draft contracts, eighteen candidate schemas and sixteen inert record examples, Artifacts/memory/execution guides, verification, recovery/privacy, and journal/handoff conventions.
 
-## Account/deployment findings
+[TODO](docs/TODO.md) distinguishes authoring from ratification/qualification. [VALIDATION](docs/VALIDATION.md) records this branch's checks and independent review. The read-only CI workflow and offline documentation checker are developer tooling, not production adapters.
 
-The user's screenshot showed Workers Paid as the current plan. The user later created namespace `artifacts-studio`; a successful listing confirmed jurisdiction `unrestricted` and zero repositories. Subsequent repository creation returned authentication error 10000; uploading the complete private Worker returned “No access to the specified resource.” After the user reauthenticated, both connector actions returned “Unknown tool” before reaching the Cloudflare API. The new API permissions remain unverified. Dashboard fallback is blocked by the execution environment's browser policy. No Studio Worker or repository was confirmed created by the assistant, no endpoint was published, and no existing Worker was changed. See `docs/HANDOFF.md` for continuation.
+## Historical evidence
 
-The October 6 deployment follow-up re-ran all 11 Node tests, 10 frontend smoke groups, and 16 Python bridge tests successfully. It added account-specific `wrangler.jsonc` and explicit `DEPLOY.md` instructions. These configuration/documentation changes do not establish a successful cloud deployment, browser rendering, or live agent execution.
+The delivered v0.1 reported 11 Node backend/API/REST/regression tests, 10 API-backed frontend smoke groups, and 16 Python bridge tests passing. Frontend smoke uses a minimal DOM stub and controlled service responses. It does not establish browser behavior or live cloud execution.
 
-## Architecture decisions
+Original review fixed orphan-commit acceptance, expired provisioning leases, project-relink races, non-atomic queueing, and bridge Git/configuration/time-budget/shutdown defects with regression coverage. Historical results are not substituted for current branch validation.
 
-- Preserve Website Studio's project lifecycle and Amplifier's execution role.
-- Keep selected context explicit; do not ingest or expose personal session history.
-- Keep GitHub linked while Artifacts owns per-run Git workspaces; no automatic GitHub migration.
-- Support a loopback-only local version with SQLite so planning remains usable while cloud access is unresolved.
-- Treat runner-produced diffs/tests as attributed evidence; Studio checks Git commit identity, ancestry and freshness, not independent test execution.
-- Record acceptance separately from integration and deployment. This version does not merge or deploy contributions.
+The expanded official Artifacts review covers 32 source files including index pages, plus relevant Builds/Queues references: [review](docs/ARTIFACTS-REVIEW.md).
 
-## Next action and completion criteria
+## Live qualification and material limits
 
-1. Resolve Cloudflare permissions through an authorized connection/dashboard.
-2. Deploy one storage variant privately and verify owner access, Artifacts repositories and persistent CRUD.
-3. Pair the outbound bridge in isolated execution environments with existing Amplifier/provider access.
-4. Demonstrate two real overlapping runs, failure recovery and conflict rejection with timestamp/Git evidence.
-5. Add a separately initiated, tested integration/merge operation before describing this as a complete agent coding platform.
+No successful hosted Studio deployment, live Artifacts Git operation, real Amplifier/model run, independent final-candidate verifier, or custom memory adapter was demonstrated. Browser rendering/accessibility/mobile interaction remain unverified.
 
-No competition submission or hosted deployment has occurred. The source backup is published in the public GitHub repository `amplifier-chipster6/cloudflare-artifacts-studio`; private account values are replaced with placeholders.
+The current bridge runs tests before its final commit, and separate clones/forks do not prove OS isolation. Current Studio ancestry validation is bounded first-parent history. Worker reports are attributed evidence, not independent checks. Acceptance records a decision and does not merge/deploy.
+
+Historical cloud attempts included authentication/resource-access errors, then a tool-level “Unknown tool” failure after reauthentication. Later read-only review access is not proof of write/deploy permission. Recheck actual resources before any future mutation. The user-created namespace was observed unrestricted; it does not establish a new residency choice. Full history: [deployment status](docs/DEPLOYMENT-STATUS.json).
+
+## Next sequence
+
+Review/ratify scope and contracts; identify the actual memory system; resolve runtime/bundle pins and supported Unified seam; qualify durable Artifacts records/private access; run one real isolated worker; verify a combined candidate; explicitly review and deliver the pilot; evaluate transfer to a website project.
+
+Follow [roadmap](docs/ROADMAP.md), [verification](docs/VERIFICATION.md), and [handoff](docs/HANDOFF.md). No cloud deployment or unrelated repository/runtime mutation is part of this documentation change.

@@ -1,0 +1,15 @@
+flowchart TD
+  Idea --> Project --> Milestone --> Task["Task revision and criteria"]
+  Task --> Selection["Approved context selection"]
+  Selection --> Packet["Immutable packet"]
+  Packet --> Run["Mapped assignment and runtime custody"]
+  Run --> Contribution["Attributed worker contribution"]
+  Contribution --> Candidate["Combined candidate SHA"]
+  Candidate --> Verification["Trusted exact-SHA checks"]
+  Verification --> Review["Operator decision"]
+  Review --> Integration["Separate authorized integration receipt"]
+  Integration --> Deployment["Separate deployment receipt"]
+  Task --> Journal
+  Review --> Journal
+  Journal --> Handoff
+  Handoff --> Memory["Cited derived continuity"]

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1-candidate",
+  "record_type": "milestone",
+  "id": "milestone-demo",
+  "revision": 1,
+  "project_id": "project-demo",
+  "created_at": "2026-10-06T12:00:00Z",
+  "producer": {
+    "id": "example-operator",
+    "role": "operator"
+  },
+  "authority": "operator_intent",
+  "access_scope": "selected_task",
+  "supersedes": null,
+  "payload": {
+    "project": {
+      "id": "project-demo",
+      "revision": 1
+    },
+    "name": "Example pilot",
+    "goal": "A reproducible candidate",
+    "status": "planned",
+    "exit_criteria": [
+      "Independent verification and explicit operator decision"
+    ]
+  }
+}

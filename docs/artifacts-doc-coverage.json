@@ -1,0 +1,166 @@
+{
+  "reviewed_on": "2026-10-06",
+  "kind": "source_review_not_live_verification",
+  "sources": [
+    {
+      "path": "index.mdx",
+      "blob_sha": "d64afbb3c0940518b1753c70ce8b65967514c0ee",
+      "url": "https://developers.cloudflare.com/artifacts/"
+    },
+    {
+      "path": "api/errors.mdx",
+      "blob_sha": "7545813cd7cbfa2e084c118b4b12cb9caf06032d",
+      "url": "https://developers.cloudflare.com/artifacts/api/errors/"
+    },
+    {
+      "path": "api/git-protocol.mdx",
+      "blob_sha": "0b2fe497d2755c87bbb00826bad6639878453c25",
+      "url": "https://developers.cloudflare.com/artifacts/api/git-protocol/"
+    },
+    {
+      "path": "api/index.mdx",
+      "blob_sha": "1e2352609a2444bba37b6b192771d410993cf9e4",
+      "url": "https://developers.cloudflare.com/artifacts/api/"
+    },
+    {
+      "path": "api/rest-api.mdx",
+      "blob_sha": "901343f92e98fd7aae807715f3dbb8fd989d2f55",
+      "url": "https://developers.cloudflare.com/artifacts/api/rest-api/"
+    },
+    {
+      "path": "api/workers-binding.mdx",
+      "blob_sha": "b44858c8d482bdc93484fbca7ec172fc065d6986",
+      "url": "https://developers.cloudflare.com/artifacts/api/workers-binding/"
+    },
+    {
+      "path": "api/wrangler.mdx",
+      "blob_sha": "cff79bb6caa2a7d519a602420e7fc9f5c06fbfec",
+      "url": "https://developers.cloudflare.com/artifacts/api/wrangler/"
+    },
+    {
+      "path": "concepts/best-practices.mdx",
+      "blob_sha": "73fa2a75a516a65be6e9ba2f84ae50ca3e764c33",
+      "url": "https://developers.cloudflare.com/artifacts/concepts/best-practices/"
+    },
+    {
+      "path": "concepts/how-artifacts-works.mdx",
+      "blob_sha": "279bac9cd1bdeb0b602f354094bf228e488724ab",
+      "url": "https://developers.cloudflare.com/artifacts/concepts/how-artifacts-works/"
+    },
+    {
+      "path": "concepts/index.mdx",
+      "blob_sha": "4974cbc5de7f8d343329056e661be694d05794f0",
+      "url": "https://developers.cloudflare.com/artifacts/concepts/"
+    },
+    {
+      "path": "concepts/namespaces.mdx",
+      "blob_sha": "c3ff72c29280f2b279f83a11f8d55df98cd09a51",
+      "url": "https://developers.cloudflare.com/artifacts/concepts/namespaces/"
+    },
+    {
+      "path": "concepts/repositories.mdx",
+      "blob_sha": "20295bcbaed1e191ce4ad3d173576ee97c9e86d0",
+      "url": "https://developers.cloudflare.com/artifacts/concepts/repositories/"
+    },
+    {
+      "path": "examples/git-client.mdx",
+      "blob_sha": "a297d94fb81bf2625096b78ab8b304634c1c64b9",
+      "url": "https://developers.cloudflare.com/artifacts/examples/git-client/"
+    },
+    {
+      "path": "examples/index.mdx",
+      "blob_sha": "260fb24229487d1041981eb937e8f92796656452",
+      "url": "https://developers.cloudflare.com/artifacts/examples/"
+    },
+    {
+      "path": "examples/isomorphic-git.mdx",
+      "blob_sha": "9af0431185743a1fb32409e0c7d2887a322a157b",
+      "url": "https://developers.cloudflare.com/artifacts/examples/isomorphic-git/"
+    },
+    {
+      "path": "examples/sandbox-sdk-artifacts.mdx",
+      "blob_sha": "6daf684cf64b2ed0dff6d41dd7bab61eec383ad3",
+      "url": "https://developers.cloudflare.com/artifacts/examples/sandbox-sdk-artifacts/"
+    },
+    {
+      "path": "get-started/index.mdx",
+      "blob_sha": "c542885a43cc5a7c6cb7377a5c8d86d575d4c6e4",
+      "url": "https://developers.cloudflare.com/artifacts/get-started/"
+    },
+    {
+      "path": "get-started/rest-api.mdx",
+      "blob_sha": "12133db357b4e4dd189dc2bcf94589b904b029ce",
+      "url": "https://developers.cloudflare.com/artifacts/get-started/rest-api/"
+    },
+    {
+      "path": "get-started/workers.mdx",
+      "blob_sha": "69fe5b12f844e3f3ce13fab026522e866db920db",
+      "url": "https://developers.cloudflare.com/artifacts/get-started/workers/"
+    },
+    {
+      "path": "guides/artifact-fs.mdx",
+      "blob_sha": "3afd5625e3ef8f57b2cc16a762f1b545bb22363c",
+      "url": "https://developers.cloudflare.com/artifacts/guides/artifact-fs/"
+    },
+    {
+      "path": "guides/authentication.mdx",
+      "blob_sha": "ac4559e2184b237b02eba3b2361d3bb70a4fe972",
+      "url": "https://developers.cloudflare.com/artifacts/guides/authentication/"
+    },
+    {
+      "path": "guides/build-and-deploy-on-push.mdx",
+      "blob_sha": "848fc70391a18efc416209703cb5fad27ccc6878",
+      "url": "https://developers.cloudflare.com/artifacts/guides/build-and-deploy-on-push/"
+    },
+    {
+      "path": "guides/data-localization.mdx",
+      "blob_sha": "acf6458bad4918cc351ee6b605fb9abf0da1a6d9",
+      "url": "https://developers.cloudflare.com/artifacts/guides/data-localization/"
+    },
+    {
+      "path": "guides/event-subscriptions.mdx",
+      "blob_sha": "8b1184706241f3db15e8f148bc10446e7ca41ce1",
+      "url": "https://developers.cloudflare.com/artifacts/guides/event-subscriptions/"
+    },
+    {
+      "path": "guides/import-repositories.mdx",
+      "blob_sha": "cc17438859e2e4512acddefe4df43795d7589ddb",
+      "url": "https://developers.cloudflare.com/artifacts/guides/import-repositories/"
+    },
+    {
+      "path": "guides/index.mdx",
+      "blob_sha": "333936d43ed47d7798ac50792c1bf5a505d5bda0",
+      "url": "https://developers.cloudflare.com/artifacts/guides/"
+    },
+    {
+      "path": "observability/index.mdx",
+      "blob_sha": "68f7cea500db6b0b056b64018d6f8f3162ef5710",
+      "url": "https://developers.cloudflare.com/artifacts/observability/"
+    },
+    {
+      "path": "observability/metrics.mdx",
+      "blob_sha": "9b4b8956645a99acaa4fac962ca253c40c8ae9c0",
+      "url": "https://developers.cloudflare.com/artifacts/observability/metrics/"
+    },
+    {
+      "path": "platform/changelog.mdx",
+      "blob_sha": "27887ff8ce806f16163227be2b3a5eed44145dd8",
+      "url": "https://developers.cloudflare.com/artifacts/platform/changelog/"
+    },
+    {
+      "path": "platform/index.mdx",
+      "blob_sha": "a21daaf48447382cb5b3db447a394f5b3aa714e1",
+      "url": "https://developers.cloudflare.com/artifacts/platform/"
+    },
+    {
+      "path": "platform/limits.mdx",
+      "blob_sha": "79d7528282ca635363f2f2de602cb4837e93283d",
+      "url": "https://developers.cloudflare.com/artifacts/platform/limits/"
+    },
+    {
+      "path": "platform/pricing.mdx",
+      "blob_sha": "a3d821e6ba2d90dca1df4d116c9820e32675961f",
+      "url": "https://developers.cloudflare.com/artifacts/platform/pricing/"
+    }
+  ]
+}

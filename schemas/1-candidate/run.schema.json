@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.artifacts-studio.invalid/1-candidate/run.schema.json",
+  "title": "run (draft)",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "run"
+        },
+        "producer": {
+          "properties": {
+            "role": {
+              "const": "studio"
+            }
+          }
+        },
+        "authority": {
+          "const": "attributed_report"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "assignment": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "manifest": {
+              "$ref": "common.schema.json#/$defs/reference"
+            },
+            "attempt": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "status": {
+              "enum": [
+                "queued",
+                "claimed",
+                "running",
+                "submitted",
+                "failed",
+                "cancelled",
+                "expired"
+              ]
+            },
+            "base_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "head_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "runtime_fingerprint": {
+              "type": "string",
+              "minLength": 1
+            },
+            "native_session_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "native_tracker_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "assignment",
+            "manifest",
+            "attempt",
+            "status",
+            "base_commit",
+            "head_commit",
+            "runtime_fingerprint",
+            "native_session_id",
+            "native_tracker_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}
