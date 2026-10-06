@@ -49,4 +49,4 @@ The October 6 deployment follow-up re-ran all 11 Node tests, 10 frontend smoke g
 4. Demonstrate two real overlapping runs, failure recovery and conflict rejection with timestamp/Git evidence.
 5. Add a separately initiated, tested integration/merge operation before describing this as a complete agent coding platform.
 
-No competition submission or public publication has occurred.
+No competition submission or hosted deployment has occurred. The source backup is published in the public GitHub repository `amplifier-chipster6/cloudflare-artifacts-studio`; private account values are replaced with placeholders.
