@@ -27,6 +27,8 @@ Snapshot: 2026-10-06. All twenty authoring deliverables are created on `initial-
 
 ## Qualification and administration still TODO
 
+- [x] Create the pinned Converge [source-reference wiki](reference/converge/README.md), full inventory, verified local text cache, factual claims, API map, reuse/gap assessment and offline checker results (2026-10-07).
+- [ ] Resolve existing Converge UX reuse, native record ownership, hosting and acceptance/integration policy before implementing overlapping Studio components; revise the affected proposed ADRs/contracts/diagrams/pilot after that decision.
 - [ ] Ratify the pilot and ADR/contract choices; assign actual seam owners.
 - [ ] Discover the supported Unified seam and freeze its file allowlist (DOC-02).
 - [ ] Resolve actual host/transitive/bundle/tool/image pins and prove loaded composition (DOC-07/16).

@@ -1,0 +1,2042 @@
+{
+  "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+  "review_date": "2026-10-07",
+  "executed": "Offline stdlib fixtures and self-tests; no server, models, cloud or host integration",
+  "results": [
+    {
+      "kind": "fixture",
+      "kit": "experience",
+      "sample": "sample-good",
+      "exit_code": 0,
+      "report": {
+        "kit": "experience.v1",
+        "contract": "contracts/experience.v1.md",
+        "target": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience/fixtures/sample-good",
+        "target_kind": "snapshot",
+        "manager": "m1",
+        "routes_read": 11,
+        "check": "static \u2014 read from what the app served (shell, API payloads, client assets, its own route table); no browser is launched",
+        "results": [
+          {
+            "rule": "1",
+            "clause": 1,
+            "id": "home_is_the_list_of_manager_sessions_sorted_by_need",
+            "name": "home lists the manager sessions you run, sorted by which one needs you",
+            "status": "PASS",
+            "detail": "home lists 1 manager session(s), sorted by which needs you, each card carrying the count, the lanes, the last brief line and its quiet-or-silent state",
+            "managers": 1
+          },
+          {
+            "rule": "2",
+            "clause": 2,
+            "id": "two_places_and_only_two",
+            "name": "two places, and only two \u2014 Direction and Operation",
+            "status": "PASS",
+            "detail": "exactly two places, and only two (Direction, Operation)",
+            "places": [
+              "Direction",
+              "Operation"
+            ]
+          },
+          {
+            "rule": "3",
+            "clause": 3,
+            "id": "the_console_is_a_pane_never_a_third_place",
+            "name": "the Manager Console is a pane beside either place, never a third place",
+            "status": "PASS",
+            "detail": "the console is a <aside> beside both places, outside either view, and is not offered as a third place; that its conversation survives the switch at runtime is beyond a static read",
+            "element": "aside#managerConsole.manager-console"
+          },
+          {
+            "rule": "4a",
+            "clause": 4,
+            "id": "all_five_writes_exist",
+            "name": "all five writes the umbrella names exist in this body",
+            "status": "PASS",
+            "detail": "all five writes the umbrella names exist as routes the app declares: answer with a word \u2192 /api/managers/{mid}/decision, raise or lower a priority \u2192 /api/managers/{mid}/priority, drop feedback \u2192 /api/managers/{mid}/feedback, steer \u2192 /api/managers/{mid}/steer, ask for a proposal \u2192 /api/managers/{mid}/ask",
+            "writes_found": {
+              "answer with a word": "/api/managers/{mid}/decision",
+              "raise or lower a priority": "/api/managers/{mid}/priority",
+              "drop feedback": "/api/managers/{mid}/feedback",
+              "steer": "/api/managers/{mid}/steer",
+              "ask for a proposal": "/api/managers/{mid}/ask"
+            }
+          },
+          {
+            "rule": "4b",
+            "clause": 4,
+            "id": "nothing_else_writes_anything",
+            "name": "nothing beyond those five writes anything",
+            "status": "PASS",
+            "detail": "nothing beyond the five writes anything; 3 route(s) are exempt by a contract that says what they are",
+            "exempted": [
+              {
+                "route": "/api/tmux/{socket}/{session}/keys",
+                "exempt": "the console's message path \u2014 `experience-console.v1` Core 3 and 8: what you type there is a message to the manager session, and the console never ratifies"
+              },
+              {
+                "route": "/login",
+                "exempt": "the sign-in gate \u2014 a session, not the project (app/auth.py)"
+              },
+              {
+                "route": "/logout",
+                "exempt": "the sign-in gate \u2014 a session, not the project (app/auth.py)"
+              }
+            ]
+          },
+          {
+            "rule": "5a",
+            "clause": 5,
+            "id": "at_most_five_things_ask_for_your_word",
+            "name": "at most five things ask for your word at once",
+            "status": "PASS",
+            "detail": "3 thing(s) ask for your word at once, within the limit of 5",
+            "asking": 3
+          },
+          {
+            "rule": "5b",
+            "clause": 5,
+            "id": "every_answer_lands_in_a_dated_record",
+            "name": "every answer lands in a dated ratification record",
+            "status": "PASS",
+            "detail": "the answer write names the dated ratification record, and 1 record(s) exist (docs/workflow/owner-ratifications-2026-09-03.md); what one holds once written is beyond a static read",
+            "records": [
+              "docs/workflow/owner-ratifications-2026-09-03.md"
+            ],
+            "repository": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience/fixtures/sample-good/repo"
+          },
+          {
+            "rule": "6a",
+            "clause": 6,
+            "id": "the_state_words_the_app_serves_are_the_plain_ones",
+            "name": "every state the app serves is said in one of the three plain vocabularies",
+            "status": "PASS",
+            "detail": "all 6 state word(s) the app serves are plain ones (['Done', 'Kept', 'Not yet', 'Working'])",
+            "read": 6
+          },
+          {
+            "rule": "6b",
+            "clause": 6,
+            "id": "no_machine_vocabulary_outside_a_details_fold",
+            "name": "no machine vocabulary appears outside a Details fold",
+            "status": "PASS",
+            "detail": "no machine state word appears outside a Details fold in what the app serves; 1 fold(s) carry the detail. A word the app never writes down but renders from a payload is judged by rule 6a.",
+            "details_folds": 1
+          },
+          {
+            "rule": "7",
+            "clause": 7,
+            "id": "the_app_holds_no_copy_of_the_projects_truth",
+            "name": "the app holds no copy of the project's truth; your own reading is yours",
+            "status": "PASS",
+            "detail": "the app keeps no store of its own \u2014 every screen is drawn from the project's own files and queues",
+            "repository": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience/fixtures/sample-good/repo"
+          },
+          {
+            "rule": "8",
+            "clause": 8,
+            "id": "every_write_names_a_manager_session_operation",
+            "name": "every write names a manager-session operation that does the same thing",
+            "status": "PASS",
+            "detail": "every write this body offers names the manager-session operation that does the same thing (answer with a word, raise or lower a priority, drop feedback, steer, ask for a proposal)",
+            "named": [
+              "answer with a word",
+              "raise or lower a priority",
+              "drop feedback",
+              "steer",
+              "ask for a proposal"
+            ]
+          },
+          {
+            "rule": "9",
+            "clause": 9,
+            "id": "every_behavior_carries_one_of_four_words",
+            "name": "every behavior in a section contract carries one of the four words",
+            "status": "PASS",
+            "detail": "every behavior in every section contract carries one of the four words: experience-collaboration.v1.md (3); experience-console.v1.md (3); experience-direction.v1.md (3); experience-operation.v1.md (3)",
+            "contracts": {
+              "experience-collaboration.v1.md": {
+                "clauses": 3,
+                "carrying_a_word": 3
+              },
+              "experience-console.v1.md": {
+                "clauses": 3,
+                "carrying_a_word": 3
+              },
+              "experience-direction.v1.md": {
+                "clauses": 3,
+                "carrying_a_word": 3
+              },
+              "experience-operation.v1.md": {
+                "clauses": 3,
+                "carrying_a_word": 3
+              }
+            }
+          },
+          {
+            "rule": "10",
+            "clause": 10,
+            "id": "idiom_is_reviewed_as_behavior_not_shape",
+            "name": "IDIOM means the behavior is required and its shape is not",
+            "status": "SKIP",
+            "detail": "whether review asked \"is the behavior satisfied?\" rather than \"does it look the same?\" is a fact about how a person read the work, and no artifact records it. It becomes checkable when a review leaves a record naming the behavior it judged \u2014 there is no such record to read today.",
+            "reason": "whether review asked \"is the behavior satisfied?\" rather than \"does it look the same?\" is a fact about how a person read the work, and no artifact records it. It becomes checkable when a review leaves a record naming the behavior it judged \u2014 there is no such record to read today."
+          },
+          {
+            "rule": "11",
+            "clause": 11,
+            "id": "idioms_never_subtract_a_behavior",
+            "name": "idioms satisfy behaviors; they never subtract them",
+            "status": "SKIP",
+            "detail": "the subtraction and transfer tests compare two bodies \u2014 whether a shape removed a state or a refusal reason, and whether the person was surprised or merely found it elsewhere. This family has one body (the browser app), so there is nothing to compare against; and the transfer test needs a person who learned the behavior in the other one.",
+            "reason": "the subtraction and transfer tests compare two bodies \u2014 whether a shape removed a state or a refusal reason, and whether the person was surprised or merely found it elsewhere. This family has one body (the browser app), so there is nothing to compare against; and the transfer test needs a person who learned the behavior in the other one."
+          },
+          {
+            "rule": "12",
+            "clause": 12,
+            "id": "a_feature_no_contract_names_is_debt",
+            "name": "a body may exceed in idiom, never in features \u2014 an unnamed feature is debt",
+            "status": "PASS",
+            "detail": "every one of the 5 writes this body offers is named by a contract in the family, each citation re-read this run, so none of them is debt",
+            "named": {
+              "/api/managers/{mid}/ask": "experience.v1.md Core 4 (one of the five)",
+              "/api/managers/{mid}/decision": "experience.v1.md Core 4 (one of the five)",
+              "/api/managers/{mid}/feedback": "experience.v1.md Core 4 (one of the five)",
+              "/api/managers/{mid}/priority": "experience.v1.md Core 4 (one of the five)",
+              "/api/managers/{mid}/steer": "experience.v1.md Core 4 (one of the five)"
+            }
+          },
+          {
+            "rule": "13",
+            "clause": 13,
+            "id": "every_behavior_placed_against_three_surface_classes",
+            "name": "every behavior is placed against full app \u00b7 quick-access \u00b7 notification",
+            "status": "PASS",
+            "detail": "every section contract places its behaviors against all three surface classes",
+            "placement": {
+              "experience-collaboration.v1.md": [
+                "full app",
+                "quick-access",
+                "notification"
+              ],
+              "experience-console.v1.md": [
+                "full app",
+                "quick-access",
+                "notification"
+              ],
+              "experience-direction.v1.md": [
+                "full app",
+                "quick-access",
+                "notification"
+              ],
+              "experience-operation.v1.md": [
+                "full app",
+                "quick-access",
+                "notification"
+              ]
+            }
+          },
+          {
+            "rule": "14",
+            "clause": 14,
+            "id": "a_limit_is_said_in_the_app_never_left_silent",
+            "name": "where a body genuinely cannot do a thing, it says so in the app",
+            "status": "PASS",
+            "detail": "this body does everything the family names of it, so there is no limit left to state"
+          },
+          {
+            "rule": "15",
+            "clause": 15,
+            "id": "every_contract_this_umbrella_names_exists",
+            "name": "this umbrella governs a family, and the contracts it names exist",
+            "status": "PASS",
+            "detail": "every one of the 4 contracts this umbrella names exists in the repository",
+            "named": [
+              "experience-collaboration.v1",
+              "experience-console.v1",
+              "experience-direction.v1",
+              "experience-operation.v1"
+            ]
+          }
+        ],
+        "summary": {
+          "pass": 16,
+          "fail": 0,
+          "skip": 2
+        },
+        "verdict": "PASS",
+        "repository": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience/fixtures/sample-good/repo",
+        "repository_kind": "snapshot",
+        "write_routes": [
+          "/api/managers/{mid}/ask",
+          "/api/managers/{mid}/decision",
+          "/api/managers/{mid}/feedback",
+          "/api/managers/{mid}/priority",
+          "/api/managers/{mid}/steer",
+          "/api/tmux/{socket}/{session}/keys",
+          "/login",
+          "/logout"
+        ]
+      }
+    },
+    {
+      "kind": "fixture",
+      "kit": "experience",
+      "sample": "sample-bad",
+      "exit_code": 1,
+      "report": {
+        "kit": "experience.v1",
+        "contract": "contracts/experience.v1.md",
+        "target": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience/fixtures/sample-bad",
+        "target_kind": "snapshot",
+        "manager": "m1",
+        "routes_read": 11,
+        "check": "static \u2014 read from what the app served (shell, API payloads, client assets, its own route table); no browser is launched",
+        "results": [
+          {
+            "rule": "1",
+            "clause": 1,
+            "id": "home_is_the_list_of_manager_sessions_sorted_by_need",
+            "name": "home lists the manager sessions you run, sorted by which one needs you",
+            "status": "FAIL",
+            "detail": "the card carries no how many things want your word, no lanes running against lanes intended, no the last brief line, no quiet or silent; the list is not sorted by which session needs you",
+            "managers": 1
+          },
+          {
+            "rule": "2",
+            "clause": 2,
+            "id": "two_places_and_only_two",
+            "name": "two places, and only two \u2014 Direction and Operation",
+            "status": "FAIL",
+            "detail": "a third place beside the two the contract names: ['Console'] \u2014 conversation is a modality, not a place",
+            "places": [
+              "Direction",
+              "Operation",
+              "Console"
+            ]
+          },
+          {
+            "rule": "3",
+            "clause": 3,
+            "id": "the_console_is_a_pane_never_a_third_place",
+            "name": "the Manager Console is a pane beside either place, never a third place",
+            "status": "FAIL",
+            "detail": "the console is offered as a place in the workspace switch (['Console']), which makes it a third place; the console sits inside a view, so switching places tears it down rather than leaving it open beside them"
+          },
+          {
+            "rule": "4a",
+            "clause": 4,
+            "id": "all_five_writes_exist",
+            "name": "all five writes the umbrella names exist in this body",
+            "status": "FAIL",
+            "detail": "the app declares no route for raise or lower a priority (`priority`), ask for a proposal (`ask`) \u2014 the clause names five writes and this body offers 3",
+            "writes_found": {
+              "answer with a word": "/api/managers/{mid}/decision",
+              "drop feedback": "/api/managers/{mid}/feedback",
+              "steer": "/api/managers/{mid}/steer"
+            },
+            "writes_missing": [
+              "raise or lower a priority (`priority`)",
+              "ask for a proposal (`ask`)"
+            ],
+            "write_routes": [
+              "/api/managers/{mid}/decision",
+              "/api/managers/{mid}/feedback",
+              "/api/managers/{mid}/publish",
+              "/api/managers/{mid}/steer",
+              "/login"
+            ]
+          },
+          {
+            "rule": "4b",
+            "clause": 4,
+            "id": "nothing_else_writes_anything",
+            "name": "nothing beyond those five writes anything",
+            "status": "FAIL",
+            "detail": "1 route(s) beyond the five write something: ['/api/managers/{mid}/publish']. The umbrella names five writes and says nothing else, in any body, writes anything; the section contracts offer these (editing, restoring and per-change choices are `experience-direction.v1` clauses 5, 6 and 8, and the read point is this umbrella's own open question). The disagreement is between the contracts, and it is the steward's to settle.",
+            "writes_beyond_the_five": [
+              "/api/managers/{mid}/publish"
+            ],
+            "exempted": [
+              {
+                "route": "/login",
+                "exempt": "the sign-in gate \u2014 a session, not the project (app/auth.py)"
+              }
+            ]
+          },
+          {
+            "rule": "5a",
+            "clause": 5,
+            "id": "at_most_five_things_ask_for_your_word",
+            "name": "at most five things ask for your word at once",
+            "status": "FAIL",
+            "detail": "7 things ask for your word at once, and the clause fixes the limit at 5; several small calls are meant to arrive as one ratification sheet, not as a longer list",
+            "asking": 7
+          },
+          {
+            "rule": "5b",
+            "clause": 5,
+            "id": "every_answer_lands_in_a_dated_record",
+            "name": "every answer lands in a dated ratification record",
+            "status": "FAIL",
+            "detail": "the repository holds no dated ratification record (docs/workflow/owner-ratifications-<date>.md); the app's write path never names the dated ratification record, so an answer given here lands somewhere else",
+            "records": [],
+            "repository": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience/fixtures/sample-bad/repo"
+          },
+          {
+            "rule": "6a",
+            "clause": 6,
+            "id": "the_state_words_the_app_serves_are_the_plain_ones",
+            "name": "every state the app serves is said in one of the three plain vocabularies",
+            "status": "FAIL",
+            "detail": "the app serves state words outside the three vocabularies this clause fixes: a document's standing: 'RESOLVED' (1\u00d7); a lane's state: 'RUNNING' (1\u00d7); a manager session's state: 'RUNNING' (1\u00d7); a wave's phase: 'DONE' (1\u00d7). The plain words are ['Broken', \"Can't check\", 'Done', 'Kept', 'Not yet', 'Pinned open', 'Quiet', 'Silent \u2014 may have died', 'Stuck', 'Truly ready', 'Waiting on you', 'Working']",
+            "foreign": [
+              "a document's standing: 'RESOLVED'",
+              "a lane's state: 'RUNNING'",
+              "a manager session's state: 'RUNNING'",
+              "a wave's phase: 'DONE'"
+            ],
+            "read": 4
+          },
+          {
+            "rule": "6b",
+            "clause": 6,
+            "id": "no_machine_vocabulary_outside_a_details_fold",
+            "name": "no machine vocabulary appears outside a Details fold",
+            "status": "FAIL",
+            "detail": "the machine's own state words appear outside a Details fold \u2014 /: ['DEAD', 'STALE']. The clause does not ask for silence; it asks for the machine's words to sit behind a fold, and this body already has 0 fold(s) that do exactly that.",
+            "exposed": {
+              "/": [
+                "DEAD",
+                "STALE"
+              ]
+            }
+          },
+          {
+            "rule": "7",
+            "clause": 7,
+            "id": "the_app_holds_no_copy_of_the_projects_truth",
+            "name": "the app holds no copy of the project's truth; your own reading is yours",
+            "status": "FAIL",
+            "detail": "the app keeps a store of its own \u2014 app/writes.py (sqlite3) \u2014 and clause 7 grants no per-person reading exemption yet, so ['app/writes.py'] is a second copy of the truth",
+            "stores": [
+              {
+                "file": "app/writes.py",
+                "kind": "sqlite3",
+                "is_the_reading": false,
+                "is_auth_state": false,
+                "carries_project_truth": false
+              }
+            ],
+            "clause_allows_the_reading": false
+          },
+          {
+            "rule": "8",
+            "clause": 8,
+            "id": "every_write_names_a_manager_session_operation",
+            "name": "every write names a manager-session operation that does the same thing",
+            "status": "FAIL",
+            "detail": "this body offers 3 of the five writes (answer with a word, drop feedback, steer) and publishes no manager-session operation for any of them. A reader cannot check that what they can do here the manager session can do too \u2014 nothing on the surface says which operation does the same thing.",
+            "writes_offered": [
+              "answer with a word",
+              "drop feedback",
+              "steer"
+            ]
+          },
+          {
+            "rule": "9",
+            "clause": 9,
+            "id": "every_behavior_carries_one_of_four_words",
+            "name": "every behavior in a section contract carries one of the four words",
+            "status": "FAIL",
+            "detail": "section contracts with behaviors carrying none of ['REQUIRED', 'IDIOM', 'OPTIONAL', 'EXCLUDED']: experience-collaboration.v1.md (3 of 3); experience-console.v1.md (3 of 3); experience-direction.v1.md (3 of 3); experience-operation.v1.md (3 of 3). Required, idiom, optional and excluded are how a body knows what its absence means; an untagged behavior means nothing either way.",
+            "contracts": {
+              "experience-collaboration.v1.md": {
+                "clauses": 3,
+                "carrying_a_word": 0
+              },
+              "experience-console.v1.md": {
+                "clauses": 3,
+                "carrying_a_word": 0
+              },
+              "experience-direction.v1.md": {
+                "clauses": 3,
+                "carrying_a_word": 0
+              },
+              "experience-operation.v1.md": {
+                "clauses": 3,
+                "carrying_a_word": 0
+              }
+            }
+          },
+          {
+            "rule": "10",
+            "clause": 10,
+            "id": "idiom_is_reviewed_as_behavior_not_shape",
+            "name": "IDIOM means the behavior is required and its shape is not",
+            "status": "SKIP",
+            "detail": "whether review asked \"is the behavior satisfied?\" rather than \"does it look the same?\" is a fact about how a person read the work, and no artifact records it. It becomes checkable when a review leaves a record naming the behavior it judged \u2014 there is no such record to read today.",
+            "reason": "whether review asked \"is the behavior satisfied?\" rather than \"does it look the same?\" is a fact about how a person read the work, and no artifact records it. It becomes checkable when a review leaves a record naming the behavior it judged \u2014 there is no such record to read today."
+          },
+          {
+            "rule": "11",
+            "clause": 11,
+            "id": "idioms_never_subtract_a_behavior",
+            "name": "idioms satisfy behaviors; they never subtract them",
+            "status": "SKIP",
+            "detail": "the subtraction and transfer tests compare two bodies \u2014 whether a shape removed a state or a refusal reason, and whether the person was surprised or merely found it elsewhere. This family has one body (the browser app), so there is nothing to compare against; and the transfer test needs a person who learned the behavior in the other one.",
+            "reason": "the subtraction and transfer tests compare two bodies \u2014 whether a shape removed a state or a refusal reason, and whether the person was surprised or merely found it elsewhere. This family has one body (the browser app), so there is nothing to compare against; and the transfer test needs a person who learned the behavior in the other one."
+          },
+          {
+            "rule": "12",
+            "clause": 12,
+            "id": "a_feature_no_contract_names_is_debt",
+            "name": "a body may exceed in idiom, never in features \u2014 an unnamed feature is debt",
+            "status": "FAIL",
+            "detail": "1 feature(s) this body offers are named by no contract in the family: ['/api/managers/{mid}/publish']. A feature in one body and nowhere else is either a behavior that belongs in this family or it is debt \u2014 there is no third thing it can be.",
+            "debt": [
+              "/api/managers/{mid}/publish"
+            ],
+            "named": {
+              "/api/managers/{mid}/decision": "experience.v1.md Core 4 (one of the five)",
+              "/api/managers/{mid}/feedback": "experience.v1.md Core 4 (one of the five)",
+              "/api/managers/{mid}/steer": "experience.v1.md Core 4 (one of the five)"
+            },
+            "stale_citations": []
+          },
+          {
+            "rule": "13",
+            "clause": 13,
+            "id": "every_behavior_placed_against_three_surface_classes",
+            "name": "every behavior is placed against full app \u00b7 quick-access \u00b7 notification",
+            "status": "FAIL",
+            "detail": "experience-collaboration.v1.md places behavior against none; experience-console.v1.md places behavior against none; experience-direction.v1.md places behavior against none; experience-operation.v1.md places behavior against none \u2014 the three classes are ['full app', 'quick-access', 'notification'], and the clause exists so that \"nobody thought about the widget\" cannot pass as a decision",
+            "placement": {
+              "experience-collaboration.v1.md": [],
+              "experience-console.v1.md": [],
+              "experience-direction.v1.md": [],
+              "experience-operation.v1.md": []
+            }
+          },
+          {
+            "rule": "14",
+            "clause": 14,
+            "id": "a_limit_is_said_in_the_app_never_left_silent",
+            "name": "where a body genuinely cannot do a thing, it says so in the app",
+            "status": "FAIL",
+            "detail": "this body cannot do ['raise or lower a priority (`priority`)', 'ask for a proposal (`ask`)', 'feedback as a screenshot', 'feedback as voice'], and says nothing anywhere about ['raise or lower a priority (`priority`)', 'ask for a proposal (`ask`)', 'feedback as a screenshot', 'feedback as voice'] \u2014 not what the limit is, and not what to do instead. Silence is the only wrong answer this clause names, and half a sentence is most of the way to silence.",
+            "cannot_do": [
+              "raise or lower a priority (`priority`)",
+              "ask for a proposal (`ask`)",
+              "feedback as a screenshot",
+              "feedback as voice"
+            ],
+            "said_nothing_about": [
+              "raise or lower a priority (`priority`)",
+              "ask for a proposal (`ask`)",
+              "feedback as a screenshot",
+              "feedback as voice"
+            ],
+            "limit_stated_no_redirect": []
+          },
+          {
+            "rule": "15",
+            "clause": 15,
+            "id": "every_contract_this_umbrella_names_exists",
+            "name": "this umbrella governs a family, and the contracts it names exist",
+            "status": "FAIL",
+            "detail": "the umbrella names 5 contract(s) in its family and 1 do not exist: ['experience-nowhere.v1']. A family member named and unwritten is a promise nothing keeps.",
+            "named": [
+              "experience-collaboration.v1",
+              "experience-console.v1",
+              "experience-direction.v1",
+              "experience-nowhere.v1",
+              "experience-operation.v1"
+            ],
+            "missing": [
+              "experience-nowhere.v1"
+            ]
+          }
+        ],
+        "summary": {
+          "pass": 0,
+          "fail": 16,
+          "skip": 2
+        },
+        "verdict": "FAIL",
+        "repository": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience/fixtures/sample-bad/repo",
+        "repository_kind": "snapshot",
+        "write_routes": [
+          "/api/managers/{mid}/decision",
+          "/api/managers/{mid}/feedback",
+          "/api/managers/{mid}/publish",
+          "/api/managers/{mid}/steer",
+          "/login"
+        ]
+      }
+    },
+    {
+      "kind": "self_test",
+      "kit": "experience",
+      "exit_code": 0,
+      "stdout": "  ok    test_a_details_fold_is_where_a_machine_word_belongs\n  ok    test_a_dynamic_get_key_on_the_tracked_table_still_fails\n  ok    test_a_dynamic_key_access_on_the_tracked_table_still_fails\n  ok    test_a_heading_that_says_not_here_is_only_half_the_clause\n  ok    test_a_hyphenated_key_on_the_tracked_table_still_fails\n  ok    test_a_json_dump_call_with_no_locatable_target_still_fails\n  ok    test_a_keyword_is_not_a_citation\n  ok    test_a_keyword_only_dump_of_the_valid_table_itself_still_passes\n  ok    test_a_keyword_only_dump_target_beside_the_valid_table_still_fails\n  ok    test_a_missing_repository_half_skips_rather_than_guesses\n  ok    test_a_mixed_auth_plus_project_payload_still_fails\n  ok    test_a_payload_is_not_a_surface\n  ok    test_a_per_person_serialized_cache_is_still_project_truth\n  ok    test_a_per_person_store_that_is_not_your_reading_is_still_a_second_copy\n  ok    test_a_project_cache_disguised_with_revocation_words_still_fails\n  ok    test_a_real_revocation_only_store_still_passes_alongside_the_new_markers\n  ok    test_a_sentence_saying_a_form_is_absent_is_not_an_offer_of_it\n  ok    test_a_separately_persisted_unknown_cache_beside_the_valid_table_still_fails\n  ok    test_a_serialized_lane_cache_with_no_prose_is_still_project_truth\n  ok    test_a_skip_names_what_a_machine_cannot_settle\n  ok    test_a_sort_comparators_own_parentheses_do_not_hide_the_sort\n  ok    test_a_table_touching_revoked_and_another_key_still_fails\n  ok    test_a_variable_or_scalar_lane_payload_beside_bare_revoke_still_fails\n  ok    test_an_empty_string_key_on_the_tracked_table_still_fails\n  ok    test_an_exempt_route_is_exempt_because_a_contract_says_what_it_is\n  ok    test_an_unknown_expression_dumped_alongside_the_valid_table_still_fails\n  ok    test_an_unrelated_json_store_that_merely_says_revoke_still_fails\n  ok    test_auth_revocation_state_is_not_a_copy_of_the_projects_truth\n  ok    test_every_citation_still_reads_true_in_this_repository\n  ok    test_every_core_clause_has_a_row\n  ok    test_every_rule_has_a_negative_fixture\n  ok    test_every_skip_says_why\n  ok    test_no_skip_still_claims_the_app_is_unbuilt\n  ok    test_rule_7_reads_the_clause_and_not_the_reserved_section\n  ok    test_rule_ids_match_the_readme_table\n  ok    test_sample_bad_fails\n  ok    test_sample_good_passes\n  ok    test_serialized_project_shapes_are_recognized_without_prose\n  ok    test_skip_set_is_pinned\n  ok    test_the_measured_regression_runs_through_the_whole_kit\n  ok    test_the_plain_word_and_the_machine_word_differ_only_by_case\n  ok    test_the_report_shape_is_the_shared_one\n  ok    test_the_repository_read_is_named_in_the_report\n\n0 failure(s)\n",
+      "stderr": ""
+    },
+    {
+      "kind": "fixture",
+      "kit": "experience-direction",
+      "sample": "sample-good",
+      "exit_code": 0,
+      "report": {
+        "kit": "experience-direction.v1",
+        "contract": "contracts/experience-direction.v1.md",
+        "target": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-direction/fixtures/sample-good",
+        "target_kind": "snapshot",
+        "manager": "m1",
+        "routes_read": 10,
+        "check": "static \u2014 read from what the app served (shell, API payloads, client assets, its own route table); no browser is launched",
+        "results": [
+          {
+            "rule": "1",
+            "clause": 1,
+            "id": "documents_per_repository_with_an_all_view",
+            "name": "documents are organized per repository, with an All view across them",
+            "status": "PASS",
+            "detail": "1 repository/ies, each with documents (1 in all), and an All view across them",
+            "repositories": [
+              {
+                "id": "r1",
+                "documents": 1
+              }
+            ]
+          },
+          {
+            "rule": "2a",
+            "clause": 2,
+            "id": "rendered_with_the_source_one_gesture_away",
+            "name": "every document arrives rendered, and its source sits beside it",
+            "status": "PASS",
+            "detail": "all 1 document(s) arrive rendered with their source beside them, and a Raw control switches between them",
+            "documents": [
+              {
+                "route": "/api/managers/m1/docs/r1/vision",
+                "sections": 1,
+                "rendered_bytes": 215,
+                "source_bytes": 153
+              }
+            ]
+          },
+          {
+            "rule": "2b",
+            "clause": 2,
+            "id": "the_render_carries_what_the_documents_contain",
+            "name": "what the project's documents contain is what the render shows",
+            "status": "PASS",
+            "detail": "the render carries every capability this target's documents contain (markdown, a table, a link between documents); not demonstrated by this target, so unjudged here: an image, front matter, a Mermaid diagram, a DOT diagram, safely embedded HTML",
+            "demonstrated": [
+              "markdown",
+              "a table",
+              "a link between documents"
+            ],
+            "not_demonstrated": [
+              "an image",
+              "front matter",
+              "a Mermaid diagram",
+              "a DOT diagram",
+              "safely embedded HTML"
+            ]
+          },
+          {
+            "rule": "3",
+            "clause": 3,
+            "id": "copy_download_zoom_width",
+            "name": "a reader can copy rendered, copy source, download, zoom, and choose the width",
+            "status": "PASS",
+            "detail": "all five abilities have a control: two copy controls (copyRendered, copySource), download the source, zoom, page width or full screen",
+            "present": [
+              "two copy controls (copyRendered, copySource)",
+              "download the source",
+              "zoom",
+              "page width or full screen"
+            ]
+          },
+          {
+            "rule": "4",
+            "clause": 4,
+            "id": "four_views_and_changes_shows_removals",
+            "name": "four views \u2014 Reading \u00b7 Changes \u00b7 Review \u00b7 History \u2014 and Changes is sentence by sentence",
+            "status": "PASS",
+            "detail": "all four views present (read, changes, review, history); 1 document(s) carry a change list, every entry a before/now sentence pair",
+            "views": [
+              "changes",
+              "history",
+              "read",
+              "review"
+            ]
+          },
+          {
+            "rule": "5",
+            "clause": 5,
+            "id": "editing_offered_where_it_is_legal",
+            "name": "direct editing is offered exactly where it is legal",
+            "status": "PASS",
+            "detail": "editing is offered and reaches a document-saving write; the guard beyond it is the repository's, not this kit's to prove",
+            "write_routes": [
+              "/api/managers/{mid}/ask",
+              "/api/managers/{mid}/decision",
+              "/api/managers/{mid}/docs/{repo}/{doc}/changes/{change}/restore",
+              "/api/managers/{mid}/docs/{repo}/{doc}/save",
+              "/api/managers/{mid}/feedback",
+              "/api/managers/{mid}/priority",
+              "/api/managers/{mid}/steer",
+              "/api/tmux/{socket}/{session}/keys",
+              "/login"
+            ]
+          },
+          {
+            "rule": "6a",
+            "clause": 6,
+            "id": "restore_is_a_real_action",
+            "name": "restoring from history reaches a write, and routes through a proposal when locked",
+            "status": "PASS",
+            "detail": "restore reaches a write the app declares; on a locked document that write is the proposal path",
+            "handler_excerpt": "{ restoreScope(btn.dataset.restore, btn.dataset.restoreKey || ''); }"
+          },
+          {
+            "rule": "6b",
+            "clause": 6,
+            "id": "restore_can_name_a_snapshot",
+            "name": "that write can name WHICH snapshot to restore from, not only the reader's own position",
+            "status": "PASS",
+            "detail": "the client's restore write carries `since`, so the app can be asked for a wording from a snapshot other than the reader's own read point; the route table reads its body off the request and declares no schema, so this was read from the client the app ships",
+            "evidence_from": "client",
+            "restore_call": "(`${docBase(state.managerId, state.repoId, state.docId)}/changes/${scope}/restore`, since ? { since } : {})"
+          },
+          {
+            "rule": "7",
+            "clause": 7,
+            "id": "a_proposal_looks_the_same_whoever_proposed",
+            "name": "a proposal shows what changes \u00b7 why \u00b7 the evidence \u00b7 what does not change \u00b7 the word",
+            "status": "PASS",
+            "detail": "one review path lays out all five parts in the contract's order, and offers all four answer words",
+            "parts_found": [
+              "what changes",
+              "why",
+              "the evidence",
+              "what does not change",
+              "the word to answer with"
+            ]
+          },
+          {
+            "rule": "8",
+            "clause": 8,
+            "id": "granular_choices_build_one_answer",
+            "name": "accepting and reverting individual changes constructs ratified with edits",
+            "status": "PASS",
+            "detail": "per-change choices reach a write the app declares; whether that write folds them into the one answer is beyond a static read",
+            "handler_excerpt": "{ api.decision(state.managerId, { proposalId: openProposalId(), staged: btn.dataset.changeAction }); }"
+          },
+          {
+            "rule": "9",
+            "clause": 9,
+            "id": "ask_returns_a_proposal",
+            "name": "Ask is a scoped request whose output is always a proposal",
+            "status": "PASS",
+            "detail": "Ask is offered at all three scopes and its write returns a proposal",
+            "scopes": [
+              "a paragraph",
+              "a document",
+              "every document"
+            ],
+            "write_routes": [
+              "/api/managers/{mid}/ask"
+            ]
+          },
+          {
+            "rule": "10",
+            "clause": 10,
+            "id": "courtesy_presence_and_reconciliation",
+            "name": "concurrent editing is met with courtesy presence and reconciliation",
+            "status": "PASS",
+            "detail": "editing shows courtesy presence and offers all three collision choices",
+            "choices_offered": [
+              "use combined",
+              "keep mine",
+              "review both"
+            ]
+          },
+          {
+            "rule": "11",
+            "clause": 11,
+            "id": "the_lock_control_is_gated_and_shown",
+            "name": "the lock control is gated on the four conditions, and they are shown",
+            "status": "PASS",
+            "detail": "the gate states all four conditions with a control beside them (a disabled state is expressed: True); that the control's live/inert state tracks the conditions at runtime is beyond a static read",
+            "conditions_shown": [
+              "says what it means",
+              "a real example of right and wrong",
+              "can be checked against reality",
+              "the steward has read it and agreed"
+            ]
+          }
+        ],
+        "summary": {
+          "pass": 13,
+          "fail": 0,
+          "skip": 0
+        },
+        "verdict": "PASS",
+        "documents_read": 1,
+        "write_routes": [
+          "/api/managers/{mid}/ask",
+          "/api/managers/{mid}/decision",
+          "/api/managers/{mid}/docs/{repo}/{doc}/changes/{change}/restore",
+          "/api/managers/{mid}/docs/{repo}/{doc}/save",
+          "/api/managers/{mid}/feedback",
+          "/api/managers/{mid}/priority",
+          "/api/managers/{mid}/steer",
+          "/api/tmux/{socket}/{session}/keys",
+          "/login"
+        ]
+      }
+    },
+    {
+      "kind": "fixture",
+      "kit": "experience-direction",
+      "sample": "sample-bad",
+      "exit_code": 1,
+      "report": {
+        "kit": "experience-direction.v1",
+        "contract": "contracts/experience-direction.v1.md",
+        "target": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-direction/fixtures/sample-bad",
+        "target_kind": "snapshot",
+        "manager": "m1",
+        "routes_read": 10,
+        "check": "static \u2014 read from what the app served (shell, API payloads, client assets, its own route table); no browser is launched",
+        "results": [
+          {
+            "rule": "1",
+            "clause": 1,
+            "id": "documents_per_repository_with_an_all_view",
+            "name": "documents are organized per repository, with an All view across them",
+            "status": "FAIL",
+            "detail": "repositories with no documents: ['r1']; no All view across the repositories (no all-repos option in the shell)",
+            "repositories": [
+              "r1"
+            ]
+          },
+          {
+            "rule": "2a",
+            "clause": 2,
+            "id": "rendered_with_the_source_one_gesture_away",
+            "name": "every document arrives rendered, and its source sits beside it",
+            "status": "FAIL",
+            "detail": "no control puts the source one gesture away",
+            "documents": [
+              {
+                "route": "/api/managers/m1/docs/r1/vision",
+                "sections": 1,
+                "rendered_bytes": 23,
+                "source_bytes": 153
+              }
+            ]
+          },
+          {
+            "rule": "2b",
+            "clause": 2,
+            "id": "the_render_carries_what_the_documents_contain",
+            "name": "what the project's documents contain is what the render shows",
+            "status": "FAIL",
+            "detail": "the render drops markdown (source has it, the render does not: ['docs/VISION.md']); a table (source has it, the render does not: ['docs/VISION.md']); a link between documents (source has it, the render does not: ['docs/VISION.md'])",
+            "demonstrated": [],
+            "not_demonstrated": [
+              "an image",
+              "front matter",
+              "a Mermaid diagram",
+              "a DOT diagram",
+              "safely embedded HTML"
+            ]
+          },
+          {
+            "rule": "3",
+            "clause": 3,
+            "id": "copy_download_zoom_width",
+            "name": "a reader can copy rendered, copy source, download, zoom, and choose the width",
+            "status": "FAIL",
+            "detail": "no control for a second copy ability \u2014 the clause names copy as rendered AND copy as source, and this body offers ['copyRendered'], download the source, zoom, page width or full screen (present: none). The shape follows the platform; the abilities do not.",
+            "present": [],
+            "missing": [
+              "a second copy ability \u2014 the clause names copy as rendered AND copy as source, and this body offers ['copyRendered']",
+              "download the source",
+              "zoom",
+              "page width or full screen"
+            ]
+          },
+          {
+            "rule": "4",
+            "clause": 4,
+            "id": "four_views_and_changes_shows_removals",
+            "name": "four views \u2014 Reading \u00b7 Changes \u00b7 Review \u00b7 History \u2014 and Changes is sentence by sentence",
+            "status": "FAIL",
+            "detail": "no `review` view control; no `history` view control; Changes is not sentence by sentence (no before/now pair) on ['docs/VISION.md']",
+            "views": [
+              "changes",
+              "read"
+            ]
+          },
+          {
+            "rule": "5",
+            "clause": 5,
+            "id": "editing_offered_where_it_is_legal",
+            "name": "direct editing is offered exactly where it is legal",
+            "status": "FAIL",
+            "detail": "no edit control and no write route that saves a document, so a DRAFT document cannot be edited in place anywhere \u2014 the clause asks for editing exactly where it is legal, and this offers it nowhere",
+            "write_routes": [
+              "/api/managers/{mid}/decision",
+              "/api/managers/{mid}/feedback",
+              "/api/managers/{mid}/steer",
+              "/login"
+            ]
+          },
+          {
+            "rule": "6a",
+            "clause": 6,
+            "id": "restore_is_a_real_action",
+            "name": "restoring from history reaches a write, and routes through a proposal when locked",
+            "status": "FAIL",
+            "detail": "the restore control is offered but its handler reaches no write the app declares \u2014 it shows a message and forgets, so restoring is not a real action and cannot produce the proposal a locked document requires",
+            "handler_excerpt": "{ toast('Restoring opens a proposal for your word.'); }",
+            "write_routes": [
+              "/api/managers/{mid}/decision",
+              "/api/managers/{mid}/feedback",
+              "/api/managers/{mid}/steer",
+              "/login"
+            ]
+          },
+          {
+            "rule": "6b",
+            "clause": 6,
+            "id": "restore_can_name_a_snapshot",
+            "name": "that write can name WHICH snapshot to restore from, not only the reader's own position",
+            "status": "FAIL",
+            "detail": "nothing lets a restore name WHICH snapshot to put back: neither the route table nor the client the app ships carries a snapshot identifier on the restore write, so restore can only reach the reader's own read point \u2014 one snapshot, however many the History view lists",
+            "restore_write_routes": [],
+            "looked_for": [
+              "commit",
+              "revision",
+              "sha",
+              "since",
+              "snapshot"
+            ]
+          },
+          {
+            "rule": "7",
+            "clause": 7,
+            "id": "a_proposal_looks_the_same_whoever_proposed",
+            "name": "a proposal shows what changes \u00b7 why \u00b7 the evidence \u00b7 what does not change \u00b7 the word",
+            "status": "FAIL",
+            "detail": "the review lays out no why, no what does not change, no the word to answer with; the evidence is laid out before what changes, which asks a reader to judge a case before they know what it is; the answer offers [], not all four of ['ratified', 'ratified with edits', 'declined', 'later']",
+            "parts_found": [
+              "the evidence",
+              "what changes"
+            ]
+          },
+          {
+            "rule": "8",
+            "clause": 8,
+            "id": "granular_choices_build_one_answer",
+            "name": "accepting and reverting individual changes constructs ratified with edits",
+            "status": "FAIL",
+            "detail": "per-change controls exist but their handler reaches no write the app declares, so a steward's kept-and-dropped choices are not carried into the one answer \u2014 they are shown and discarded",
+            "handler_excerpt": "{ toast('Change marked to keep, pending the next proposal decision.'); }"
+          },
+          {
+            "rule": "9",
+            "clause": 9,
+            "id": "ask_returns_a_proposal",
+            "name": "Ask is a scoped request whose output is always a proposal",
+            "status": "FAIL",
+            "detail": "Ask is offered nowhere and no write route produces a proposal, so the fifth write the umbrella names does not exist in this body",
+            "write_routes": [
+              "/api/managers/{mid}/decision",
+              "/api/managers/{mid}/feedback",
+              "/api/managers/{mid}/steer",
+              "/login"
+            ]
+          },
+          {
+            "rule": "10",
+            "clause": 10,
+            "id": "courtesy_presence_and_reconciliation",
+            "name": "concurrent editing is met with courtesy presence and reconciliation",
+            "status": "FAIL",
+            "detail": "there is no editing surface at all in this body (see rule 5), so the courtesy presence and the collision choices this clause requires have nothing to attach to; none of Use combined \u00b7 Keep mine \u00b7 Review both appears either",
+            "presence_shown": false,
+            "choices_offered": []
+          },
+          {
+            "rule": "11",
+            "clause": 11,
+            "id": "the_lock_control_is_gated_and_shown",
+            "name": "the lock control is gated on the four conditions, and they are shown",
+            "status": "FAIL",
+            "detail": "no lock control and none of the four conditions appear anywhere the app serves, so nothing gates a document being locked \u2014 and nothing shows a steward why it is not yet lockable",
+            "conditions_shown": []
+          }
+        ],
+        "summary": {
+          "pass": 0,
+          "fail": 13,
+          "skip": 0
+        },
+        "verdict": "FAIL",
+        "documents_read": 1,
+        "write_routes": [
+          "/api/managers/{mid}/decision",
+          "/api/managers/{mid}/feedback",
+          "/api/managers/{mid}/steer",
+          "/login"
+        ]
+      }
+    },
+    {
+      "kind": "self_test",
+      "kit": "experience-direction",
+      "exit_code": 0,
+      "stdout": "  ok    test_a_handler_is_read_from_its_selector_not_its_markup\n  ok    test_a_render_that_lifts_headings_into_titles_is_not_a_dropped_render\n  ok    test_a_word_in_a_message_is_not_a_write\n  ok    test_every_core_clause_has_a_row\n  ok    test_every_rule_has_a_negative_fixture\n  ok    test_every_skip_says_why\n  ok    test_no_skip_still_claims_the_app_is_unbuilt\n  ok    test_rule_ids_match_the_readme_table\n  ok    test_sample_bad_fails\n  ok    test_sample_good_passes\n  ok    test_skip_set_is_pinned\n  ok    test_the_report_shape_is_the_shared_one\n  ok    test_the_restore_rule_tells_the_two_builds_apart\n  ok    test_the_unjudged_capabilities_are_named\n\n0 failure(s)\n",
+      "stderr": ""
+    },
+    {
+      "kind": "fixture",
+      "kit": "experience-operation",
+      "sample": "sample-good",
+      "exit_code": 0,
+      "report": {
+        "kit": "experience-operation.v1",
+        "contract": "contracts/experience-operation.v1.md",
+        "target": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-operation/fixtures/sample-good",
+        "target_kind": "snapshot",
+        "manager": "m1",
+        "routes_read": 13,
+        "check": "static \u2014 read from what the app served (shell, API payloads, client assets, its own route table); no browser is launched",
+        "results": [
+          {
+            "rule": "1",
+            "clause": 1,
+            "id": "objective_limits_strategy_stand_at_the_top",
+            "name": "the objective, the limits, and today's strategy stand above any list of work",
+            "status": "PASS",
+            "detail": "objective, limits and strategy are all stated in the manager session's own words and stand above the waves and the lanes",
+            "said": {
+              "the objective": "Keep the promises.",
+              "the limits": "Friday 4",
+              "today's strategy": "3 waves Contracts first."
+            }
+          },
+          {
+            "rule": "2a",
+            "clause": 2,
+            "id": "waves_with_lanes_inside_them",
+            "name": "the plan is shown in waves, with the lanes inside them",
+            "status": "PASS",
+            "detail": "1 wave(s), each with the lanes inside it; all 2 lane(s) name their wave",
+            "waves": 1,
+            "lanes": 2
+          },
+          {
+            "rule": "2b",
+            "clause": 2,
+            "id": "every_grouping_carries_its_reason",
+            "name": "every grouping carries its reason, and a redrawn plan shows why",
+            "status": "PASS",
+            "detail": "all 1 waves carry a reason, and a redraw shows why",
+            "waves": 1
+          },
+          {
+            "rule": "3",
+            "clause": 3,
+            "id": "the_return_brief_carries_all_five_parts",
+            "name": "the return brief is read first and carries all five of its parts",
+            "status": "PASS",
+            "detail": "the brief is 5 sentence(s) and carries all five parts, above the lists of work",
+            "sentences": 5
+          },
+          {
+            "rule": "4",
+            "clause": 4,
+            "id": "each_turn_opens_onto_its_evidence",
+            "name": "every entry on the confidence timeline opens onto its evidence",
+            "status": "PASS",
+            "detail": "all 1 timeline entries open onto their evidence",
+            "entries": 1
+          },
+          {
+            "rule": "5a",
+            "clause": 5,
+            "id": "the_flow_measures_are_shown",
+            "name": "work derived, resolved, verified, reopened and stuck are shown",
+            "status": "PASS",
+            "detail": "all five flow measures are shown: derived, resolved, verified, reopened, stuck",
+            "shown": [
+              "derived",
+              "resolved",
+              "verified",
+              "reopened",
+              "stuck"
+            ]
+          },
+          {
+            "rule": "5b",
+            "clause": 5,
+            "id": "flow_and_outcome_are_shown_apart",
+            "name": "flow is never offered as outcome \u2014 the two readings are shown apart",
+            "status": "PASS",
+            "detail": "flow and the outcome reading are two separate readings, never summed into one number"
+          },
+          {
+            "rule": "6",
+            "clause": 6,
+            "id": "lanes_running_against_lanes_intended",
+            "name": "lanes running, lanes intended, and the fill control appear together",
+            "status": "PASS",
+            "detail": "3 running of 4 intended, with the fill control beside them, and filling reaches a write",
+            "running": 3,
+            "intended": 4
+          },
+          {
+            "rule": "7",
+            "clause": 7,
+            "id": "truly_ready_against_waiting_on_you",
+            "name": "work truly ready is shown against work waiting on you, as two numbers",
+            "status": "PASS",
+            "detail": "both numbers are shown \u2014 work truly ready, and work waiting on you"
+          },
+          {
+            "rule": "8",
+            "clause": 8,
+            "id": "every_lane_speaks_a_plain_lane_word",
+            "name": "every lane \u2014 at work, or reported back \u2014 carries its plain state word and evidence you can open",
+            "status": "PASS",
+            "detail": "every one of 2 working lane(s) reads as a plain lane word (['quiet', 'working']) and every one of 0 reported lane(s) reads as a plain work word ([]); all carry evidence to open, and no lane is in both lists",
+            "words_shown": {
+              "working": 1,
+              "quiet": 1
+            },
+            "field_shown": "status",
+            "reported_words_shown": {},
+            "reported_field_shown": "outcome"
+          },
+          {
+            "rule": "9",
+            "clause": 9,
+            "id": "watch_session_reaches_the_worker",
+            "name": "Watch session opens that worker session's live view, on every lane offered one",
+            "status": "PASS",
+            "detail": "Watch session opens the lane's own live view; 2 of 2 lane(s) name a session to reach; no lane that has reported back is offered it, which the clause does not ask for",
+            "lanes_without_session": 0,
+            "reported_watch_offered": false,
+            "reported_watch_reaches_its_lane": null
+          },
+          {
+            "rule": "10",
+            "clause": 10,
+            "id": "feedback_in_whatever_form_is_to_hand",
+            "name": "feedback can be dropped in seconds, in every form this body claims",
+            "status": "PASS",
+            "detail": "feedback is accepted in every form this body claims (text, a screenshot, voice) and reaches the feedback write; not offered here: none \u2014 where a body cannot do a thing, experience.v1 clause 14 asks it to say so in the app",
+            "forms_accepted": [
+              "text",
+              "a screenshot",
+              "voice"
+            ],
+            "forms_absent": []
+          },
+          {
+            "rule": "11",
+            "clause": 11,
+            "id": "steering_sets_limits_and_assigns_nothing",
+            "name": "steering offers exactly the five limits and no way to assign work",
+            "status": "PASS",
+            "detail": "steering offers exactly the five limits and no way to assign work",
+            "offered": [
+              "objective",
+              "budget",
+              "lane count",
+              "fill the lanes",
+              "have the manager review this"
+            ]
+          },
+          {
+            "rule": "12",
+            "clause": 12,
+            "id": "stopping_is_never_a_board_button",
+            "name": "no control on the board stops work by moving it",
+            "status": "PASS",
+            "detail": "no control on the board stops work \u2014 stopping happens because the objective changed or the steward said so in words"
+          },
+          {
+            "rule": "13",
+            "clause": 13,
+            "id": "every_manager_listed_and_tell_all",
+            "name": "every manager session is listed, sorted by which needs you, and one message reaches all",
+            "status": "PASS",
+            "detail": "all 1 manager session(s) listed, sorted by which needs you, with one message that reaches all",
+            "managers": 1
+          }
+        ],
+        "summary": {
+          "pass": 15,
+          "fail": 0,
+          "skip": 0
+        },
+        "verdict": "PASS",
+        "write_routes": [
+          "/api/managers/{mid}/ask",
+          "/api/managers/{mid}/decision",
+          "/api/managers/{mid}/docs/{repo}/{doc}/changes/{change}/restore",
+          "/api/managers/{mid}/docs/{repo}/{doc}/save",
+          "/api/managers/{mid}/feedback",
+          "/api/managers/{mid}/priority",
+          "/api/managers/{mid}/steer",
+          "/api/tmux/{socket}/{session}/keys",
+          "/login"
+        ]
+      }
+    },
+    {
+      "kind": "fixture",
+      "kit": "experience-operation",
+      "sample": "sample-bad",
+      "exit_code": 1,
+      "report": {
+        "kit": "experience-operation.v1",
+        "contract": "contracts/experience-operation.v1.md",
+        "target": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-operation/fixtures/sample-bad",
+        "target_kind": "snapshot",
+        "manager": "m1",
+        "routes_read": 13,
+        "check": "static \u2014 read from what the app served (shell, API payloads, client assets, its own route table); no browser is launched",
+        "results": [
+          {
+            "rule": "1",
+            "clause": 1,
+            "id": "objective_limits_strategy_stand_at_the_top",
+            "name": "the objective, the limits, and today's strategy stand above any list of work",
+            "status": "FAIL",
+            "detail": "the manager session says nothing for the objective, the limits, today's strategy",
+            "said": {
+              "the objective": "",
+              "the limits": "",
+              "today's strategy": ""
+            }
+          },
+          {
+            "rule": "2a",
+            "clause": 2,
+            "id": "waves_with_lanes_inside_them",
+            "name": "the plan is shown in waves, with the lanes inside them",
+            "status": "FAIL",
+            "detail": "waves with no lanes inside them: ['Wave 2']; 1 lane(s) sit in no wave: ['w1-kit']",
+            "waves": 2,
+            "lanes": 1
+          },
+          {
+            "rule": "2b",
+            "clause": 2,
+            "id": "every_grouping_carries_its_reason",
+            "name": "every grouping carries its reason, and a redrawn plan shows why",
+            "status": "FAIL",
+            "detail": "2 of 2 waves carry no reason \u2014 only their lane names (['Wave 1', 'Wave 2']); nothing shows why the plan was redrawn when it is",
+            "waves": 2
+          },
+          {
+            "rule": "3",
+            "clause": 3,
+            "id": "the_return_brief_carries_all_five_parts",
+            "name": "the return brief is read first and carries all five of its parts",
+            "status": "FAIL",
+            "detail": "the return brief is empty \u2014 a returning steward reads nothing"
+          },
+          {
+            "rule": "4",
+            "clause": 4,
+            "id": "each_turn_opens_onto_its_evidence",
+            "name": "every entry on the confidence timeline opens onto its evidence",
+            "status": "FAIL",
+            "detail": "1 of 1 timeline entries carry nothing to open \u2014 they state that confidence moved and give the reader no way to inspect why",
+            "entries": 1,
+            "without_evidence": 1,
+            "shape": "['2026-09-03', 'something moved', 'no way to look at it']"
+          },
+          {
+            "rule": "5a",
+            "clause": 5,
+            "id": "the_flow_measures_are_shown",
+            "name": "work derived, resolved, verified, reopened and stuck are shown",
+            "status": "FAIL",
+            "detail": "the flow reading shows ['derived', 'resolved'] and never says verified, reopened, stuck \u2014 the clause names all five as what says whether things are moving",
+            "shown": [
+              "derived",
+              "resolved"
+            ],
+            "missing": [
+              "verified",
+              "reopened",
+              "stuck"
+            ]
+          },
+          {
+            "rule": "5b",
+            "clause": 5,
+            "id": "flow_and_outcome_are_shown_apart",
+            "name": "flow is never offered as outcome \u2014 the two readings are shown apart",
+            "status": "FAIL",
+            "detail": "flow shown: True; the outcome reading shown: False \u2014 the clause asks for both, apart",
+            "flow": true,
+            "outcome": false
+          },
+          {
+            "rule": "6",
+            "clause": 6,
+            "id": "lanes_running_against_lanes_intended",
+            "name": "lanes running, lanes intended, and the fill control appear together",
+            "status": "FAIL",
+            "detail": "the shell has no ['activeLaneCount', 'laneBudgetCount', 'fillLanesButton']; the manager payload does not carry both lanes running and lanes intended; the fill control reaches no write the app declares, so filling cannot update the ratio or the plan"
+          },
+          {
+            "rule": "7",
+            "clause": 7,
+            "id": "truly_ready_against_waiting_on_you",
+            "name": "work truly ready is shown against work waiting on you, as two numbers",
+            "status": "FAIL",
+            "detail": "only neither is shown; the clause asks for two numbers, and the second \u2014 the steward's own backlog \u2014 is what keeps the operation from stalling politely behind a person",
+            "shown": []
+          },
+          {
+            "rule": "8",
+            "clause": 8,
+            "id": "every_lane_speaks_a_plain_lane_word",
+            "name": "every lane \u2014 at work, or reported back \u2014 carries its plain state word and evidence you can open",
+            "status": "FAIL",
+            "detail": "the surface shows each working lane's `status`, and w1-kit reads 'done' \u2014 outside the lane vocabulary the contract fixes (['working', 'quiet', 'silent']); 1 working lane(s) carry no evidence to open: ['w1-kit']",
+            "words_shown": {
+              "done": 1
+            },
+            "field_shown": "status",
+            "reported_words_shown": {},
+            "reported_field_shown": "outcome",
+            "lanes_faulted": [
+              "w1-kit"
+            ],
+            "reported_faulted": [],
+            "without_evidence": [
+              "w1-kit"
+            ],
+            "in_both_lists": []
+          },
+          {
+            "rule": "9",
+            "clause": 9,
+            "id": "watch_session_reaches_the_worker",
+            "name": "Watch session opens that worker session's live view, on every lane offered one",
+            "status": "FAIL",
+            "detail": "no lane offers Watch session, so the bottom rung of the ladder cannot be reached"
+          },
+          {
+            "rule": "10",
+            "clause": 10,
+            "id": "feedback_in_whatever_form_is_to_hand",
+            "name": "feedback can be dropped in seconds, in every form this body claims",
+            "status": "FAIL",
+            "detail": "feedback can be dropped in no form at all"
+          },
+          {
+            "rule": "11",
+            "clause": 11,
+            "id": "steering_sets_limits_and_assigns_nothing",
+            "name": "steering offers exactly the five limits and no way to assign work",
+            "status": "FAIL",
+            "detail": "steering offers ['objective'] and no way to set budget, lane count, fill the lanes, have the manager review this",
+            "offered": [
+              "objective"
+            ],
+            "missing": [
+              "budget",
+              "lane count",
+              "fill the lanes",
+              "have the manager review this"
+            ]
+          },
+          {
+            "rule": "12",
+            "clause": 12,
+            "id": "stopping_is_never_a_board_button",
+            "name": "no control on the board stops work by moving it",
+            "status": "FAIL",
+            "detail": "controls on the board stop work: button#stopLaneButton: 'Stop this lane'",
+            "controls": [
+              "button#stopLaneButton: 'Stop this lane'"
+            ]
+          },
+          {
+            "rule": "13",
+            "clause": 13,
+            "id": "every_manager_listed_and_tell_all",
+            "name": "every manager session is listed, sorted by which needs you, and one message reaches all",
+            "status": "FAIL",
+            "detail": "the list is not sorted by which manager session needs you; there is no way to tell them all at once, so several projects must be visited in turn",
+            "managers": 1
+          }
+        ],
+        "summary": {
+          "pass": 0,
+          "fail": 15,
+          "skip": 0
+        },
+        "verdict": "FAIL",
+        "write_routes": [
+          "/api/managers/{mid}/decision",
+          "/api/managers/{mid}/feedback",
+          "/api/managers/{mid}/steer",
+          "/login"
+        ]
+      }
+    },
+    {
+      "kind": "self_test",
+      "kit": "experience-operation",
+      "exit_code": 0,
+      "stdout": "  ok    test_a_function_is_read_from_its_definition_not_its_import\n  ok    test_a_list_nobody_judges_is_a_place_to_hide_a_lane\n  ok    test_a_reported_lane_is_judged_like_a_working_one\n  ok    test_a_wave_title_that_repeats_its_lane_names_is_not_a_reason\n  ok    test_a_well_formed_reported_lane_is_accepted\n  ok    test_a_word_in_a_message_is_not_a_write\n  ok    test_duplicate_id_within_a_single_list_fails\n  ok    test_empty_subject_is_skip_not_pass_or_fail\n  ok    test_every_core_clause_has_a_row\n  ok    test_every_rule_has_a_negative_fixture\n  ok    test_every_skip_says_why\n  ok    test_malformed_collections_fail_not_skip_not_except\n  ok    test_missing_operation_payload_is_still_fail\n  ok    test_no_skip_still_claims_the_app_is_unbuilt\n  ok    test_rule_ids_match_the_readme_table\n  ok    test_sample_bad_fails\n  ok    test_sample_good_passes\n  ok    test_skip_set_is_pinned\n  ok    test_the_lane_vocabulary_is_the_contracts_not_the_kits\n  ok    test_the_report_shape_is_the_shared_one\n  ok    test_the_work_vocabulary_is_the_contracts_not_the_kits\n  ok    test_valid_empty_still_skips\n\n0 failure(s)\n",
+      "stderr": ""
+    },
+    {
+      "kind": "fixture",
+      "kit": "experience-console",
+      "sample": "sample-good",
+      "exit_code": 0,
+      "report": {
+        "kit": "experience-console.v1",
+        "contract": "contracts/experience-console.v1.md",
+        "target": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-console/fixtures/sample-good",
+        "target_kind": "snapshot",
+        "manager": "m1",
+        "routes_read": 12,
+        "check": "static \u2014 read from what the app served (shell, API payloads, client assets, its own route table); no browser is launched",
+        "results": [
+          {
+            "rule": "1",
+            "clause": 1,
+            "id": "a_pane_beside_the_places_not_a_third_place",
+            "name": "the console is a pane beside Direction and Operation, never a third place",
+            "status": "PASS",
+            "detail": "the console is a pane beside the two places (['direction', 'operation']) and the place switch neither lists it nor disturbs it",
+            "places": [
+              "direction",
+              "operation"
+            ]
+          },
+          {
+            "rule": "2",
+            "clause": 2,
+            "id": "it_carries_the_session_as_it_already_runs",
+            "name": "the pane embeds the live manager session through the tmux connector",
+            "status": "PASS",
+            "detail": "the pane embeds the manager session as it already runs (hw:example) through the connector at ['/api/tmux/{socket}/{session}', '/api/tmux/{socket}/{session}/keys']",
+            "connector_routes": [
+              "/api/tmux/{socket}/{session}",
+              "/api/tmux/{socket}/{session}/keys"
+            ],
+            "session": "hw:example"
+          },
+          {
+            "rule": "3",
+            "clause": 3,
+            "id": "what_you_type_is_what_the_session_receives",
+            "name": "one console, one manager session \u2014 and it IS that session",
+            "status": "PASS",
+            "detail": "the console takes input and a route carries it to the session (['/api/tmux/{socket}/{session}/keys']); that the line arrives is a live round trip beyond this kit",
+            "send_routes": [
+              "/api/tmux/{socket}/{session}/keys"
+            ]
+          },
+          {
+            "rule": "4",
+            "clause": 4,
+            "id": "a_pane_when_wide_a_tray_when_small",
+            "name": "wide screen: a resizable pane; small screen: a sliding tray",
+            "status": "PASS",
+            "detail": "a resizable pane on a wide screen and a dismissible sliding tray at a small one, read from the stylesheet's own rules",
+            "tray": true,
+            "dismissible": true,
+            "resizable": true
+          },
+          {
+            "rule": "5",
+            "clause": 5,
+            "id": "watch_session_reuses_this_pane",
+            "name": "watching a lane opens here, and leaving returns the manager conversation",
+            "status": "PASS",
+            "detail": "watching a lane opens in this pane, and leaving it puts the manager conversation back where it stood"
+          },
+          {
+            "rule": "6",
+            "clause": 6,
+            "id": "the_console_is_never_the_dashboard",
+            "name": "nothing in Operation requires reading the console to make sense",
+            "status": "PASS",
+            "detail": "Operation is understood on its own terms (the plan, the lanes, the return brief, the flow, confidence), and nothing sends the reader to the console",
+            "operation_shows": [
+              "the plan",
+              "the lanes",
+              "the return brief",
+              "the flow",
+              "confidence"
+            ]
+          },
+          {
+            "rule": "7",
+            "clause": 7,
+            "id": "nothing_needing_your_word_arrives_only_here",
+            "name": "every decision reaches you through the short list, not only through the console",
+            "status": "PASS",
+            "detail": "what needs your word arrives through the short list and ['/api/needs/{mid}'], never only through the console",
+            "needs_routes": [
+              "/api/needs/{mid}"
+            ]
+          },
+          {
+            "rule": "8",
+            "clause": 8,
+            "id": "the_console_never_ratifies",
+            "name": "a word typed here is a message, never a ratification",
+            "status": "PASS",
+            "detail": "the console's submit reaches no ratification write and offers none of the answer words \u2014 a word typed here is a message"
+          },
+          {
+            "rule": "9",
+            "clause": 9,
+            "id": "not_a_native_chat_in_v1",
+            "name": "it is not a native chat in V1, and the app says so",
+            "status": "PASS",
+            "detail": "the app says so in its own words ('not a chat') and nothing is built to depend on the console being a native chat"
+          },
+          {
+            "rule": "10",
+            "clause": 10,
+            "id": "one_managers_own_work_and_nothing_else",
+            "name": "it shows one manager session's own work and reaches nothing else",
+            "status": "PASS",
+            "detail": "the console reaches only this manager session's own targets (3), and no route enumerates anything else",
+            "own_targets": 3
+          }
+        ],
+        "summary": {
+          "pass": 10,
+          "fail": 0,
+          "skip": 0
+        },
+        "verdict": "PASS",
+        "write_routes": [
+          "/api/managers/{mid}/ask",
+          "/api/managers/{mid}/decision",
+          "/api/managers/{mid}/docs/{repo}/{doc}/changes/{change}/restore",
+          "/api/managers/{mid}/docs/{repo}/{doc}/save",
+          "/api/managers/{mid}/feedback",
+          "/api/managers/{mid}/priority",
+          "/api/managers/{mid}/steer",
+          "/api/tmux/{socket}/{session}/keys",
+          "/login"
+        ]
+      }
+    },
+    {
+      "kind": "fixture",
+      "kit": "experience-console",
+      "sample": "sample-bad",
+      "exit_code": 1,
+      "report": {
+        "kit": "experience-console.v1",
+        "contract": "contracts/experience-console.v1.md",
+        "target": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-console/fixtures/sample-bad",
+        "target_kind": "snapshot",
+        "manager": "m1",
+        "routes_read": 12,
+        "check": "static \u2014 read from what the app served (shell, API payloads, client assets, its own route table); no browser is launched",
+        "results": [
+          {
+            "rule": "1",
+            "clause": 1,
+            "id": "a_pane_beside_the_places_not_a_third_place",
+            "name": "the console is a pane beside Direction and Operation, never a third place",
+            "status": "FAIL",
+            "detail": "the place switch offers ['direction', 'operation', 'console'] \u2014 the console is a third place when it appears here (['console']); the place switch offers 3 places, not two; the place-switch renderer touches the console's open state or its body, so switching does not leave it as it was",
+            "places": [
+              "direction",
+              "operation",
+              "console"
+            ]
+          },
+          {
+            "rule": "2",
+            "clause": 2,
+            "id": "it_carries_the_session_as_it_already_runs",
+            "name": "the pane embeds the live manager session through the tmux connector",
+            "status": "FAIL",
+            "detail": "the manager session names no live terminal session for the pane to carry; the console never attaches to a session",
+            "connector_routes": [
+              "/api/tmux/sessions",
+              "/api/tmux/{socket}/{session}"
+            ]
+          },
+          {
+            "rule": "3",
+            "clause": 3,
+            "id": "what_you_type_is_what_the_session_receives",
+            "name": "one console, one manager session \u2014 and it IS that session",
+            "status": "FAIL",
+            "detail": "the console's input is disabled (['input#consoleInput']); its send control is disabled (['button']); the app answers no route that carries a keystroke to the session, so there is no path for a typed line to arrive \u2014 the pane shows the session but is not it. Whether a line ARRIVES is a live round trip this kit does not attempt; it judges only whether a path exists at all",
+            "send_routes": []
+          },
+          {
+            "rule": "4",
+            "clause": 4,
+            "id": "a_pane_when_wide_a_tray_when_small",
+            "name": "wide screen: a resizable pane; small screen: a sliding tray",
+            "status": "FAIL",
+            "detail": "no stylesheet rule turns the console into a tray at a small width; nothing dismisses it, so it cannot get out of the way on demand; no rule or control makes the pane resizable on a wide screen \u2014 the shape may follow the platform, but the behaviour does not change. Read from the stylesheet's rules; a rendered layout at two widths is not judged here",
+            "tray": false,
+            "dismissible": false,
+            "resizable": false
+          },
+          {
+            "rule": "5",
+            "clause": 5,
+            "id": "watch_session_reuses_this_pane",
+            "name": "watching a lane opens here, and leaving returns the manager conversation",
+            "status": "FAIL",
+            "detail": "nothing watches a lane, so the pane cannot be reused for it"
+          },
+          {
+            "rule": "6",
+            "clause": 6,
+            "id": "the_console_is_never_the_dashboard",
+            "name": "nothing in Operation requires reading the console to make sense",
+            "status": "FAIL",
+            "detail": "Operation sends the reader to the console to make sense of it: 'Open the console'"
+          },
+          {
+            "rule": "7",
+            "clause": 7,
+            "id": "nothing_needing_your_word_arrives_only_here",
+            "name": "every decision reaches you through the short list, not only through the console",
+            "status": "FAIL",
+            "detail": "the shell has no short list of what needs your word; the app answers no route listing what needs your word; a decision is offered inside the console (['button', 'button']), so a steward who never opens it would miss one",
+            "needs_routes": []
+          },
+          {
+            "rule": "8",
+            "clause": 8,
+            "id": "the_console_never_ratifies",
+            "name": "a word typed here is a message, never a ratification",
+            "status": "FAIL",
+            "detail": "the console offers the answer words themselves (['ratified', 'declined'])"
+          },
+          {
+            "rule": "9",
+            "clause": 9,
+            "id": "not_a_native_chat_in_v1",
+            "name": "it is not a native chat in V1, and the app says so",
+            "status": "FAIL",
+            "detail": "the app never says the console is not a conversation in this version, so a steward is left to discover it by typing"
+          },
+          {
+            "rule": "10",
+            "clause": 10,
+            "id": "one_managers_own_work_and_nothing_else",
+            "name": "it shows one manager session's own work and reaches nothing else",
+            "status": "FAIL",
+            "detail": "the app answers ['/api/tmux/sessions'], which enumerates every terminal session on a socket \u2014 the machine's other sessions, checkouts and queues are reachable merely because they exist. The client itself calls it: False. The console pane shows only this manager's own targets (1 of them), so the defect is the reach, not the display",
+            "enumerating_routes": [
+              "/api/tmux/sessions"
+            ],
+            "client_calls_it": false,
+            "own_targets": 1
+          }
+        ],
+        "summary": {
+          "pass": 0,
+          "fail": 10,
+          "skip": 0
+        },
+        "verdict": "FAIL",
+        "write_routes": [
+          "/api/managers/{mid}/decision",
+          "/api/managers/{mid}/feedback",
+          "/api/managers/{mid}/steer",
+          "/login"
+        ]
+      }
+    },
+    {
+      "kind": "self_test",
+      "kit": "experience-console",
+      "exit_code": 0,
+      "stdout": "  ok    test_a_live_round_trip_is_never_claimed\n  ok    test_a_word_in_a_message_is_not_a_write\n  ok    test_every_core_clause_has_a_row\n  ok    test_every_rule_has_a_negative_fixture\n  ok    test_every_skip_says_why\n  ok    test_no_skip_still_claims_the_app_is_unbuilt\n  ok    test_rule_4_reads_the_stylesheet_and_says_so\n  ok    test_rule_4_skips_rather_than_fails_when_no_stylesheet_was_served\n  ok    test_rule_ids_match_the_readme_table\n  ok    test_sample_bad_fails\n  ok    test_sample_good_passes\n  ok    test_skip_set_is_pinned\n  ok    test_the_report_shape_is_the_shared_one\n\n0 failure(s)\n",
+      "stderr": ""
+    },
+    {
+      "kind": "fixture",
+      "kit": "experience-collaboration",
+      "sample": "sample-good",
+      "exit_code": 0,
+      "report": {
+        "kit": "experience-collaboration.v1",
+        "contract": "contracts/experience-collaboration.v1.md",
+        "target": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-collaboration/fixtures/sample-good",
+        "target_kind": "snapshot",
+        "manager": "m1",
+        "routes_read": 6,
+        "check": "static \u2014 read from what the app served (shell, API payloads, client assets, its own route table); no browser is launched",
+        "results": [
+          {
+            "rule": "1",
+            "clause": 1,
+            "id": "git_is_the_protocol",
+            "name": "collaboration happens through the shared repository host, and the write path is git",
+            "status": "PASS",
+            "detail": "every write reaches the shared repository through git and nothing else; what the host then does with it is the host's own business",
+            "repository": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-collaboration/fixtures/sample-good/repo"
+          },
+          {
+            "rule": "2",
+            "clause": 2,
+            "id": "no_manager_talks_to_another_manager",
+            "name": "manager sessions never talk to each other directly",
+            "status": "PASS",
+            "detail": "no route among the 7 this app declares addresses a second manager session, and the app's own source names no peer, no federation and no other manager as a destination",
+            "routes_read": 7
+          },
+          {
+            "rule": "3",
+            "clause": 3,
+            "id": "three_origins_one_review",
+            "name": "a proposal is shown identically whoever it came from",
+            "status": "PASS",
+            "detail": "one review path lays out every proposal, and the origin is a value it renders rather than a branch it takes",
+            "review_renderers": 1
+          },
+          {
+            "rule": "4a",
+            "clause": 4,
+            "id": "the_pull_request_bridge_exists",
+            "name": "a question asked in Converge can reach the host as a comment",
+            "status": "PASS",
+            "detail": "a path to the host's own comments exists (routes: ['/api/managers/{mid}/pulls/{number}/comments']; code: ['a call that posts a comment']); whether a comment actually lands is beyond a static read",
+            "comment_routes": [
+              "/api/managers/{mid}/pulls/{number}/comments"
+            ],
+            "markers": [
+              "a call that posts a comment"
+            ]
+          },
+          {
+            "rule": "4b",
+            "clause": 4,
+            "id": "the_reply_comes_back_attributed",
+            "name": "the reply arrives back inside the same review, attributed",
+            "status": "SKIP",
+            "detail": "a comment written by a teammate on a real repository host, arriving back inside the review with their name on it, cannot be produced by any file in this tree. Settling it needs a live host and a second party on it \u2014 the app's own declared routes can only show whether a bridge exists at all, which is rule 4a.",
+            "reason": "a comment written by a teammate on a real repository host, arriving back inside the review with their name on it, cannot be produced by any file in this tree. Settling it needs a live host and a second party on it \u2014 the app's own declared routes can only show whether a bridge exists at all, which is rule 4a."
+          },
+          {
+            "rule": "5a",
+            "clause": 5,
+            "id": "the_answer_lands_in_the_dated_record",
+            "name": "your answer is written to the dated ratification record",
+            "status": "PASS",
+            "detail": "the answer write names the dated ratification record, and 1 record(s) exist (docs/workflow/owner-ratifications-2026-09-03.md)",
+            "records": [
+              "docs/workflow/owner-ratifications-2026-09-03.md"
+            ]
+          },
+          {
+            "rule": "5b",
+            "clause": 5,
+            "id": "the_answer_returns_to_its_origin",
+            "name": "your answer is posted back where the proposal came from",
+            "status": "PASS",
+            "detail": "a path posts the steward's word back to the origin (['a call that posts the answer back', 'the origin addressed as a destination']); that it arrives in the steward's own words is beyond a static read",
+            "post_back_markers": [
+              "a call that posts the answer back",
+              "the origin addressed as a destination"
+            ]
+          },
+          {
+            "rule": "6a",
+            "clause": 6,
+            "id": "inbound_changes_arrive_without_asking",
+            "name": "inbound changes arrive without the steward asking for them",
+            "status": "PASS",
+            "detail": "an inbound change arrives without the steward asking, by ['a webhook the host calls']",
+            "mechanisms": [
+              "a webhook the host calls"
+            ]
+          },
+          {
+            "rule": "6b",
+            "clause": 6,
+            "id": "the_fallback_is_named_not_assumed",
+            "name": "the freshness mechanism is named in plain words",
+            "status": "PASS",
+            "detail": "the surface names how it stays fresh in plain words ('webhook')",
+            "mechanisms": [
+              "a webhook the host calls"
+            ]
+          },
+          {
+            "rule": "7",
+            "clause": 7,
+            "id": "the_manager_session_is_not_in_the_hot_path",
+            "name": "a write goes to the repository directly, not through the manager session",
+            "status": "PASS",
+            "detail": "no write reaches the manager session: the write path runs git and never sends a keystroke to a terminal session or opens a socket",
+            "processes_started": [
+              "git"
+            ]
+          },
+          {
+            "rule": "8a",
+            "clause": 8,
+            "id": "one_steward_per_manager_session",
+            "name": "whose word counts is settled when the session is registered",
+            "status": "PASS",
+            "detail": "1 manager session(s) each name exactly one steward, settled at registration",
+            "stewards": [
+              "m1"
+            ]
+          },
+          {
+            "rule": "8b",
+            "clause": 8,
+            "id": "no_second_persons_word_is_recorded",
+            "name": "no second person's word is written to the ratification record",
+            "status": "SKIP",
+            "detail": "whether a second person's word ever reached the ratification record needs two people answering on one manager session. This target has one signed-in reader and no way to be two; what IS checkable \u2014 that whose word counts is settled at registration rather than inferred from whoever is looking \u2014 is rule 8a.",
+            "reason": "whether a second person's word ever reached the ratification record needs two people answering on one manager session. This target has one signed-in reader and no way to be two; what IS checkable \u2014 that whose word counts is settled at registration rather than inferred from whoever is looking \u2014 is rule 8a."
+          },
+          {
+            "rule": "9",
+            "clause": 9,
+            "id": "a_ratification_is_an_ordinary_repository_change",
+            "name": "the word is recorded and the text it ratifies is committed, the ordinary way",
+            "status": "PASS",
+            "detail": "a ratification is an ordinary repository change: the word is recorded, the text is committed, and a proposal is a sibling `*-candidate.md` file (1 in the repository now)",
+            "candidates": [
+              "contracts/experience.v2-candidate.md"
+            ]
+          },
+          {
+            "rule": "10",
+            "clause": 10,
+            "id": "no_second_collaboration_surface",
+            "name": "Converge adds no second issue tracker, document store or review tool",
+            "status": "PASS",
+            "detail": "none of the 7 routes this app declares is an issue tracker, a document store or a review tool of its own; a comment relayed to the host is rule 4a's bridge, not a surface kept here",
+            "routes_read": 7
+          }
+        ],
+        "summary": {
+          "pass": 12,
+          "fail": 0,
+          "skip": 2
+        },
+        "verdict": "PASS",
+        "repository": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-collaboration/fixtures/sample-good/repo",
+        "repository_kind": "snapshot",
+        "write_routes": [
+          "/api/managers/{mid}/decision",
+          "/api/managers/{mid}/pulls/{number}/comments",
+          "/login",
+          "/webhooks/host"
+        ]
+      }
+    },
+    {
+      "kind": "fixture",
+      "kit": "experience-collaboration",
+      "sample": "sample-bad",
+      "exit_code": 1,
+      "report": {
+        "kit": "experience-collaboration.v1",
+        "contract": "contracts/experience-collaboration.v1.md",
+        "target": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-collaboration/fixtures/sample-bad",
+        "target_kind": "snapshot",
+        "manager": "m1",
+        "routes_read": 6,
+        "check": "static \u2014 read from what the app served (shell, API payloads, client assets, its own route table); no browser is launched",
+        "results": [
+          {
+            "rule": "1",
+            "clause": 1,
+            "id": "git_is_the_protocol",
+            "name": "collaboration happens through the shared repository host, and the write path is git",
+            "status": "FAIL",
+            "detail": "the write path never runs git, so a change made here does not reach the shared repository the way every other participant's does \u2014 Converge would be replacing the flow rather than rendering it",
+            "repository": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-collaboration/fixtures/sample-bad/repo"
+          },
+          {
+            "rule": "2",
+            "clause": 2,
+            "id": "no_manager_talks_to_another_manager",
+            "name": "manager sessions never talk to each other directly",
+            "status": "FAIL",
+            "detail": "this body offers a way for one manager session to reach another \u2014 routes: ['/api/managers/{mid}/peers/{other}'] \u2014 in the app's own source: ['a peer manager session', 'another manager session as a destination']. Two stewards both running Converge must still meet as Converge \u00b7 host \u00b7 Converge, or a teammate on plain tooling stops being a first-class participant.",
+            "peer_routes": [
+              "/api/managers/{mid}/peers/{other}"
+            ],
+            "peer_markers": [
+              "a peer manager session",
+              "another manager session as a destination"
+            ]
+          },
+          {
+            "rule": "3",
+            "clause": 3,
+            "id": "three_origins_one_review",
+            "name": "a proposal is shown identically whoever it came from",
+            "status": "FAIL",
+            "detail": "the origin is never rendered as a value, so a reader is not told where a proposal came from at all; the layout branches on the origin ('if (proposal.origin ==='), which is a different experience per origin",
+            "review_renderers": 1
+          },
+          {
+            "rule": "4a",
+            "clause": 4,
+            "id": "the_pull_request_bridge_exists",
+            "name": "a question asked in Converge can reach the host as a comment",
+            "status": "FAIL",
+            "detail": "nothing in this body can carry a question to the host as a comment: no route the app declares addresses a pull request or its comments, and no code path posts one. A steward asking a question here has to leave and say it somewhere else, which is the copying between tools this clause exists to stop.",
+            "comment_routes": []
+          },
+          {
+            "rule": "4b",
+            "clause": 4,
+            "id": "the_reply_comes_back_attributed",
+            "name": "the reply arrives back inside the same review, attributed",
+            "status": "SKIP",
+            "detail": "a comment written by a teammate on a real repository host, arriving back inside the review with their name on it, cannot be produced by any file in this tree. Settling it needs a live host and a second party on it \u2014 the app's own declared routes can only show whether a bridge exists at all, which is rule 4a.",
+            "reason": "a comment written by a teammate on a real repository host, arriving back inside the review with their name on it, cannot be produced by any file in this tree. Settling it needs a live host and a second party on it \u2014 the app's own declared routes can only show whether a bridge exists at all, which is rule 4a."
+          },
+          {
+            "rule": "5a",
+            "clause": 5,
+            "id": "the_answer_lands_in_the_dated_record",
+            "name": "your answer is written to the dated ratification record",
+            "status": "FAIL",
+            "detail": "the app's write path never names the dated ratification record; the repository holds no dated ratification record",
+            "repository": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-collaboration/fixtures/sample-bad/repo"
+          },
+          {
+            "rule": "5b",
+            "clause": 5,
+            "id": "the_answer_returns_to_its_origin",
+            "name": "your answer is posted back where the proposal came from",
+            "status": "FAIL",
+            "detail": "the steward's word is recorded but nothing posts it back where the proposal came from \u2014 and there is no bridge to post it through either (see rule 4a). A teammate who proposed on the host learns the answer only if someone copies it there by hand, which is the judgment-copying this clause forbids.",
+            "post_back_markers": []
+          },
+          {
+            "rule": "6a",
+            "clause": 6,
+            "id": "inbound_changes_arrive_without_asking",
+            "name": "inbound changes arrive without the steward asking for them",
+            "status": "FAIL",
+            "detail": "nothing brings an inbound change in on its own: the app declares no webhook route, opens no live stream, and runs no timer that reloads the project's own data. Freshness is the steward's job in this body \u2014 they find out by reloading.",
+            "mechanisms": []
+          },
+          {
+            "rule": "6b",
+            "clause": 6,
+            "id": "the_fallback_is_named_not_assumed",
+            "name": "the freshness mechanism is named in plain words",
+            "status": "FAIL",
+            "detail": "nothing on the surface says how this body stays fresh \u2014 not \"checked every N minutes\", not \"webhook\", not \"polling\". The clause asks for the fallback to be named rather than assumed, and a steward reading this app cannot tell whether it is current. This follows from rule 6a: there is no mechanism to name \u2014 a derived failure, not a second one.",
+            "mechanisms": []
+          },
+          {
+            "rule": "7",
+            "clause": 7,
+            "id": "the_manager_session_is_not_in_the_hot_path",
+            "name": "a write goes to the repository directly, not through the manager session",
+            "status": "FAIL",
+            "detail": "a write reaches ['a terminal session'] on its way to the repository, so the steward's action waits on a session rather than landing directly. The manager session is meant to learn of a write as an event and fold it into its next turn.",
+            "reaching": [
+              "a terminal session"
+            ]
+          },
+          {
+            "rule": "8a",
+            "clause": 8,
+            "id": "one_steward_per_manager_session",
+            "name": "whose word counts is settled when the session is registered",
+            "status": "FAIL",
+            "detail": "no manager session names a steward, so whose word counts is inferred from whoever is looking (this target answers as 'a-reader'). The clause asks for it to be settled when the session is registered \u2014 everyone else is a teammate, whose proposals get the same reading and none of the authority.",
+            "managers": [
+              "m1"
+            ],
+            "signed_in_as": "a-reader"
+          },
+          {
+            "rule": "8b",
+            "clause": 8,
+            "id": "no_second_persons_word_is_recorded",
+            "name": "no second person's word is written to the ratification record",
+            "status": "SKIP",
+            "detail": "whether a second person's word ever reached the ratification record needs two people answering on one manager session. This target has one signed-in reader and no way to be two; what IS checkable \u2014 that whose word counts is settled at registration rather than inferred from whoever is looking \u2014 is rule 8a.",
+            "reason": "whether a second person's word ever reached the ratification record needs two people answering on one manager session. This target has one signed-in reader and no way to be two; what IS checkable \u2014 that whose word counts is settled at registration rather than inferred from whoever is looking \u2014 is rule 8a."
+          },
+          {
+            "rule": "9",
+            "clause": 9,
+            "id": "a_ratification_is_an_ordinary_repository_change",
+            "name": "the word is recorded and the text it ratifies is committed, the ordinary way",
+            "status": "FAIL",
+            "detail": "the write path never commits, so the text a word ratifies is not carried into the record everybody already reads; the write path never produces the repository's own proposal shape (`<document>.vN-candidate.md` beside the document), so a locked document has no ordinary way to be proposed against; the word itself is never recorded in the repository",
+            "repository": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-collaboration/fixtures/sample-bad/repo"
+          },
+          {
+            "rule": "10",
+            "clause": 10,
+            "id": "no_second_collaboration_surface",
+            "name": "Converge adds no second issue tracker, document store or review tool",
+            "status": "FAIL",
+            "detail": "the app answers ['/api/issues'] \u2014 a second collaboration surface of its own. What a teammate needs to see is meant to be visible on the host, in the host's own terms; a tracker here is one more place they cannot reach.",
+            "routes": [
+              "/api/issues"
+            ]
+          }
+        ],
+        "summary": {
+          "pass": 0,
+          "fail": 12,
+          "skip": 2
+        },
+        "verdict": "FAIL",
+        "repository": "/workspace/cloudflare-artifacts-studio/docs/reference/converge/source/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-collaboration/fixtures/sample-bad/repo",
+        "repository_kind": "snapshot",
+        "write_routes": [
+          "/api/issues",
+          "/api/managers/{mid}/decision",
+          "/api/managers/{mid}/peers/{other}",
+          "/login"
+        ]
+      }
+    },
+    {
+      "kind": "self_test",
+      "kit": "experience-collaboration",
+      "exit_code": 0,
+      "stdout": "  ok    test_a_derived_failure_names_the_rule_it_follows_from\n  ok    test_a_drafting_subprocess_is_not_the_manager_session_in_the_hot_path\n  ok    test_a_missing_repository_half_skips_rather_than_guesses\n  ok    test_a_relayed_comment_is_not_a_second_surface\n  ok    test_a_route_only_rule_says_it_read_the_route_table_alone\n  ok    test_a_skip_names_the_second_party_it_needs\n  ok    test_a_word_in_a_comment_is_not_a_channel\n  ok    test_every_core_clause_has_a_row\n  ok    test_every_rule_has_a_negative_fixture\n  ok    test_every_skip_says_why\n  ok    test_no_skip_still_claims_the_app_is_unbuilt\n  ok    test_reaching_the_host_is_not_reaching_another_manager\n  ok    test_rule_ids_match_the_readme_table\n  ok    test_sample_bad_fails\n  ok    test_sample_good_passes\n  ok    test_skip_set_is_pinned\n  ok    test_the_report_shape_is_the_shared_one\n\n0 failure(s)\n",
+      "stderr": ""
+    }
+  ]
+}

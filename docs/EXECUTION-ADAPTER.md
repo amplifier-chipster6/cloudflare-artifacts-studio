@@ -4,9 +4,9 @@ Status: proposed Unified/Converge adapter. The current [Python bridge](../bridge
 
 ## Recommendation on Converge
 
-Converge is a suitable **development workflow candidate** because its protocol organizes bounded work, worker coordination, contract checks, candidate construction, and review. It does not replace Artifacts, memory, OS isolation, or delivery authorization.
+Converge is a candidate **product and workflow foundation**: it ships a Python web app with Home, Direction, Operation, a manager console, document proposals/history and Git-host collaboration, as well as its development method. These functions overlap the proposed Studio UX and record responsibilities. The earlier description as only a development-workflow candidate was incomplete. Consult the [pinned source wiki](reference/converge/README.md) and [reuse assessment](reference/converge/STUDIO-REUSE-AND-GAPS.md) before extending this adapter or creating another surface.
 
-The reviewed root bundle is lean and exposes six helper agents. The manager workflow depends on actual behavior/work-tracker activation, four Converge workflow agents, mode support, and five declared skills. Inspect the pinned composition rather than assuming the root bundle alone activates everything. Collaborative guidance is a separate entrypoint; helper availability is not a live manager/worker demonstration.
+Its root includes lean Anchors (six helpers), work-tracker behavior and Converge behavior (four workflow agents, guard, awareness and manager-mode declaration). Five procedure skills mount with the manager mode. Actual host loading and separate worker execution still require qualification. The newer collaborative profile ships portable instructions for external domain/runtime tools; it does not implement those tools or replace the Python app backend here. Artifacts, memory integration, OS isolation and delivery policy still need explicit seams.
 
 ## Project-local composition
 

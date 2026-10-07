@@ -8,3 +8,4 @@ src/schema.mjs
 __pycache__/
 bridge/config.json
 .superpowers/
+docs/reference/converge/source/

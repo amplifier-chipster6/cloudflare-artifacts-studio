@@ -2,6 +2,8 @@
 
 Status: proposed target, 2026-10-06. Current behavior: [DESIGN](DESIGN.md). Decisions are [proposed ADRs](adr/README.md); boundaries are [contracts](CONTRACTS-README.md).
 
+**Review gate, 2026-10-07:** this proposal did not account adequately for Converge's shipped web app or its external collaborative record/runtime seams. The [source reference](reference/converge/README.md) and [reuse assessment](reference/converge/STUDIO-REUSE-AND-GAPS.md) now identify that overlap. The Studio surface and authority allocations below remain provisional until that decision is resolved; this reference work does not authorize duplicate implementation or silently amend the draft contracts.
+
 ## Components and durable authority
 
 The Studio UI/API is the project control surface. Artifacts Git repositories are the proposed authoritative durable store for authored project, milestone, task, criterion, assignment, context manifest, contribution, candidate, verification, review, delivery, journal, and handoff records. Artifacts also supplies source baselines and isolated agent repositories.

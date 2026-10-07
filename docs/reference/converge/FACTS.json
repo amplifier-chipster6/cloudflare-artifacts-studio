@@ -1,0 +1,1172 @@
+{
+  "repository": "microsoft/amplifier-bundle-converge",
+  "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+  "review_date": "2026-10-07",
+  "review_timezone": "Etc/UTC",
+  "purpose": "Pinned factual source reference; not canonical project records or newly ratified architecture",
+  "facts": [
+    {
+      "id": "REF-CVG-001",
+      "evidence_class": "source",
+      "claim": "The repository ships a Python companion web app as well as the Converge bundle.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "README.md",
+          "line": 184,
+          "end_line": 222,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/README.md#L184",
+          "excerpt_end_line": 191,
+          "excerpt": "### Run the app\n\nThe manager session works whether or not you watch it. The app is where you\nwatch it \u2014 the two places above, read from your own repository. From a checkout\nof this repository, one command:\n\n```\nscripts/run-app.sh",
+          "source_blob_sha": "82194834be9e12a1fc2bf9c455ff2f0c2561adb0",
+          "source_content_sha256": "c175108efcdf13ba4f616a69ff6de1b3a848a42a1e098421a2f748baa5698cd9"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-002",
+      "evidence_class": "contract",
+      "claim": "The experience anchor is a manager session and the two main places are Direction and Operation.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "contracts/experience.v1.md",
+          "line": 17,
+          "end_line": 27,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/contracts/experience.v1.md#L17",
+          "excerpt_end_line": 24,
+          "excerpt": "1. **The anchor is a manager session, not a repository.** One manager session\n   may register several repositories and several work queues. Home is the list\n   of manager sessions you run, sorted by which one needs you \u2014 how many things\n   want your word, lanes running against lanes intended, the last brief line,\n   quiet or silent.\n2. **Two places, and only two.** *Direction* \u2014 the vision and contracts as one\n   experience. *Operation* \u2014 the manager session at work as one experience.\n   Conversation is a modality, not a place.",
+          "source_blob_sha": "a73efaa55592fd319bfbc5f8eead4cfa5f2d2e48",
+          "source_content_sha256": "81873dfd0fa98e8c855874723018e2b5a8f12548c32919bc89e2c9c7edb99560"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-003",
+      "evidence_class": "contract",
+      "claim": "The umbrella names five conceptual writes; it does not enumerate five literal HTTP endpoints.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "contracts/experience.v1.md",
+          "line": 28,
+          "end_line": 44,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/contracts/experience.v1.md#L28",
+          "excerpt_end_line": 35,
+          "excerpt": "4. **Exactly five writes.** Answer with a word (ratified \u00b7 ratified with edits \u00b7\n   declined \u00b7 later) \u00b7 raise or lower a priority \u00b7 drop feedback \u00b7 steer \u00b7 ask\n   for a proposal. Nothing else, in any body, writes anything.\n5. **At most five things ask for your word at once,** re-ranked each refresh.\n   Several small calls may arrive as one ratification sheet answered in a pass;\n   every answer lands in a dated ratification record.\n6. **Plain state words everywhere.** Contracts: *Kept \u00b7 Not yet \u00b7 Broken \u00b7\n   Pinned open \u00b7 Can't check*. Work: *Truly ready \u00b7 Waiting on you \u00b7 Working \u00b7",
+          "source_blob_sha": "a73efaa55592fd319bfbc5f8eead4cfa5f2d2e48",
+          "source_content_sha256": "81873dfd0fa98e8c855874723018e2b5a8f12548c32919bc89e2c9c7edb99560"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-004",
+      "evidence_class": "contract",
+      "claim": "Project truth stays with its sources; personal reading is kept per person outside the repository.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "contracts/experience.v1.md",
+          "line": 37,
+          "end_line": 44,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/contracts/experience.v1.md#L37",
+          "excerpt_end_line": 44,
+          "excerpt": "7. **The app holds no copy of the project's truth.** It shows the project's\n   documents, code record, work queue, lanes, return log, and pending\n   decisions, and keeps none of them; a second copy of the truth is a defect,\n   not a cache. Your own reading \u2014 where you have read to, what you are\n   keeping \u2014 is yours, kept per person outside the repository.\n8. **Whatever you can do here, the manager session can do too.** Every write\n   names a manager-session operation that does the same thing, so nothing the\n   project needs is reachable only by a person at a screen.",
+          "source_blob_sha": "a73efaa55592fd319bfbc5f8eead4cfa5f2d2e48",
+          "source_content_sha256": "81873dfd0fa98e8c855874723018e2b5a8f12548c32919bc89e2c9c7edb99560"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-005",
+      "evidence_class": "source",
+      "claim": "Root composition includes Anchors, work-tracker behavior and Converge behavior.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "bundle.md",
+          "line": 16,
+          "end_line": 36,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/bundle.md#L16",
+          "excerpt_end_line": 23,
+          "excerpt": "includes:\n  # The LEAN BASE (composition.v1 Core 1). `anchors` carries the session block,\n  # the everyday tool roster, delegate/skills/recipes, and six thin agents\n  # (explorer, builder, git-ops, architect, debugger, researcher). Converge's\n  # recipe steps use only these. The heavy full-foundation package is NOT\n  # included: sessions stay fast and cheap.\n  - bundle: git+https://github.com/microsoft/amplifier-foundation@main#subdirectory=bundles/anchors/bundle.md\n  # Work-tracker BEHAVIOR \u2014 supplies converge:reconciler's work_list/work_add/",
+          "source_blob_sha": "61475b7b3f596ba738a04d1e99f939a00397c244",
+          "source_content_sha256": "6dc72f0aacc3d98857b238ff8566916865477487294483c772c6596b0d9f2f3f"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-006",
+      "evidence_class": "source",
+      "claim": "Converge supplies four workflow agents through its behavior.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "behaviors/converge.yaml",
+          "line": 136,
+          "end_line": 145,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/behaviors/converge.yaml#L136",
+          "excerpt_end_line": 143,
+          "excerpt": "agents:\n  # Compose converge's four agents into coordinator.config[\"agents\"]. Without an\n  # agents: block the agents are DISCOVERABLE (`amplifier agents show`) but never\n  # COMPOSED, so recipe execution fails \"Agent 'converge:reconciler' not found in\n  # configuration\". Discovery != composition (live-verified, DTU increment 1).\n  include:\n    - converge:reconciler\n    - converge:protocol-authority",
+          "source_blob_sha": "d76648c702fc1f782740dbc3131812103b28ff53",
+          "source_content_sha256": "44c19901ec5c07534f0f6260d82b243cc9880010110e35a3f874d1ae63f4fa14"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-007",
+      "evidence_class": "source",
+      "claim": "Manager mode contributes five procedure skills when active.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "modes/converge-manager.md",
+          "line": 20,
+          "end_line": 55,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/modes/converge-manager.md#L20",
+          "excerpt_end_line": 27,
+          "excerpt": "  contributes:\n    # The five procedure skills. They are MID-OPERATION procedures \u2014 write a\n    # lane brief, propose a change to a locked contract, decide whether a\n    # surface warrants a contract, give a ledger row its verdict, judge a lock\n    # bar \u2014 so the only session that ever reaches for one is a manager session,\n    # and that is this mode. Contributed here rather than registered always-on\n    # (the `tools: - module: tool-skills` block this replaced in\n    # `behaviors/converge.yaml`), they cost a host session zero tokens in the",
+          "source_blob_sha": "a9e4e326decfdba2dfed527d80f52027d56879bd",
+          "source_content_sha256": "abfaf2abf30b84e0ad037f3045defa28fb938f87151db560227f74f2ea8fdee5"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-008",
+      "evidence_class": "source",
+      "claim": "There is no root session-wide spawn exclusion policy; role restrictions are behavioral.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "bundle.md",
+          "line": 38,
+          "end_line": 56,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/bundle.md#L38",
+          "excerpt_end_line": 45,
+          "excerpt": "# NO top-level `spawn:` block \u2014 deliberately (composition.v1 Core 6, measured\n# 2026-09-02). A composed bundle's `spawn.exclude_tools` applies to EVERY spawned\n# sub-agent in EVERY session it composes into \u2014 including via `--app` (live probe:\n# an unrelated session's own helper lost bash/delegate/load_skill; the removal\n# control restored a byte-identical baseline). That blast radius is unacceptable\n# for a composable surface. The agents' \"no delegate / no skills / no shell\" rules\n# are BEHAVIORAL (their body instructions + explicit tools: blocks); the\n# candidate-guard hook remains the structural enforcement that matters. Do NOT",
+          "source_blob_sha": "61475b7b3f596ba738a04d1e99f939a00397c244",
+          "source_content_sha256": "6dc72f0aacc3d98857b238ff8566916865477487294483c772c6596b0d9f2f3f"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-009",
+      "evidence_class": "source",
+      "claim": "The recipe is schema 2 with declared helper dependencies, including Converge behavior at v0.1.0.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "recipes/seed-reconcile.yaml",
+          "line": 368,
+          "end_line": 388,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/recipes/seed-reconcile.yaml#L368",
+          "excerpt_end_line": 375,
+          "excerpt": "schema_version: 2\n\ndependencies:\n  - source: \"git+https://github.com/microsoft/amplifier-foundation@main#subdirectory=bundles/anchors/bundle.md\"\n    kind: bundle\n    required_agents:\n      - \"anchors:explorer\"\n  - source: \"git+https://github.com/microsoft/amplifier-bundle-converge@v0.1.0#subdirectory=behaviors/converge.yaml\"",
+          "source_blob_sha": "b2f5eab1665ccd47eab3117f6262ed7b6c33de83",
+          "source_content_sha256": "f5f500444970ead949899cb3fc4b1505eb4693ca991c258d64275ec122b64e71"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-010",
+      "evidence_class": "source",
+      "claim": "Root package requires Python >=3.11 and its app extra declares OS-adjacent application dependencies.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "pyproject.toml",
+          "line": 1,
+          "end_line": 40,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/pyproject.toml#L1",
+          "excerpt_end_line": 8,
+          "excerpt": "[project]\nname = \"amplifier-converge\"\nversion = \"0.1.0\"\ndescription = \"Amplifier Converge: vision-first, contract-driven development \u2014 the library beside the app (readers, writers, ledger checks)\"\nreadme = \"README.md\"\nrequires-python = \">=3.11\"\nlicense = { file = \"LICENSE\" }\n# `click` is a BASE dependency, not an `app`-extra one: it is what",
+          "source_blob_sha": "9ad55dd1747942b5f9aa38dce9d3fce15f060e14",
+          "source_content_sha256": "906b8e0543ad718030b929f24ee7538cde5e43c0c6c786e374bfa1294422dc12"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-011",
+      "evidence_class": "source",
+      "claim": "Current package CLI has start, doctor and register commands.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "src/amplifier_converge/cli.py",
+          "line": 32,
+          "end_line": 93,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/src/amplifier_converge/cli.py#L32",
+          "excerpt_end_line": 39,
+          "excerpt": "@cli.command(context_settings={\"ignore_unknown_options\": True})\n@click.option(\n    \"--host\",\n    default=None,\n    help=\"Bind address (default: every interface; pass 127.0.0.1 for the SSH-tunnel case)\",\n)\n@click.option(\"--port\", default=None, type=int, help=\"Port (default: 8788)\")\n@click.option(\"--config\", default=None, help=\"Path to converge-app.toml\")",
+          "source_blob_sha": "eddd1ddec75352b736b97cdc1fe4ddb386d6f028",
+          "source_content_sha256": "ea39ee6168ad1ee029426ee80717bf9439cacc0d0f4feae7d7f1ecd286a3303d"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-012",
+      "evidence_class": "source",
+      "claim": "Default proposal drafter is fixture; agent drafting is explicitly opt-in.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/serve.py",
+          "line": 102,
+          "end_line": 107,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/serve.py#L102",
+          "excerpt_end_line": 107,
+          "excerpt": "#: Who drafts the wording an ask proposes. `agent` runs a headless Amplifier\n#: session per ask; anything else writes the proposal from the steward's own\n#: words with no session at all, which is what the tests run and what an ask\n#: falls back to when a session fails. Off by default: a route that shells out\n#: to a minutes-long session on every call should be asked for, not assumed.\nASK_DRAFTER = os.environ.get(\"CONVERGE_ASK_DRAFTER\", \"fixture\").strip().lower()",
+          "source_blob_sha": "917046be8c352649fc6c9181a006be21e5d967db",
+          "source_content_sha256": "0606762b9e5de9c04f0b7c1259b1f2ca96dec03b60ea5096ae7338e58c356b8c"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-013",
+      "evidence_class": "source",
+      "claim": "Agent drafting invokes a headless Amplifier subprocess with timeout and failure fallback.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/writes.py",
+          "line": 550,
+          "end_line": 590,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/writes.py#L550",
+          "excerpt_end_line": 557,
+          "excerpt": "def draft_with_amplifier(\n    prompt: str,\n    *,\n    cwd: Path,\n    timeout: float = DRAFT_TIMEOUT,\n) -> tuple[str, str]:\n    \"\"\"Ask a headless Amplifier session for the wording, and say what happened.\n",
+          "source_blob_sha": "a9608d059e1b1f732591271d649595bdbb05eb89",
+          "source_content_sha256": "6afc5ef77bbfe185025d1549c0dfe48561878ea0b6c2203deb189c691c17a514"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-014",
+      "evidence_class": "source",
+      "claim": "Decision recording appends a dated ratification record and returns its location; it does not apply or merge a candidate.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/writes.py",
+          "line": 85,
+          "end_line": 121,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/writes.py#L85",
+          "excerpt_end_line": 92,
+          "excerpt": "def record_decision(\n    repo: Path,\n    *,\n    repo_id: str,\n    doc_id: str,\n    proposal_id: str,\n    decision: str,\n    note: str = \"\",",
+          "source_blob_sha": "a9608d059e1b1f732591271d649595bdbb05eb89",
+          "source_content_sha256": "6afc5ef77bbfe185025d1549c0dfe48561878ea0b6c2203deb189c691c17a514"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-015",
+      "evidence_class": "source",
+      "claim": "Priority appends an attributed HIGHWAY request; queueNumberUntouched is true.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/writes.py",
+          "line": 202,
+          "end_line": 272,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/writes.py#L202",
+          "excerpt_end_line": 209,
+          "excerpt": "def record_priority(\n    batch_dir: Path,\n    *,\n    item: str,\n    direction: str,\n    note: str = \"\",\n    title: str = \"\",\n    user: str = \"\",",
+          "source_blob_sha": "a9608d059e1b1f732591271d649595bdbb05eb89",
+          "source_content_sha256": "6afc5ef77bbfe185025d1549c0dfe48561878ea0b6c2203deb189c691c17a514"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-016",
+      "evidence_class": "source",
+      "claim": "Steer writes requested width and logs intent; the manager acts on it.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/writes.py",
+          "line": 275,
+          "end_line": 327,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/writes.py#L275",
+          "excerpt_end_line": 282,
+          "excerpt": "def steer(\n    batch_dir: Path,\n    *,\n    objective: str = \"\",\n    lanes: int | None = None,\n    fill: bool = False,\n    note: str = \"\",\n    user: str = \"\",",
+          "source_blob_sha": "a9608d059e1b1f732591271d649595bdbb05eb89",
+          "source_content_sha256": "6afc5ef77bbfe185025d1549c0dfe48561878ea0b6c2203deb189c691c17a514"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-017",
+      "evidence_class": "source",
+      "claim": "Asking writes a candidate and reports the target document unchanged.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/writes.py",
+          "line": 717,
+          "end_line": 834,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/writes.py#L717",
+          "excerpt_end_line": 724,
+          "excerpt": "def record_ask(\n    repo: Path,\n    path: Path,\n    *,\n    scope: str,\n    text: str,\n    section: str = \"\",\n    documents: list[Path] | tuple[Path, ...] = (),",
+          "source_blob_sha": "a9608d059e1b1f732591271d649595bdbb05eb89",
+          "source_content_sha256": "6afc5ef77bbfe185025d1549c0dfe48561878ea0b6c2203deb189c691c17a514"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-018",
+      "evidence_class": "source",
+      "claim": "Locked edits create candidates; clean draft edits attempt a path-scoped commit and restore bytes if it fails.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/writes.py",
+          "line": 837,
+          "end_line": 942,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/writes.py#L837",
+          "excerpt_end_line": 844,
+          "excerpt": "def apply_change(\n    repo: Path,\n    path: Path,\n    *,\n    change: dict,\n    text: str,\n    action: str = \"edit\",\n    user: str = \"\",",
+          "source_blob_sha": "a9608d059e1b1f732591271d649595bdbb05eb89",
+          "source_content_sha256": "6afc5ef77bbfe185025d1549c0dfe48561878ea0b6c2203deb189c691c17a514"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-019",
+      "evidence_class": "source",
+      "claim": "Locking counts at least four submitted nonempty condition strings, commits H1/changelog, then writes a separate ratification entry.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/writes.py",
+          "line": 1073,
+          "end_line": 1203,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/writes.py#L1073",
+          "excerpt_end_line": 1080,
+          "excerpt": "    when = when or _now()\n    repo, path = Path(repo), Path(path)\n    rel = path.relative_to(repo).as_posix()\n    answered = [str(one).strip() for one in conditions if str(one).strip()]\n\n    lock = document_lock(path)\n    if lock:\n        return {",
+          "source_blob_sha": "a9608d059e1b1f732591271d649595bdbb05eb89",
+          "source_content_sha256": "6afc5ef77bbfe185025d1549c0dfe48561878ea0b6c2203deb189c691c17a514"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-020",
+      "evidence_class": "source",
+      "claim": "A session cookie needs a user and sid; signature validity alone does not establish non-revocation.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/auth.py",
+          "line": 185,
+          "end_line": 225,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/auth.py#L185",
+          "excerpt_end_line": 192,
+          "excerpt": "class Sessions:\n    \"\"\"Signs and reads the session cookie. One per running app.\"\"\"\n\n    secret: str\n\n    def __post_init__(self) -> None:\n        self._signer = URLSafeTimedSerializer(self.secret, salt=_SALT)\n",
+          "source_blob_sha": "1ba104b9846b143713af1ac90aced28ecc5ab717",
+          "source_content_sha256": "a66359fad7d79656f261944966f665f411741d0552902b707ad4822f7d072981"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-021",
+      "evidence_class": "source",
+      "claim": "Missing origin headers or missing CSRF sides are accepted; supplied mismatches are rejected.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/auth.py",
+          "line": 395,
+          "end_line": 425,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/auth.py#L395",
+          "excerpt_end_line": 402,
+          "excerpt": "def same_origin(scheme: str, netloc: str, origin: str | None, referer: str | None) -> bool:\n    \"\"\"Origin (or, absent, Referer) names this same scheme+host -- or neither\n    header was sent at all, which is not treated as a mismatch (see the\n    module docstring for why).\n    \"\"\"\n    want = f\"{scheme}://{netloc}\"\n    if origin:\n        return origin.rstrip(\"/\") == want",
+          "source_blob_sha": "1ba104b9846b143713af1ac90aced28ecc5ab717",
+          "source_content_sha256": "a66359fad7d79656f261944966f665f411741d0552902b707ad4822f7d072981"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-022",
+      "evidence_class": "source",
+      "claim": "Terminal writes check the manager's registered steward in middleware.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/serve.py",
+          "line": 395,
+          "end_line": 418,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/serve.py#L395",
+          "excerpt_end_line": 402,
+          "excerpt": "        # A terminal keystroke is a write like decision/priority/steer, and\n        # was missed here between lane ownerships (converge-e2c3): being\n        # signed in proved who is asking, never that they may type into\n        # this manager's own console -- only its registered steward may.\n        if request.method == \"POST\":\n            tmux_target = _tmux_keys_target(path)\n            if tmux_target is not None:\n                tmux_socket, tmux_session = tmux_target",
+          "source_blob_sha": "917046be8c352649fc6c9181a006be21e5d967db",
+          "source_content_sha256": "0606762b9e5de9c04f0b7c1259b1f2ca96dec03b60ea5096ae7338e58c356b8c"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-023",
+      "evidence_class": "source",
+      "claim": "Terminal GET takes socket/session path inputs; its handler reads a frame without its own registered-manager check.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/tmux_view.py",
+          "line": 487,
+          "end_line": 521,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/tmux_view.py#L487",
+          "excerpt_end_line": 494,
+          "excerpt": "router = APIRouter(prefix=\"/api/tmux\", tags=[\"tmux\"])\n\n\nclass KeysIn(BaseModel):\n    \"\"\"One line, or one keystroke, on its way to a pinned pane.\"\"\"\n\n    keys: str = Field(\"\", description=\"Literal text; every character is sent as its own code point.\")\n    enter: bool = Field(False, description=\"Also send Return after the text.\")",
+          "source_blob_sha": "0aac7670128653624ba7045ddf989971cf18206e",
+          "source_content_sha256": "04a721047272a0b8df2d3b12a880fb1c219caa093682c8c22d505cc8281c085b"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-024",
+      "evidence_class": "source",
+      "claim": "The normal CLI/server main always starts HTTPS with generated/retained local TLS material.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/serve.py",
+          "line": 1178,
+          "end_line": 1211,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/serve.py#L1178",
+          "excerpt_end_line": 1185,
+          "excerpt": "    # HTTPS is mandatory -- there is no flag to fall back to plain HTTP.\n    # `--host 127.0.0.1` (the SSH-tunnel case) still gets a certificate,\n    # because \"loopback\" is a fact about the socket, not a promise that\n    # nothing else on this machine can reach it.\n    cert_paths = tls.ensure(tls_dir=tls_dir, extra_host=args.host)\n    made = create_app(\n        Path(args.config) if args.config else None,\n        state_path=Path(args.state) if args.state else None,",
+          "source_blob_sha": "917046be8c352649fc6c9181a006be21e5d967db",
+          "source_content_sha256": "0606762b9e5de9c04f0b7c1259b1f2ca96dec03b60ea5096ae7338e58c356b8c"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-025",
+      "evidence_class": "source",
+      "claim": "Discovery reads workspace registration files; manager config holds explicit steward and console identity.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/config.py",
+          "line": 58,
+          "end_line": 136,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/config.py#L58",
+          "excerpt_end_line": 65,
+          "excerpt": "class ManagerConfig:\n    \"\"\"One manager session: the batch it runs, the repos it steers.\"\"\"\n\n    id: str\n    name: str\n    batch_dir: Path | None = None\n    repos: tuple[Path, ...] = ()\n    tracker_project: str = \"\"",
+          "source_blob_sha": "f72e5739a84aece83e87692e8a528028e84df1ae",
+          "source_content_sha256": "0cd051cf016c990623be0969995fc35d9d5f9671cb1662e171279f5ab34499ba"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-026",
+      "evidence_class": "source",
+      "claim": "App document discovery currently selects docs/VISION.md and contracts/*.v1.md.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/data.py",
+          "line": 616,
+          "end_line": 628,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/data.py#L616",
+          "excerpt_end_line": 623,
+          "excerpt": "def repo_docs(repo: Path) -> list[Path]:\n    \"\"\"The documents a steward steers by: the vision and the contracts.\"\"\"\n    found: list[Path] = []\n    vision = Path(repo) / \"docs\" / \"VISION.md\"\n    if vision.is_file():\n        found.append(vision)\n    contracts = Path(repo) / \"contracts\"\n    if contracts.is_dir():",
+          "source_blob_sha": "2c11d1a3cac7f9f5942804804982356725cd0553",
+          "source_content_sha256": "6d602e206b37ba74db80cf641fbc6514ab33bed9633ed276f2f3c637e4b18cae"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-027",
+      "evidence_class": "source",
+      "claim": "The Markdown renderer enables tables, disables raw HTML, and falls back to escaped preformatted text.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/data.py",
+          "line": 140,
+          "end_line": 148,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/data.py#L140",
+          "excerpt_end_line": 147,
+          "excerpt": "def render_markdown(text: str) -> str:\n    \"\"\"Markdown to HTML, server-side, with fenced code kept.\"\"\"\n    try:\n        from markdown_it import MarkdownIt\n\n        return MarkdownIt(\"commonmark\", {\"html\": False}).enable(\"table\").render(text or \"\")\n    except Exception:\n        escaped = (text or \"\").replace(\"&\", \"&amp;\").replace(\"<\", \"&lt;\").replace(\">\", \"&gt;\")",
+          "source_blob_sha": "2c11d1a3cac7f9f5942804804982356725cd0553",
+          "source_content_sha256": "6d602e206b37ba74db80cf641fbc6514ab33bed9633ed276f2f3c637e4b18cae"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-028",
+      "evidence_class": "source",
+      "claim": "Document payload combines raw/rendered reading, lock and standing, changes, proposals and history.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/data.py",
+          "line": 1550,
+          "end_line": 1593,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/data.py#L1550",
+          "excerpt_end_line": 1557,
+          "excerpt": "def doc_payload(repo: Path, path: Path, *, since: str = \"\", kept: set[str] | None = None) -> dict:\n    \"\"\"One document as a screen reads it, from that steward's own last reading.\n\n    `since` is the commit this steward has already read up to and `kept` the\n    changes they have already answered for. Both are the caller's to supply,\n    because both belong to a person rather than to the document.\n    \"\"\"\n    from . import changes as change_reading",
+          "source_blob_sha": "2c11d1a3cac7f9f5942804804982356725cd0553",
+          "source_content_sha256": "6d602e206b37ba74db80cf641fbc6514ab33bed9633ed276f2f3c637e4b18cae"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-029",
+      "evidence_class": "source",
+      "claim": "App repository ID is a basename; collaboration has a canonical-path-derived key and refuses ambiguity.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/collab.py",
+          "line": 457,
+          "end_line": 506,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/collab.py#L457",
+          "excerpt_end_line": 464,
+          "excerpt": "def _repo_key(repo) -> str:\n    \"\"\"A collaboration-identity key unique to THIS repository, across the\n    whole manager session -- not just within one bare name.\n\n    converge-xet9: `data.repo_id` is `Path(repo).name`, so two configured\n    repositories that happen to share a basename (``/a/repo`` and\n    ``/b/repo``) answer to the SAME identifier -- both list every pull\n    request under ``repo::pull-<n>``, and a request naming that identifier",
+          "source_blob_sha": "c2278092013cb2f19e1afeee28c46146fd4f8ef9",
+          "source_content_sha256": "19352da265b1428b884c042fd7d67967b7f13fd547c3bb2d17e3abb1830b9ad9"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-030",
+      "evidence_class": "source",
+      "claim": "Pull-request answering records a local decision then posts a host comment, reporting both separately.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/collab.py",
+          "line": 595,
+          "end_line": 668,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/collab.py#L595",
+          "excerpt_end_line": 602,
+          "excerpt": "async def answer_a_pull(mid: str, number: int, request: Request) -> JSONResponse:\n    \"\"\"The steward's word: into the dated record, and back to its origin.\n\n    Both halves of clause 5, in one action, and each reported separately so a\n    host that refuses the comment never makes the record look unwritten.\n\n    converge-0zmv: `experience-collaboration.v1` Core 8 reserves *whose word\n    counts* -- ratification, the authority to answer a proposal -- to the",
+          "source_blob_sha": "c2278092013cb2f19e1afeee28c46146fd4f8ef9",
+          "source_content_sha256": "19352da265b1428b884c042fd7d67967b7f13fd547c3bb2d17e3abb1830b9ad9"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-031",
+      "evidence_class": "source",
+      "claim": "Cookie-exempt webhook checks a custom x-converge-secret and records an arrival hint.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/collab.py",
+          "line": 671,
+          "end_line": 698,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/collab.py#L671",
+          "excerpt_end_line": 678,
+          "excerpt": "@router.post(\"/webhooks/host\")\nasync def host_called(request: Request) -> JSONResponse:\n    \"\"\"The door the host knocks on when something changed.\n\n    It is checked against a shared secret so anything that reaches this route\n    still has to prove it is the host. When no secret file exists the route\n    refuses rather than trusting the caller.\n    \"\"\"",
+          "source_blob_sha": "c2278092013cb2f19e1afeee28c46146fd4f8ef9",
+          "source_content_sha256": "19352da265b1428b884c042fd7d67967b7f13fd547c3bb2d17e3abb1830b9ad9"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-032",
+      "evidence_class": "source",
+      "claim": "Git-host frontend polling interval is 60 seconds.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/static/js/render/collab.js",
+          "line": 1,
+          "end_line": 27,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/static/js/render/collab.js#L1",
+          "excerpt_end_line": 8,
+          "excerpt": "// The host half of collaboration, drawn.\n//\n// `contracts/experience-collaboration.v1.md`:\n//\n//  * clause 3 -- a pull request is laid out with the same anatomy every other\n//    proposal gets: what changes, why, the evidence, what does not change, and\n//    the same four words to answer with. Where it came from is printed as a\n//    fact about the proposal (`source`), never a different screen. The server",
+          "source_blob_sha": "07e4be423c38c18c798c8873c8297fa483a1b0cb",
+          "source_content_sha256": "513ad38e3b0dd6435627b4b8e244e68dcd8bd6b597a8fddf69f89ea86a468e95"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-033",
+      "evidence_class": "source",
+      "claim": "PWA uses dated read copies, refuses offline writes and does not replay terminal/login responses as stale cache.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/static/sw.js",
+          "line": 1,
+          "end_line": 38,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/static/sw.js#L1",
+          "excerpt_end_line": 8,
+          "excerpt": "// Converge service worker \u2014 the small helper `platform-web.v1` \u00a710 names.\n//\n// Three rules that matter:\n//\n//   1. /login and /logout are NEVER cached \u2014 an auth surface must not be\n//      replayed. Signing out empties everything this worker kept, so the next\n//      person at this browser reads nothing of the last person's.\n//",
+          "source_blob_sha": "a8eabd12d20318e39f00aaa5bea22ae39dd4af92",
+          "source_content_sha256": "51b0a7e88358b5e75a78f432eed88e24034ea8e4adcf202273693c91e72ced42"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-034",
+      "evidence_class": "source",
+      "claim": "Personal reading state, auth revocation and in-memory presence are separate stores.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/serve.py",
+          "line": 220,
+          "end_line": 252,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/serve.py#L220",
+          "excerpt_end_line": 227,
+          "excerpt": "    instance_dir = Path(instance_dir) if instance_dir else None\n    namespace = auth.instance_namespace(instance_dir)\n    app.state.session_cookie, app.state.csrf_cookie = auth.cookie_names(namespace)\n    resolved_secret_path = (\n        Path(secret_path) if secret_path else (instance_dir / \"secret\" if instance_dir else None)\n    )\n    app.state.sessions = auth.Sessions(auth.read_or_make_secret(resolved_secret_path))\n    # A logout ends THIS session, not merely this browser's copy of the",
+          "source_blob_sha": "917046be8c352649fc6c9181a006be21e5d967db",
+          "source_content_sha256": "0606762b9e5de9c04f0b7c1259b1f2ca96dec03b60ea5096ae7338e58c356b8c"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-035",
+      "evidence_class": "source",
+      "claim": "The source library can return a dated cached managers reading when the tracker is missing/slow.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "src/amplifier_converge/reading/queue.py",
+          "line": 143,
+          "end_line": 185,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/src/amplifier_converge/reading/queue.py#L143",
+          "excerpt_end_line": 150,
+          "excerpt": "def read_managers(repo: Path, timeout: float = 12.0) -> Reading[list[QueueSummary]]:\n    \"\"\"Every manager session you run \u2014 one per project the queue knows about.\n\n    This is the answer to a measured failure: one incident hand-carried into\n    four sessions in fourteen minutes. Seeing them all in one place is the\n    point, so a slow answer is cached rather than dropped.\n    \"\"\"\n    repo = Path(repo)",
+          "source_blob_sha": "df39e8c75e572216724c050de35a969ddb9337c8",
+          "source_content_sha256": "ad7a4be2df637193c88e29b6f4bc2aeaee3896380cc8ec0e42a79134a52116db"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-036",
+      "evidence_class": "contract",
+      "claim": "Collaboration uses the shared Git host and excludes manager federation and a second collaboration surface.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "contracts/experience-collaboration.v1.md",
+          "line": 26,
+          "end_line": 61,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/contracts/experience-collaboration.v1.md#L26",
+          "excerpt_end_line": 33,
+          "excerpt": "1. **Git is the protocol; Converge is the lens.** `(REQUIRED)` Collaboration\n   between people happens through the shared repository host \u2014 commits, pull\n   requests, and their comments. Converge renders that flow; it never replaces\n   it.\n2. **Manager sessions never talk to each other directly.** `(EXCLUDED)` Two\n   stewards both running Converge still meet as Converge \u00b7 host \u00b7 Converge, and\n   neither manager session knows the other exists. That is what keeps a teammate\n   on plain tooling a first-class participant, and keeps the seam between two",
+          "source_blob_sha": "8af0a1a50057553a3357cfe6b826d00f85e4058e",
+          "source_content_sha256": "d76c8e6c61edb1e81d07b10c99c85906fab405d40532e01bb40fa30884e23bbf"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-037",
+      "evidence_class": "source",
+      "claim": "The portable instruction package is text-only and does not implement a runtime or tools.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "packages/collaborative/README.md",
+          "line": 1,
+          "end_line": 19,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/packages/collaborative/README.md#L1",
+          "excerpt_end_line": 8,
+          "excerpt": "# Collaborative instruction resources\n\nThis text-only package owns portable Converge collaboration, manager and supervisor instructions.\nIt has no runtime, tool, host dependency, process, store or command entrypoint.\n\n```python\nfrom converge_instructions import instruction\n",
+          "source_blob_sha": "e16b65224ffce49188ce324253aa961ed2a9afe8",
+          "source_content_sha256": "53fbe988f214e6a34c1a5f43024ce2ad14230ba78a63658ef8b0aa4c7a30eceb"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-038",
+      "evidence_class": "source",
+      "claim": "The portable instruction package version is 0.4.25 with Python >=3.12.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "packages/collaborative/pyproject.toml",
+          "line": 5,
+          "end_line": 18,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/packages/collaborative/pyproject.toml#L5",
+          "excerpt_end_line": 12,
+          "excerpt": "[project]\nname = \"amplifier-converge-instructions\"\nversion = \"0.4.25\"\ndescription = \"Converge collaborative supervisor and manager instruction resources\"\nreadme = \"README.md\"\nrequires-python = \">=3.12\"\nlicense = { file = \"LICENSE\" }\n",
+          "source_blob_sha": "74ef85bfc2d1224a528e90c78d4352b8e9a57ce9",
+          "source_content_sha256": "559103efa294051d3ba374ae33f27c2751e0cbed1805a901292b539eea86f11a"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-039",
+      "evidence_class": "source",
+      "claim": "The instruction loader returns shared collaboration and selected manager/supervisor text; it does not resolve recursive mentions.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "packages/collaborative/src/converge_instructions/__init__.py",
+          "line": 1,
+          "end_line": 19,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/packages/collaborative/src/converge_instructions/__init__.py#L1",
+          "excerpt_end_line": 8,
+          "excerpt": "\"\"\"Portable text resources; composing them does not start or configure a runtime.\"\"\"\n\nfrom importlib.resources import files\n\n\ndef instruction(role: str) -> str:\n    \"\"\"Return the shared collaboration guidance and one role's instructions.\n",
+          "source_blob_sha": "fe8181f16038d719fcf055577436b87504a47257",
+          "source_content_sha256": "39b9359df5220bf4b7797c3f9548de642846e2341f2fb13034baaba70788ffed"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-040",
+      "evidence_class": "documented_profile",
+      "claim": "Collaborative action implementations belong to external runtime/domain owners; installed schemas and readiness are authority.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "packages/collaborative/METHOD-PROTOCOL.md",
+          "line": 105,
+          "end_line": 146,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/packages/collaborative/METHOD-PROTOCOL.md#L105",
+          "excerpt_end_line": 112,
+          "excerpt": "## Implementation seams and authority\n\nThe supervisor calls installed `converge_operations`; the manager calls its\nproject-bound `converge_project` wrapper. Both use public records, stable exact\nretry receipts and current revisions. The manager cannot change its own\nlifecycle. Product implementation uses the lane workflow, while bounded\nin-session helpers are limited to investigation, protocol, queue reading or\nwatching; they are not canonical lanes.",
+          "source_blob_sha": "042f15bac1147507e45e651903e2bb94c8a0c8e5",
+          "source_content_sha256": "3fae7c7fa077d0d580d28796e17b5ae7d808e25fd72ea18e4a314c233fa0e8e1"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-041",
+      "evidence_class": "documented_profile",
+      "claim": "Retained manager adoption uses exact instruction digest migration and preserves native history.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "packages/collaborative/METHOD-PROTOCOL.md",
+          "line": 202,
+          "end_line": 219,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/packages/collaborative/METHOD-PROTOCOL.md#L202",
+          "excerpt_end_line": 209,
+          "excerpt": "## Instruction transition and proof boundary\n\nThe old and new package versions are immutable source pins. A live manager must\nbe observed idle, then upgraded through an explicit migration from its exact\nsaved instruction digest to the new digest, retaining its native session ID.\nThe digest covers the full runtime instruction, including project suffixes; a\nhash of this resource alone is not the per-session migration key. Runtime\nconfiguration checks remain in force. Readiness must report the actual new",
+          "source_blob_sha": "042f15bac1147507e45e651903e2bb94c8a0c8e5",
+          "source_content_sha256": "3fae7c7fa077d0d580d28796e17b5ae7d808e25fd72ea18e4a314c233fa0e8e1"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-042",
+      "evidence_class": "source",
+      "claim": "Optional supervisor observation needs an explicit public-read adapter and does not launch servers or mutate projects.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "modules/hooks-supervisor-entry/README.md",
+          "line": 1,
+          "end_line": 38,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/modules/hooks-supervisor-entry/README.md#L1",
+          "excerpt_end_line": 8,
+          "excerpt": "# Optional supervisor entry context\n\nThis module supplies a small, dated public project observation before a root\nsupervisor's first tool choice on each prompt. It addresses operation Core 3/7\nand composition Core 6: the customer should not have to find the manager, and\nobserved records must not become invented readiness or authority.\n\nIt is **opt-in** through `behaviors/supervisor-entry.yaml`. Existing root,",
+          "source_blob_sha": "3570119b09c46bf03f928936b6902e4f658326eb",
+          "source_content_sha256": "11d4eeb1200ff0f6c3387a2584602c768e66997240fdb62a37c18c0ecba01038"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-043",
+      "evidence_class": "source",
+      "claim": "Supervisor observation has configured read/deadline/context limits and conservative root-session scope.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "modules/hooks-supervisor-entry/README.md",
+          "line": 47,
+          "end_line": 81,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/modules/hooks-supervisor-entry/README.md#L47",
+          "excerpt_end_line": 54,
+          "excerpt": "## Bounds and scope\n\nThe total deadline defaults to two seconds, configurable with `deadline_seconds`\nup to five. Each observation permits at most 20 reads, two inventory pages of\nthree projects, four pages per record, 128 KiB per domain response and 6,000 bytes\nof context. A cold transport may exhaust this allowance; it reports uncertainty,\nnot absence. These are safety bounds, not measured live performance promises.\n",
+          "source_blob_sha": "3570119b09c46bf03f928936b6902e4f658326eb",
+          "source_content_sha256": "11d4eeb1200ff0f6c3387a2584602c768e66997240fdb62a37c18c0ecba01038"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-044",
+      "evidence_class": "source",
+      "claim": "Candidate guard has documented shell/mount/inheritance coverage limits; it is not OS isolation.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "modules/hooks-candidate-guard/README.md",
+          "line": 452,
+          "end_line": 490,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/modules/hooks-candidate-guard/README.md#L452",
+          "excerpt_end_line": 459,
+          "excerpt": "## Known gaps (documented, not silently assumed away)\n\n- **bash non-coverage.** Variable-constructed paths, `python -c`/`perl -e`\n  writers, `base64 | sh`, and other obfuscation are **not** detected. The\n  bundle's own sanctioned contract-writers use `write_file`/`edit_file`/\n  `apply_patch`, never bash \u2014 the residual blast radius is a rogue agent\n  hand-crafting an obfuscated bash write. Defense-in-depth backstop: a\n  target-repo git `pre-commit` hook rejecting commits that modify a FROZEN",
+          "source_blob_sha": "5e199b62aaa3b7417c8b254bdbca879e5bd0620b",
+          "source_content_sha256": "2bc1621c82bcbc0e82060269f62fea72886d074ebdf8b2824eb2c03266cebbca"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-045",
+      "evidence_class": "source",
+      "claim": "Ratified candidate escape is target-scoped and already-landed candidates are spent; emergency unlock is off by default.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "modules/hooks-candidate-guard/README.md",
+          "line": 492,
+          "end_line": 520,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/modules/hooks-candidate-guard/README.md#L492",
+          "excerpt_end_line": 499,
+          "excerpt": "## Escape hatch \u2014 how a RATIFIED amendment lands\n\n**Primary: ratified-proposal detection.** When a write targets a guarded\nfile, the handler looks for a sibling proposal under **either** name \u2014\n`<contract>.vN-candidate.md` or `CANDIDATE-*.md` (glob `candidate_glob`) \u2014\nthat (i) declares the guarded path via a `target:` line, and (ii) carries the\nowner's ratified stamp matching `ratified_stamp_regex` (default: a line\nstarting `ratified` or `ratified as edited`, containing `by owner`). If found,",
+          "source_blob_sha": "5e199b62aaa3b7417c8b254bdbca879e5bd0620b",
+          "source_content_sha256": "2bc1621c82bcbc0e82060269f62fea72886d074ebdf8b2824eb2c03266cebbca"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-046",
+      "evidence_class": "source",
+      "claim": "The ledger is a draft convention with stable clause IDs, quotes, assertions and a contract hash synchronization row.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "docs/LEDGER-FORMAT.md",
+          "line": 1,
+          "end_line": 95,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/docs/LEDGER-FORMAT.md#L1",
+          "excerpt_end_line": 8,
+          "excerpt": "# Conformance Ledger \u2014 Starter Format\n\n**Status:** DRAFT convention \u2014 deliberately **not** a contract.\n**Promotion trigger (named):** the moment a *second* repo adopts this format,\nor the first real cross-repo ledger query is needed, this crosses the seam\ntest (\"if this changed silently, who breaks?\"). At that point: author\n`ledger-format.v1.md` in the shared contracts repo and lock it once it meets the\nfour conditions (`docs/PROTOCOL.md` \u00a75). Until then, adopting repos may deviate",
+          "source_blob_sha": "59a2edd62ac7222e6805751d8092481fa7754b06",
+          "source_content_sha256": "2ca5b6d3bcac476b5be70f8c7c15760ade3329cf66c99c52046c5217d7f62eab"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-047",
+      "evidence_class": "source",
+      "claim": "Five contracts are frozen; nine remain drafts, including three held loosely.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "PINS.md",
+          "line": 45,
+          "end_line": 54,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/PINS.md#L45",
+          "excerpt_end_line": 52,
+          "excerpt": "- A locked contract carries `(FROZEN <date>)` in its first heading line; a draft\n  carries `(DRAFT)`. Status appears nowhere else in the file.\n- Five contracts are locked, all on 2026-09-06: `composition.v1`,\n  `experience-direction.v1`, `experience-operation.v1`, `experience-console.v1`,\n  `experience-collaboration.v1`. `docs/VISION.md` is locked the same day. Never\n  edit one of those six in place \u2014 write a proposal beside it.\n- The other nine contracts are `(DRAFT)`. Three of them are *held loosely*: they\n  meet the four conditions and the steward chose to leave them open while the",
+          "source_blob_sha": "89d06be3d29775631bd9d4ac147ffaa855cc4de3",
+          "source_content_sha256": "1ba8514369419209e460bb063c05c18d85c1df8be3ab07751a97b348e0ca8859"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-048",
+      "evidence_class": "source",
+      "claim": "The actual protocol document is ratified v3.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "docs/PROTOCOL.md",
+          "line": 1,
+          "end_line": 6,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/docs/PROTOCOL.md#L1",
+          "excerpt_end_line": 6,
+          "excerpt": "# Vision-First, Contract-Driven Development \u2014 Protocol v3 (RATIFIED 2026-09-03)\n\n**Who this is for:** the intent steward who sets direction; the manager\nsession that runs the loop; every autonomous work session that closes an item\nagainst it; and any colleague or coding agent who has to know why work here\nhappens the way it does. Its ratification date is in the heading.",
+          "source_blob_sha": "51de840b997701587eddd67b6ce0c0c35566313a",
+          "source_content_sha256": "88d619a56b8382d3360309bda5aaa8b2a9a49f0f2f38240f0187f6c6df35c454"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-049",
+      "evidence_class": "source",
+      "claim": "Four native platform bodies are absent and no platform kit is shipped.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "conformance/README.md",
+          "line": 18,
+          "end_line": 37,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/README.md#L18",
+          "excerpt_end_line": 25,
+          "excerpt": "There is no `operation/` kit here. That contract's promises are about a running\nsystem, and closing them needs the turnkey harness (`converge-qtp`), not a file\nscan. There is no `platform-*` kit either: four of the five platform bodies do\nnot exist. `ledger/rows.yaml` says so row by row rather than leaving the silence\nunexplained.\n\nThe last two kits arrived on 2026-09-04 (`converge-f1l`). Until then the\numbrella and collaboration had none, and the ledger recorded that silence",
+          "source_blob_sha": "8b69ce6c9092a6a76eadba19735e23690f196b28",
+          "source_content_sha256": "31a6986375312eaa80ccc7e85839c3cdac2e0350675da324f13230fe7f199639"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-050",
+      "evidence_class": "source",
+      "claim": "Experience kits inspect app snapshots; SKIP is not a pass and static checks do not prove runtime writes/layout.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "conformance/experience-direction/README.md",
+          "line": 83,
+          "end_line": 91,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-direction/README.md#L83",
+          "excerpt_end_line": 90,
+          "excerpt": "## What a static read buys, and what it does not\n\nIt proves a promise is **reachable**: a document arrives rendered with its\nsource, four view controls exist, a required control is present at all, and \u2014\nthe one that matters most \u2014 the control that triggers an action reaches a write\nthe app declares, rather than only showing a message.\n\nIt cannot prove what a write records once it lands, and it never judges a",
+          "source_blob_sha": "d5337c1b472e2dfa53611a53574d4ea28b49069f",
+          "source_content_sha256": "a3d459b4a3a87bf6cde239e467c1bd484596b42d98c466ec6c2727aab2c0e6ef"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-051",
+      "evidence_class": "historical",
+      "claim": "Upstream records one successful returned-artifact acceptance review and explicitly excludes full orchestration/journey proof.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "evaluations/collaborative/acceptance-coverage-result-2026-09-22.md",
+          "line": 1,
+          "end_line": 12,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/evaluations/collaborative/acceptance-coverage-result-2026-09-22.md#L1",
+          "excerpt_end_line": 8,
+          "excerpt": "# Acceptance-coverage CLI result \u2014 2026-09-22\n\n**PASS for one manual returned-artifact verification case.** Serves\n[`operation.v1`](../../contracts/operation.v1.md) clauses 7\u20138; this does not\nestablish full orchestration, integration, closure or the collaborative journey.\n\nA fresh standalone Amplifier CLI session received the exact\n[scenario prompt](acceptance-coverage.md#setup-and-prompt) and only the four",
+          "source_blob_sha": "d45b23aa5b998d520cf01df15c0e73220a9d5729",
+          "source_content_sha256": "ef0dba87a7e27b03feb4bfbc1e881aaf493538624797909f92a94d8f19703bcd"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-052",
+      "evidence_class": "historical",
+      "claim": "Portable current-state/handback scenario is marked NOT RUN in the package README.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "packages/collaborative/README.md",
+          "line": 21,
+          "end_line": 35,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/packages/collaborative/README.md#L21",
+          "excerpt_end_line": 28,
+          "excerpt": "## Version 0.4.25: report current work and finish the handback\n\nShared observation guidance separates a run's admission snapshot from current\nowner/lane/check/result records, and an observer's expiry from the work's outcome.\nManager delivery guidance completes supported publication and selection using\nexact evidence and read-back; neither publication nor passing checks establishes\na usable customer opening by itself.\n",
+          "source_blob_sha": "e16b65224ffce49188ce324253aa961ed2a9afe8",
+          "source_content_sha256": "53fbe988f214e6a34c1a5f43024ce2ad14230ba78a63658ef8b0aa4c7a30eceb"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-053",
+      "evidence_class": "documented_gap",
+      "claim": "Direction fixture generator is documented as regressing sample-good's snapshot wiring if regenerated unchanged.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "conformance/experience-direction/README.md",
+          "line": 139,
+          "end_line": 150,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/conformance/experience-direction/README.md#L139",
+          "excerpt_end_line": 146,
+          "excerpt": "`sample-good` and `sample-bad` are rewritten in place by\n[`../experience-fixtures/make_fixtures.py`](../experience-fixtures/make_fixtures.py),\nwhich is how they are kept in step when a rule is added \u2014 not a build step\nanyone has to run first. `sample-one-snapshot` is not one of the two it writes.\n\n> **Before you regenerate:** `sample-good`'s restore wiring here carries a\n> snapshot (`restoreScope(scope, snapshot)` posting `{ since }`), and the\n> generator's shared template does not yet. Re-running it as it stands reverts",
+          "source_blob_sha": "d5337c1b472e2dfa53611a53574d4ea28b49069f",
+          "source_content_sha256": "a3d459b4a3a87bf6cde239e467c1bd484596b42d98c466ec6c2727aab2c0e6ef"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-054",
+      "evidence_class": "source",
+      "claim": "Collaboration guard middleware now opens only the exact secret-protected webhook path.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/serve.py",
+          "line": 72,
+          "end_line": 100,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/serve.py#L72",
+          "excerpt_end_line": 79,
+          "excerpt": "#: The one path that answers without a cookie and is still a write, listed\n#: apart from the prefixes above because it is matched WHOLE.\n#:\n#: `experience-collaboration.v1` Core 6 asks for webhooks where the host offers\n#: them, and polling as the honest fallback. The route exists and works\n#: (`app/collab.py`), but a repository host carries no `cv_session` cookie, so\n#: the gate answered 401 and the host could never reach its own webhook --\n#: measured 2026-09-04 on 127.0.0.1:8846, and the reason the freshness sentence",
+          "source_blob_sha": "917046be8c352649fc6c9181a006be21e5d967db",
+          "source_content_sha256": "0606762b9e5de9c04f0b7c1259b1f2ca96dec03b60ea5096ae7338e58c356b8c"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-055",
+      "evidence_class": "source",
+      "claim": "The ordinary local decision route defaults unmatched repository IDs to the first registered repository.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/serve.py",
+          "line": 942,
+          "end_line": 963,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/serve.py#L942",
+          "excerpt_end_line": 949,
+          "excerpt": "    async def decision(mid: str, request: Request) -> JSONResponse:\n        mc = manager_or_none(mid)\n        if mc is None:\n            return JSONResponse({\"error\": f\"no manager named {mid}\"}, status_code=404)\n        denied = _steward_denied(mc, request)\n        if denied is not None:\n            return denied\n        body = await request.json()",
+          "source_blob_sha": "917046be8c352649fc6c9181a006be21e5d967db",
+          "source_content_sha256": "0606762b9e5de9c04f0b7c1259b1f2ca96dec03b60ea5096ae7338e58c356b8c"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-056",
+      "evidence_class": "source",
+      "claim": "App document standing comes from the ledger and is distinct from lock status.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/data.py",
+          "line": 640,
+          "end_line": 665,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/data.py#L640",
+          "excerpt_end_line": 647,
+          "excerpt": "def doc_state(repo: Path, path: Path, reading=None, kept_module=None) -> dict:\n    \"\"\"One word for whether this promise is being kept, from the ledger only.\n\n    `kept` when the ledger's own fold says Kept. `gap` when the ledger watches\n    this promise and says anything else. `draft` when nothing watches it \u2014 no\n    ledger at all, or no rows naming this file \u2014 which is a different silence\n    from a measured gap and is said apart.\n    \"\"\"",
+          "source_blob_sha": "2c11d1a3cac7f9f5942804804982356725cd0553",
+          "source_content_sha256": "6d602e206b37ba74db80cf641fbc6514ab33bed9633ed276f2f3c637e4b18cae"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-057",
+      "evidence_class": "source",
+      "claim": "The optional collaborative root composes a separately pinned Anchors and the collaborative behavior.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "bundles/collaborative/bundle.md",
+          "line": 1,
+          "end_line": 10,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/bundles/collaborative/bundle.md#L1",
+          "excerpt_end_line": 8,
+          "excerpt": "---\nbundle:\n  name: converge-collaborative\n  version: 0.4.0\n  description: Optional complete supervisor host; use the collaborative behavior in an existing host.\nincludes:\n  - bundle: git+https://github.com/microsoft/amplifier-foundation@2c864f7c839c39d4387c41c3bc3f11a7176396da#subdirectory=bundles/anchors/bundle.md\n  - bundle: converge:behaviors/collaborative.yaml",
+          "source_blob_sha": "c9a87a3db948e8d84f3822f3db8da589498d09dd",
+          "source_content_sha256": "2e4da7a92e43d226b2c38e3bb2ad96d2a63d7754a2b852faf9cd49e092e4a47d"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    },
+    {
+      "id": "REF-CVG-058",
+      "evidence_class": "source",
+      "claim": "Voice feedback preserves original audio form beside dated feedback notes; it is not transcription.",
+      "repository": "microsoft/amplifier-bundle-converge",
+      "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+      "evidence": [
+        {
+          "path": "app/feedback_voice.py",
+          "line": 27,
+          "end_line": 46,
+          "url": "https://github.com/microsoft/amplifier-bundle-converge/blob/41679679fd449ecc16b6af58d0ce8ec2cb2d29ad/app/feedback_voice.py#L27",
+          "excerpt_end_line": 34,
+          "excerpt": "## What arrives is what lands\n\nThe clause says the folder \"takes whatever form it arrives in\", so this never\ntranscodes and never renames a format. The extension comes from the MIME type\nthe browser recorded with \u2014 `audio/webm;codecs=opus` lands as `.webm`, an\nattached `audio/mpeg` file lands as `.mp3` \u2014 and an unrecognised audio subtype\nlands under its own subtype rather than being guessed into a lie.\n",
+          "source_blob_sha": "71ffe26d5eb34aadf01ec805e8759ff020173138",
+          "source_content_sha256": "4284604607664b66b0bb66e4e10b11b786cbb6651861afe4a298657bf9caae46"
+        }
+      ],
+      "qualification": "Source review; no live runtime claim unless explicitly classified"
+    }
+  ],
+  "record_class": "source_reference_fact",
+  "authority": "review_observation",
+  "identity_note": "REF-CVG IDs identify this review knowledge, never upstream CVG ledger rows, native tasks or project decisions"
+}

@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "commit": "41679679fd449ecc16b6af58d0ce8ec2cb2d29ad",
+  "inventory_files": 752,
+  "acquisition": {
+    "cached_verified": 672,
+    "binary_indexed_only": 78,
+    "generated_or_vendor_indexed_only": 2
+  },
+  "review_depth": {
+    "cached_only": 134,
+    "focused_semantic_review": 46,
+    "heading_indexed": 152,
+    "symbol_indexed": 179,
+    "inventory_only": 80,
+    "fixture_exercised": 142,
+    "self_test_review_and_executed": 5,
+    "contract_core_review": 14
+  },
+  "cache_present": true,
+  "fresh_cached_blob_verifications": 672,
+  "facts": 58,
+  "fixture_runs": 10,
+  "self_tests": 109,
+  "local_links": 49,
+  "pinned_source_citations": 140,
+  "limits": "Integrity and reference consistency only; no automatic semantic or live verification"
+}

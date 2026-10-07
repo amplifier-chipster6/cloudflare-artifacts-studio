@@ -2,6 +2,8 @@
 
 Snapshot: 2026-10-06. The locally runnable **v0.1** application remains the implementation baseline. The new architecture is a **documented proposal**.
 
+**2026-10-07 source-review correction:** Converge ships a web app and collaborative integration guidance that overlap the proposed Studio control surface. The [pinned reference](docs/reference/converge/README.md) now documents that foundation and its limits. Resolve the [reuse/ownership decisions](docs/reference/converge/STUDIO-REUSE-AND-GAPS.md) before implementing the earlier proposal; this review does not adopt a replacement architecture.
+
 ## Implemented
 
 Persistent SQL-backed project/task/context storage, project-scoped selected packets/export, native Artifacts binding and local REST adapter, per-run repository provisioning, two-run concurrency, atomic claims/leases/heartbeats, attributed reports, exact-head/freshness review, owner/runner auth boundaries, responsive UI, and an outbound Python bridge.
@@ -32,6 +34,6 @@ Historical cloud attempts included authentication/resource-access errors, then a
 
 ## Next sequence
 
-Review/ratify scope and contracts; identify the actual memory system; resolve runtime/bundle pins and supported Unified seam; qualify durable Artifacts records/private access; run one real isolated worker; verify a combined candidate; explicitly review and deliver the pilot; evaluate transfer to a website project.
+Resolve Converge UX and record-owner reuse; review/ratify the resulting scope and contracts; identify the actual memory system; resolve runtime/bundle pins and supported Unified seam; qualify durable Artifacts records/private access; run one real isolated worker; verify a combined candidate; explicitly review and deliver the pilot; evaluate transfer to a website project.
 
 Follow [roadmap](docs/ROADMAP.md), [verification](docs/VERIFICATION.md), and [handoff](docs/HANDOFF.md). No cloud deployment or unrelated repository/runtime mutation is part of this documentation change.

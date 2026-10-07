@@ -9,7 +9,7 @@ Snapshot date: 2026-10-06. These are **reviewed source observations**, not a com
 | Amplified Design | `335abd4f4d79415185d81b5498547c59582f91c6` | Knowledge snapshot |
 | Own Unified | `696d5145480a2695ffcafa118cacf32c4081ec7b`, 0.20.44 | Pilot fork; not run here |
 | Microsoft Unified | `dff378190cf02a2f82e87b283b2c1bd2f96ff266`, 0.20.56 | Compatibility reference; Python >=3.13 |
-| Converge | `41679679fd449ecc16b6af58d0ce8ec2cb2d29ad` | Not loaded/executed here |
+| Converge | `41679679fd449ecc16b6af58d0ce8ec2cb2d29ad` | [Connector source reference](docs/reference/converge/README.md), 2026-10-07; offline kits only, no live host/app |
 | Specialist starter | Prototype SHA above, `.amplifier/bundles/amplifier-bundle-artifacts-studio`, declared 0.1 | Operator actively changing it; require fresh content pin |
 | Core | Unified declares >=2.0.1 | Actual resolved commit/version unknown |
 | Foundation | Referenced moving `main` | Resolve commit/lock in actual host |

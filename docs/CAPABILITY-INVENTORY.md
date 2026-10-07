@@ -10,6 +10,7 @@ Snapshot: 2026-10-06. “Declared” means documented/source-present; “loaded�
 | Unified native sessions/configuration | Reviewed host source | No | No real host run | Discover current seam; configure before extending |
 | Core/Foundation | Upstream declarations | No | No | Resolve transitive commits in actual host |
 | Converge manager/workers/work-tracker | Bundle/protocol declarations | No | No | Compose project-locally; qualify custody and modes |
+| Converge web app and existing product UX | FastAPI/Jinja2/JS/PWA source; Direction/Operation/console/review/host bridge | No live app | Offline kit fixtures/self-tests only | [Reuse first; review host/truth/UX overlap](reference/converge/STUDIO-REUSE-AND-GAPS.md) |
 | Converge collaborative guidance | Separate behavior/instructions | No | No | Do not substitute guidance-only entrypoint for manager workflow |
 | Cloudflare specialist starter | Private baseline bundle | No | Structural review only | Coordinate with operator's active development; pin actual content |
 | OS-isolated execution | Design requirement | No qualified environment | No | Constrained containers/VMs; directories/forks insufficient |
@@ -23,3 +24,5 @@ Snapshot: 2026-10-06. “Declared” means documented/source-present; “loaded�
 For every actual run, capture host commit, lockfile/resolved dependencies, bundle content revisions, mode/behavior activation, native tracker IDs, environment image digest, and verification commands. [PINS](../PINS.md) records observations and unresolved inputs.
 
 The Unified fork/upstream revisions differ. Frequent upstream releases suggest active development but do not prove compatibility or select an upgrade. Inventory capabilities again on any new pin.
+
+Converge follow-up review: 2026-10-07, same fixed upstream commit, complete tree inventory and verified text cache. [Coverage and proof limits](reference/converge/SNAPSHOT-AND-COVERAGE.md) distinguish acquisition, focused review, indexing and executed synthetic checks. This corrects the earlier omission of its shipped UI; it does not establish a live Unified or Artifacts integration.

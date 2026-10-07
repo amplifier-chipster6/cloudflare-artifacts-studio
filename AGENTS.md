@@ -4,6 +4,8 @@
 
 Read [README](README.md), [project status](PROJECT_STATUS.md), [vision](docs/VISION.md), [pilot](docs/PILOT.md), and the relevant [contract](docs/CONTRACTS-README.md). Consult [pins](PINS.md), [ownership](docs/INTEGRATION-OWNERSHIP.md), and [TODO](docs/TODO.md) before changing a seam.
 
+Before changing Converge composition, product UX, task ownership or execution adapters, read the [pinned Converge reference](docs/reference/converge/README.md) and its [reuse/gap assessment](docs/reference/converge/STUDIO-REUSE-AND-GAPS.md). Converge ships a web app and collaborative guidance; do not treat it as an agent bundle alone. Use the cached facts/indexes before repeating broad retrievals, and retain the stated source-versus-live proof limits.
+
 ## Work and authority
 
 - Implement a bounded task with explicit scope and acceptance criteria. Use an isolated branch or working copy; preserve unrelated operator changes.
